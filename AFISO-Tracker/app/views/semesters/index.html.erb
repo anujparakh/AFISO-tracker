@@ -1,0 +1,28 @@
+<div class="semesters index">
+
+	<h2>Semesters</h2>
+	
+	<% flash.each do |type, msg| %>
+		<div>
+			<p><b><%= msg %></b></p><br/>
+		</div>
+	<% end %>
+	
+	<%= link_to("Add Semester", new_semester_path, :class => 'action new') %>
+	
+	<table class="listing" summary="Semester List">
+		<tr class="header">
+			<th>Semester</th>
+		</tr>
+		<% @semesters.each do |semester| %>
+		<tr>
+			<td><%= semester.semester_name %></td>
+			<td class="actions">
+				<%= link_to("Show", semester_path(semester), :class => 'action show') %>
+				<%= link_to("Edit", edit_semester_path(semester), :class => 'action edit') %>
+				<%= link_to("Delete", delete_semester_path(semester), :class => 'action delete') %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>
