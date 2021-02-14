@@ -7,7 +7,7 @@
 <%= form_for(@member, :method => 'delete') do |f| %>
 
   <p> Are you sure you want to permanently delele this Member? </p>
-<p> <%= @member.member_name %> </p>
+<p> <%= @member.name %> </p>
 
   <div class="form-buttons">
     <%= f.submit("Delete Member") %>
