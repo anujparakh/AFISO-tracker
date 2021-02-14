@@ -16,7 +16,7 @@
 		</tr>
 		<% @members.each do |member| %>
 		<tr>
-			<td><%= member.member_name %></td>
+			<td><%= member.name %></td>
 			<td class="actions">
 				<%= link_to("Show", member_path(member), :class => 'action show') %>
 				<%= link_to("Edit", edit_member_path(member), :class => 'action edit') %>
