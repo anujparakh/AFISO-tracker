@@ -1,2 +1,17 @@
-<h1>Members#delete</h1>
-<p>Find me in app/views/members/delete.html.erb</p>
+
+<%= link_to("<< Back to List", members_path, :class => 'back-link') %>
+
+<div class="member delete">
+<h2>Delete Member</h2>
+
+<%= form_for(@member, :method => 'delete') do |f| %>
+
+  <p> Are you sure you want to permanently delele this Member? </p>
+<p> <%= @member.member_name %> </p>
+
+  <div class="form-buttons">
+    <%= f.submit("Delete Member") %>
+  </div>
+
+<% end %>
+</div>
