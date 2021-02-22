@@ -28,5 +28,7 @@ Rails.application.routes.draw do
   #get 'members/new'
   #get 'members/edit'
   #get 'members/delete'
+  mount Lockup::Engine, at: '/lockup'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
