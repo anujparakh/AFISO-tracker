@@ -12,16 +12,17 @@ class MembersController < ApplicationController
   def new
     @member = Member.new
   end
-
+  
   def create
-	     @member = Member.new(member_params)
-	     name = @member.name
+	@member = Member.new(member_params)
+	name = @member.name
+	
+	if @member.save
+		redirect_to(members_path, notice: "#{name} added to list!")
+	else
+		render('new')
+	end
 
-	     if @member.save
-		       redirect_to(members_path, notice: "#{name} added to list!")
-	     else
-		       render('new')
-	     end
   end
 
   def edit
@@ -47,10 +48,11 @@ class MembersController < ApplicationController
 	  @member.destroy
 	  redirect_to(members_path, :flash => {notice: "Member deleted from list!"})
   end
-
+  
   private
-	     def member_params
-		       params.require(:member).permit(:name, :email)
-       end
+	def member_params
+		params.require(:member).permit(:name, :email)
+	end
+
 end
 
