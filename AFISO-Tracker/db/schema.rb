@@ -41,9 +41,10 @@ ActiveRecord::Schema.define(version: 2021_02_19_214029) do
   end
   
   create_table "semesters", force: :cascade do |t|
-    t.datetime "startDate"
-    t.datetime "endDate"
-    t.string "semesterName"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "dues_deadline"
+    t.string "semester_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
