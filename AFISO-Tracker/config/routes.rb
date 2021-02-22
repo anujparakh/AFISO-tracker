@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   
+  resources :payments do
+    member do
+      get :delete
+    end
+  end
+  
+
   resources :semesters do
 	member do
 		get :delete
@@ -28,6 +35,12 @@ Rails.application.routes.draw do
   #get 'members/new'
   #get 'members/edit'
   #get 'members/delete'
+  #get 'payments/index'
+  #get 'payments/show'
+  #get 'payments/new'
+  #get 'payments/edit'
+  #get 'payments/delete'
+
   mount Lockup::Engine, at: '/lockup'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

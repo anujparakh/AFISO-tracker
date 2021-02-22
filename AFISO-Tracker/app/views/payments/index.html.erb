@@ -1,0 +1,30 @@
+<div class="payments index">
+    <h2>Payments</h2>
+
+    <%= link_to("Add New Payment", new_payment_path, :class => "action new") %>
+
+    <table class="listing" summary="Payment list">
+        <tr class="header">
+            <th>#</th>
+            <th>Member</th>
+            <th>Semester</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+        <% @payments.each do |payment| %>
+        <tr>
+            <td><%= payment.id %></td>
+            <td><%= payment.member.name %></td>
+            <td><%= payment.semester.startDate.month %></td>
+            <td><%= payment.paymentAmount %></td>
+            <td><%= payment.paymentDate.year %></td>
+            <td class="actions">
+                <%= link_to("Show", payment_path(payment), :class => "action show") %>
+                <%= link_to("Edit", edit_payment_path(payment), :class => "action edit") %>
+                <%= link_to("Delete", delete_payment_path(payment), :class => "action delete") %>
+            </td>
+        </tr>
+        <% end %>
+    </table>
+    <br /><br />
+</div>
