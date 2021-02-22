@@ -1,2 +1,15 @@
-<h1>Members#new</h1>
-<p>Find me in app/views/members/new.html.erb</p>
+<%= link_to("<< Back to List", members_path, :class => 'back-link') %>
+
+<div class="members new">
+  <h2>Add Member</h2>
+
+  <%= form_for(@member, :url => members_path, :method => 'post') do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= f.submit("Add Member") %>
+    </div>
+
+  <% end %>
+</div>
