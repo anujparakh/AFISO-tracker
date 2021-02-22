@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+  before_action :check_for_lockup
+
   def index
     @members = Member.all
   end
@@ -51,3 +53,4 @@ class MembersController < ApplicationController
 		       params.require(:member).permit(:name, :email)
        end
 end
+
