@@ -1,3 +1,3 @@
 class Officer < ApplicationRecord
-    has-many :payments
+    has_many :payments
 end
