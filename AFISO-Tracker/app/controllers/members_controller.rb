@@ -53,3 +53,4 @@ class MembersController < ApplicationController
 		       params.require(:member).permit(:name, :email)
        end
 end
+
