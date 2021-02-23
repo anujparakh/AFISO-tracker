@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Home', type: :feature do
+RSpec.describe 'Home Page', type: :feature do
 
     # MUST test each page to make sure it's password protected
     describe 'Password Protected' do
@@ -21,16 +21,11 @@ RSpec.describe 'Home', type: :feature do
     end
 
     describe 'Index' do
-        it 'shows the password page' do
-            visit 'home/index'
-            expect(page).to have_content('password')
-        end
-
         it 'logs in and shows the welcome page' do
             visit 'home/index'
 
             # Fill in password
-            fill_in "code word", with: "secret"
+            fill_in "code word", with: ENV['LOCKUP_CODEWORD']
             click_button('Go')
 
             expect(page).to have_content('Home')
@@ -42,7 +37,7 @@ RSpec.describe 'Home', type: :feature do
             visit 'home/help'
 
             # Fill in password
-            fill_in "code word", with: "secret"
+            fill_in "code word", with: ENV['LOCKUP_CODEWORD']
             click_button('Go')
 
             expect(page).to have_content('Help')
@@ -54,7 +49,7 @@ RSpec.describe 'Home', type: :feature do
             visit 'home/security'
 
             # Fill in password
-            fill_in "code word", with: "secret"
+            fill_in "code word", with: ENV['LOCKUP_CODEWORD']
             click_button('Go')
 
             expect(page).to have_content('Security')

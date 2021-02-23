@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_02_19_214029) do
     t.bigint "officer_id"
     t.bigint "semester_id"
   end
-  
+
   create_table "semesters", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
@@ -48,5 +48,4 @@ ActiveRecord::Schema.define(version: 2021_02_19_214029) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
 end

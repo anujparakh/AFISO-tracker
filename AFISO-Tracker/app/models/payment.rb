@@ -3,5 +3,5 @@ class Payment < ApplicationRecord
     belongs_to :semester
     belongs_to :officer
 
-    validates_presence_of :paymentAmount, :paymentDate
+    validates_presence_of :paymentAmount
 end
