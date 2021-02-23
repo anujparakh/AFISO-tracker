@@ -1,15 +1,15 @@
 <%= link_to("<< Back to List", semesters_path, :class => 'back-link') %>
 
 <div class="semesters edit">
-  <h2>Update Semester</h2>
-  
-  <%= form_for(@semester) do |f| %>
+    <h2>Update Semester</h2>
+
+    <%= form_for(@semester) do |f| %>
 
     <%= render(:partial => 'form', :locals => {:f => f}) %>
 
     <div class="form-buttons">
-      <%= f.submit("Update Semester") %>
+        <%= f.submit("Update Semester") %>
     </div>
 
-  <% end %>
+    <% end %>
 </div>

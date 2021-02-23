@@ -4,7 +4,7 @@
     <h2>Create payment</h2>
 
     <%= form_for(@payment, :url => payments_path, :method => "post") do |f| %>
-    
+
     <%= render(:partial => "form", :locals => {:f => f}) %>
 
     <div class="form-buttons">

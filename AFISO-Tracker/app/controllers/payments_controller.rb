@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
-  
+  before_action :check_for_lockup
+
   ### READ ###
   def index
     @payments = Payment.order("created_at ASC")
@@ -8,7 +9,6 @@ class PaymentsController < ApplicationController
   def show
     @payment = Payment.find(params[:id])
   end
-
 
   ### CREATE ###
   def new
@@ -25,13 +25,12 @@ class PaymentsController < ApplicationController
       if @payment.save
         redirect_to(payments_path)
       else
-        render('new')
+        render("new")
       end
     else
-      render('new')
+      render("new")
     end
   end
-
 
   ### UPDATE ###
   def edit
@@ -40,15 +39,10 @@ class PaymentsController < ApplicationController
 
   def update
     @payment = Payment.find(params[:id])
-
-    if valid_relations(@payment)
-      if @payment.update(payment_params)
-        redirect_to(payment_path(@payment))
-      else
-        render('edit')
-      end
-    else 
-      render('edit')
+    if @payment.update(payment_params)
+      redirect_to(payment_path(@payment))
+    else
+      render("edit")
     end
   end
 
@@ -64,20 +58,20 @@ class PaymentsController < ApplicationController
   end
 
   private
-    
-    def payment_params
-      params.require(:payment).permit(:member_id, :semester_id, :officer_id, :paymentAmount)
-    end
 
-    def valid_relations(form_record)
-      semester_exists = Semester.exists?(id: form_record.semester_id)
-      officer_exists = Officer.exists?(id: form_record.officer_id)
-      member_exists = Member.exists?(id: form_record.member_id)
-      if semester_exists && officer_exists && member_exists
-        true
-      else
-        false
-      end
-    end
+  def payment_params
+    params.require(:payment).permit(:member_id, :semester_id, :officer_id, :paymentAmount)
+  end
 
+  def valid_relations(form_record)
+    semester_exists = Semester.exists?(id: form_record.semester_id)
+    officer_exists = Officer.exists?(id: form_record.officer_id)
+    member_exists = Member.exists?(id: form_record.member_id)
+
+    if semester_exists && officer_exists && member_exists
+      true
+    else
+      false
+    end
+  end
 end
