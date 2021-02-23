@@ -1,0 +1,43 @@
+<% flash.each do |type, msg| %>
+    <div class="text-center full-bg bg-success m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+<% end %>
+
+<div class="jumbotron text-center">
+    <h1 class="display-3">Semesters</h1>
+    <%= link_to("Add Semester", new_semester_path, :class => 'action new large-link') %>
+
+</div>
+
+<div class="container text-center">
+    <table class="table table-hover table-striped table-bordered" summary="Semester List">
+        <tr class="header">
+            <th>Semester</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Dues Deadline</th>
+            <th><i class="fas fa-edit"></i></th>
+            <th><i class="fas fa-trash"></th>
+        </tr>
+        <% @semesters.each do |semester| %>
+        <tr>
+            <td><%= semester.semester_name %></td>
+            <td><%= semester.start_date.strftime("%b %Y") %></td>
+            <td><%= semester.end_date.strftime("%b %Y") %></td>
+            <td><%= semester.dues_deadline.strftime("%b %d, %Y") %></td>
+             <td>
+                <%= link_to edit_semester_path(semester), :class => 'action edit' do%>
+                <i class="fas fa-edit"></i>
+                <% end%>
+            </td>
+            <td>
+                <%= link_to semester_path(semester), :method => 'delete' , :class => 'action destroy', :data => {confirm: "Are you sure you wish to delete this member?"} do%>
+                <i class="fas fa-trash"></i>
+                <% end%>
+            </td>
+
+        </tr>
+        <% end %>
+    </table>
+</div>
