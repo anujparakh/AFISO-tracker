@@ -64,5 +64,5 @@ RSpec.configure do |config|
 
   # Set capybara browser
   # Uncomment to run tests in browser
-  Capybara.default_driver = :selenium_chrome
+  # Capybara.default_driver = :selenium_chrome
 end

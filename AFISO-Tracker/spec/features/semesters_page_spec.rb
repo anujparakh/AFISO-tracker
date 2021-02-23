@@ -41,7 +41,7 @@ RSpec.describe "Semesters Page", type: :feature do
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
       click_button("Go")
 
-      expect(page).to have_content("Add Semester")
+      expect(page).to have_content("New Semester")
     end
 
     it "tries to create a new valid semester" do
@@ -72,7 +72,7 @@ RSpec.describe "Semesters Page", type: :feature do
       click_button("Go")
 
       click_button("Add Semester")
-      expect(page).to have_content("Add Semester")
+      expect(page).to have_content("Invalid")
     end
   end
 
@@ -83,7 +83,7 @@ RSpec.describe "Semesters Page", type: :feature do
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
       click_button("Go")
 
-      expect(page).to have_content("Update")
+      expect(page).to have_content("Updating")
     end
 
     it "opens edit page for a semester and changes the name" do
@@ -98,7 +98,7 @@ RSpec.describe "Semesters Page", type: :feature do
       expect(page).to have_content("Spring 2030")
     end
 
-    it "opens edit page for a semester and changes the name" do
+    it "opens edit page for a semester and changes the name to something invalid" do
       visit edit_semester_path(Semester.last.id)
       # Fill in password
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
@@ -107,7 +107,7 @@ RSpec.describe "Semesters Page", type: :feature do
       fill_in "name", with: ""
       click_button("Update Semester")
 
-      expect(page).to have_content("Update")
+      expect(page).to have_content("Invalid")
     end
   end
 

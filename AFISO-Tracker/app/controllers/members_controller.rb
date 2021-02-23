@@ -20,6 +20,7 @@ class MembersController < ApplicationController
     if @member.save
       redirect_to(members_path, notice: "#{name} added to list!")
     else
+      flash[:error] = "Invalid Fields"
       render("new")
     end
   end
@@ -31,8 +32,9 @@ class MembersController < ApplicationController
   def update
     @member = Member.find(params[:id])
     if @member.update(member_params)
-      redirect_to(member_path(@member), notice: "Member information updated!")
+      redirect_to(members_path, notice: "Member information updated!")
     else
+      flash[:error] = "Invalid Fields"
       render("edit")
     end
   end
@@ -48,21 +50,10 @@ class MembersController < ApplicationController
   end
 
   private
-
   def member_params
     params.require(:member).permit(:name, :email)
   end
 
-  def destroy
-	  @member = Member.find(params[:id])
-	  @member.destroy
-	  redirect_to(members_path, :flash => {notice: "Member deleted from list!"})
-  end
-  
-  private
-	def member_params
-		params.require(:member).permit(:name, :email)
-	end
 
 end
 

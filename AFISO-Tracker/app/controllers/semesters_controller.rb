@@ -20,6 +20,7 @@ class SemestersController < ApplicationController
     if @semester.save
       redirect_to(semesters_path, notice: "#{semester_name} added to list!")
     else
+      flash[:errors] = "Invalid fields"
       render("new")
     end
   end
@@ -31,8 +32,9 @@ class SemestersController < ApplicationController
   def update
     @semester = Semester.find(params[:id])
     if @semester.update(semester_params)
-      redirect_to(semester_path(@semester), notice: "Semester information updated!")
+      redirect_to(semesters_path, notice: "#{@semester.semester_name} information updated!")
     else
+      flash[:errors] = "Invalid fields"
       render("edit")
     end
   end

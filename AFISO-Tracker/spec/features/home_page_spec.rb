@@ -28,7 +28,7 @@ RSpec.describe 'Home Page', type: :feature do
             fill_in "code word", with: ENV['LOCKUP_CODEWORD']
             click_button('Go')
 
-            expect(page).to have_content('Home')
+            expect(page).to have_content('Welcome')
         end
     end
 

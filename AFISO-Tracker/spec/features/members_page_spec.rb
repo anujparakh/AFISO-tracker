@@ -42,7 +42,7 @@ RSpec.describe "Members Page", type: :feature do
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
       click_button("Go")
 
-      expect(page).to have_content("Add Member")
+      expect(page).to have_content("New Member")
     end
 
     it "tries to create a new valid member" do
@@ -55,7 +55,7 @@ RSpec.describe "Members Page", type: :feature do
       fill_in "name", with: "John Doe"
       fill_in "email", with: "johndoe@gmail.com"
       click_button("Add Member")
-      expect(page).to have_content("Members")
+      expect(page).to_not have_content("Invalid")
     end
 
     it "tries to create a new invalid member" do
@@ -68,7 +68,7 @@ RSpec.describe "Members Page", type: :feature do
       fill_in "name", with: "Bad Doe"
       fill_in "email", with: "fakeemail" #invalid email
       click_button("Add Member")
-      expect(page).to_not have_content("Members")
+      expect(page).to have_content("Invalid")
     end
   end
 
@@ -79,7 +79,7 @@ RSpec.describe "Members Page", type: :feature do
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
       click_button("Go")
 
-      expect(page).to have_content("Update")
+      expect(page).to have_content("Updating")
     end
 
     it "opens edit page for a semester and changes the name" do
@@ -103,7 +103,7 @@ RSpec.describe "Members Page", type: :feature do
       fill_in "email", with: "wrongemail.com"
       click_button("Update Member")
 
-      expect(page).to have_content("Update")
+      expect(page).to have_content("Invalid")
     end
   end
 
