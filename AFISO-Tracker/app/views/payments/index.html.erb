@@ -1,30 +1,42 @@
-<div class="payments index">
-    <h2>Payments</h2>
+<% flash.each do |type, msg| %>
+<div class="text-center full-bg bg-success m-0">
+    <p class="text-white m-0"><%=msg%></p>
+</div>
+<% end %>
 
-    <%= link_to("Add New Payment", new_payment_path, :class => "action new") %>
+<div class="jumbotron text-center">
+    <h1 class="display-3">Payments</h1>
+    <%= link_to("Add Payment", new_payment_path, :class => 'action new large-link') %>
+</div>
 
-    <table class="listing" summary="Payment list">
+<div class="container text-center">
+    <table class="table table-hover table-striped table-bordered" summary="Payment List">
         <tr class="header">
-            <th>#</th>
             <th>Member</th>
             <th>Semester</th>
             <th>Amount</th>
             <th>Date</th>
+            <th><i class="fas fa-edit"></i></th>
+            <th><i class="fas fa-trash"></th>
         </tr>
         <% @payments.each do |payment| %>
         <tr>
-            <td><%= payment.id %></td>
             <td><%= payment.member.name %></td>
-            <td><%= payment.semester.start_date.month %></td>
-            <td><%= payment.paymentAmount %></td>
-            <td><%= payment.paymentDate.year %></td>
-            <td class="actions">
-                <%= link_to("Show", payment_path(payment), :class => "action show") %>
-                <%= link_to("Edit", edit_payment_path(payment), :class => "action edit") %>
-                <%= link_to("Delete", delete_payment_path(payment), :class => "action delete") %>
+            <td><%= payment.semester.semester_name%></td>
+            <td>$ <%= payment.paymentAmount %></td>
+            <td><%= payment.paymentDate.strftime('%b %d, %Y') %></td>
+             <td>
+                <%= link_to edit_payment_path(payment), :class => 'action edit' do%>
+                <i class="fas fa-edit"></i>
+                <% end%>
+            </td>
+            <td>
+                <%= link_to payment_path(payment), method: :delete, data: {confirm: "Are you sure you wish to delete this member?"} do%>
+                <i class="fas fa-trash"></i>
+                <% end%>
             </td>
         </tr>
         <% end %>
     </table>
-    <br /><br />
+
 </div>

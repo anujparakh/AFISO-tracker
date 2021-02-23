@@ -44,7 +44,7 @@ RSpec.describe "Payments Page", type: :feature do
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
       click_button("Go")
 
-      expect(page).to have_content("Create payment")
+      expect(page).to have_content("New Payment")
     end
 
     it "tries to create a new valid payment" do
@@ -58,7 +58,7 @@ RSpec.describe "Payments Page", type: :feature do
       fill_in "payment_member_id", with: Member.last.id
       fill_in "payment_semester_id", with: Semester.last.id
       fill_in "payment_officer_id", with: Officer.last.id
-      click_button("Create payment")
+      click_button("Add Payment")
       expect(page).to have_content("Payments")
     end
 
@@ -69,8 +69,8 @@ RSpec.describe "Payments Page", type: :feature do
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
       click_button("Go")
 
-      click_button("Create payment")
-      expect(page).to_not have_content("Payments")
+      click_button("Add Payment")
+      expect(page).to have_content("Invalid")
     end
 
     it "tries to create a new invalid payment without payment amount" do
@@ -84,8 +84,8 @@ RSpec.describe "Payments Page", type: :feature do
       fill_in "payment_semester_id", with: Semester.last.id
       fill_in "payment_officer_id", with: Officer.last.id
 
-      click_button("Create payment")
-      expect(page).to_not have_content("Payments")
+      click_button("Add Payment")
+      expect(page).to have_content("Invalid")
     end
   end
 
@@ -106,7 +106,7 @@ RSpec.describe "Payments Page", type: :feature do
       click_button("Go")
 
       fill_in "payment_paymentAmount", with: 123456
-      click_button("Update payment")
+      click_button("Update Payment")
 
       expect(page).to have_content("123456")
     end
@@ -118,7 +118,7 @@ RSpec.describe "Payments Page", type: :feature do
       click_button("Go")
 
       fill_in "payment_paymentAmount", with: ""
-      click_button("Update payment")
+      click_button("Update Payment")
 
       expect(page).to have_content("Update")
     end
@@ -130,8 +130,7 @@ RSpec.describe "Payments Page", type: :feature do
       click_button("Go")
 
       fill_in "payment_semester_id", with: ""
-      p "PRINTING"
-      click_button("Update payment")
+      click_button("Update Payment")
 
       expect(page).to have_content("Update")
     end

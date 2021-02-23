@@ -1,6 +1,6 @@
 <%= error_messages_for(f.object) %>
 
-<table summary="Subject form fields">
+<table class="table" summary="Subject form fields">
     <tr>
         <th>Amount</th>
         <td><%= f.text_field(:paymentAmount) %></td>
@@ -16,5 +16,9 @@
     <tr>
         <th>Officer</th>
         <td><%= f.text_field(:officer_id) %></td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td><%= f.date_select(:dues_deadline,{order: [:month, :day, :year], selected: Date.today})%></td>
     </tr>
 </table>

@@ -25,9 +25,11 @@ class PaymentsController < ApplicationController
       if @payment.save
         redirect_to(payments_path)
       else
+        flash[:errors] = "Invalid fields"
         render("new")
       end
     else
+      flash[:errors] = "Invalid officer, member or semester"
       render("new")
     end
   end
@@ -40,8 +42,9 @@ class PaymentsController < ApplicationController
   def update
     @payment = Payment.find(params[:id])
     if @payment.update(payment_params)
-      redirect_to(payment_path(@payment))
+      redirect_to(payments_path)
     else
+      flash[:errors] = "Invalid fields"
       render("edit")
     end
   end
@@ -54,6 +57,7 @@ class PaymentsController < ApplicationController
   def destroy
     @payment = Payment.find(params[:id])
     @payment.destroy
+    flash[:notice] = "Payment has been deleted"
     redirect_to(payments_path)
   end
 

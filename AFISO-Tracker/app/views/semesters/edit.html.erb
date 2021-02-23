@@ -1,7 +1,14 @@
-<%= link_to("<< Back to List", semesters_path, :class => 'back-link') %>
+<% flash.each do |type, msg| %>
+<div class="text-center full-bg bg-danger m-0">
+    <p class="text-white m-0"><%=msg%></p>
+</div>
+<% end %>
 
-<div class="semesters edit">
-    <h2>Update Semester</h2>
+<div class="jumbotron text-center">
+    <h1 class="display-3">Updating Semester</h1>
+</div>
+
+<div class="container text-center">
 
     <%= form_for(@semester) do |f| %>
 

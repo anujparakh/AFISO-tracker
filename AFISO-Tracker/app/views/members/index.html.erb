@@ -1,31 +1,38 @@
+<% flash.each do |type, msg| %>
+<div class="text-center full-bg bg-success m-0">
+    <p class="text-white m-0"><%=msg%></p>
+</div>
+<% end %>
 
-<%= link_to("<< Back to Home", root_path, :class => 'back-link') %>
+<div class="jumbotron text-center">
+    <h1 class="display-3">Members</h1>
+    <%= link_to("Add Member", new_member_path, :class => 'action new large-link') %>
+</div>
 
-<div class="members index">
 
-	<h2>Members</h2>
-
-	<% flash.each do |type, msg| %>
-		<div>
-			<p><b><%= msg %></b></p><br/>
-		</div>
-	<% end %>
-
-	<%= link_to("Add Member", new_member_path, :class => 'action new') %>
-
-	<table class="listing" summary="Member List">
-		<tr class="header">
-			<th>Member</th>
-		</tr>
-		<% @members.each do |member| %>
-		<tr>
-			<td><%= member.name %></td>
-			<td class="actions">
-				<%= link_to("Show", member_path(member), :class => 'action show') %>
-				<%= link_to("Edit", edit_member_path(member), :class => 'action edit') %>
-				<%= link_to("Delete", delete_member_path(member), :class => 'action delete') %>
-			</td>
-		</tr>
-		<% end %>
-	</table>
+<div class="container text-center">
+    <table class="table table-hover table-striped table-bordered" summary="Member List">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th><i class="fas fa-edit"></i></th>
+            <th><i class="fas fa-trash"></th>
+        </tr>
+        <% @members.each do |member| %>
+        <tr>
+            <td><%= member.name %></td>
+            <td><%= member.email %></td>
+            <td>
+                <%= link_to edit_member_path(member), :class => 'action edit' do%>
+                <i class="fas fa-edit"></i>
+                <% end%>
+            </td>
+            <td>
+                <%= link_to member_path(member), :method => :delete , :data => {confirm: "Are you sure you wish to delete this member?"} do%>
+                <i class="fas fa-trash"></i>
+                <% end%>
+            </td>
+        </tr>
+        <% end %>
+    </table>
 </div>
