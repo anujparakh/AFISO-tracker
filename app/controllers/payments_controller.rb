@@ -23,6 +23,7 @@ class PaymentsController < ApplicationController
     # Make sure associated member, officer, and semester exist
     if valid_relations(@payment)
       if @payment.save
+        flash[:notice] = "Payment Successfully Created!"
         redirect_to(payments_path)
       else
         flash[:errors] = "Invalid fields"
@@ -42,6 +43,7 @@ class PaymentsController < ApplicationController
   def update
     @payment = Payment.find(params[:id])
     if @payment.update(payment_params)
+      flash[:notice] = "Payment Successfully Updated!"
       redirect_to(payments_path)
     else
       flash[:errors] = "Invalid fields"
