@@ -13,16 +13,20 @@
 
 <div class="container text-center">
     <table class="table table-hover table-striped table-bordered" summary="Payment List">
-        <tr class="header">
+        <thead class="thead-dark">
+            <tr>
+            <th>#</th>
             <th>Member</th>
             <th>Semester</th>
             <th>Amount</th>
             <th>Date</th>
             <th><i class="fas fa-edit"></i></th>
             <th><i class="fas fa-trash"></th>
-        </tr>
-        <% @payments.each do |payment| %>
+            </tr>
+        </thead>
+        <% @payments.each_with_index do |payment, index| %>
         <tr>
+            <td><a href="<%= payment_path(payment) %>" class="cell-link"><%=index + 1%></a></td>
             <td><%= payment.member.name %></td>
             <td><%= payment.semester.semester_name%></td>
             <td>$ <%= payment.paymentAmount %></td>
@@ -33,7 +37,7 @@
                 <% end%>
             </td>
             <td>
-                <%= link_to payment_path(payment), method: :delete, data: {confirm: "Are you sure you wish to delete this member?"} do%>
+                <%= link_to payment_path(payment), method: :delete, data: {confirm: "Are you sure you wish to delete this payment?"} do%>
                 <i class="fas fa-trash text-danger"></i>
                 <% end%>
             </td>

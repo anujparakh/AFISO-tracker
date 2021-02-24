@@ -1,31 +1,29 @@
-<%= link_to("<< Back to List", payments_path, :class => "back-link") %>
+<div class="jumbotron text-center">
+    <h1 class="display-3">Payment Information</h1>
+    <a href="<%=payments_path%>" class="large-link">Back to List</a>
+</div>
 
-
-<div class="payments show">
-    <h2>Show Payment</h2>
-
-
-    <table summary="Payment details view">
+<div class="container text-center">
+    <table class="table" summary="Member detail view">
         <tr>
-            <th>#</th>
+            <th>ID:</th>
             <td><%= @payment.id %></td>
         </tr>
         <tr>
-            <th>Member</th>
+            <th>Member Name</th>
             <td><%= @payment.member.name %></td>
         </tr>
         <tr>
             <th>Semester</th>
-            <td><%= @payment.semester.start_date.month %></td>
+            <td><%= @payment.semester.semester_name %></td>
         </tr>
         <tr>
             <th>Amount</th>
-            <td><%= @payment.paymentAmount %></td>
+            <td>$<%= @payment.paymentAmount %></td>
         </tr>
         <tr>
             <th>Date</th>
-            <td><%= @payment.paymentDate.year %></td>
+            <td><%= @payment.paymentDate.strftime("%B %d, %Y") %></td>
         </tr>
     </table>
-    <br /><br />
 </div>
