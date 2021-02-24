@@ -26,3 +26,13 @@
   "Helvetica Neue", Arial, sans-serif,
   // Emoji fonts
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+.cell-link:hover
+{
+  cursor: pointer;
+}
+
+.large-link {
+  font-size: 30px;
+  font-weight: 200;
+}

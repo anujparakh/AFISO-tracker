@@ -1,17 +1,23 @@
-<%= link_to("<< Back to List", members_path, :class => 'back-link') %>
 
-<div class="members show">
-    <h2>Show Member</h2>
-
-    <table summary="Member detail view">
-        <tr>
-            <th>Member</th>
-            <td><%= @member.name %></td>
-        </tr>
-        <tr>
-            <th>Email</th>
-            <td><%= @member.email %></td>
-        </tr>
-    </table>
-
+<div class="jumbotron text-center">
+    <h1 class="display-3">Member Information</h1>
+    <a href="<%=members_path%>" class="large-link">Back to List</a>
 </div>
+
+<div class="container text-center">
+<table class="table" summary="Member detail view">
+    <tr>
+        <th>ID</th>
+        <td><%= @member.id%></td>
+    </thead>
+    <tr>
+        <th>Name</th>
+        <td><%= @member.name %></td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td><%= @member.email %></td>
+    </tr>
+</table>
+</div>
+

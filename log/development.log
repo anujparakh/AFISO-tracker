@@ -3451,3 +3451,1745 @@ Processing by MembersController#index as HTML
 Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 1.0ms | Allocations: 7140)
 
 
+Started GET "/" for ::1 at 2021-02-24 07:02:01 -0600
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 349)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 7823)
+Completed 200 OK in 53ms (Views: 39.7ms | ActiveRecord: 0.0ms | Allocations: 10576)
+
+
+Started GET "/" for ::1 at 2021-02-24 07:02:02 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4331)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 4720)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:02:03 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (4.8ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:23
+  Rendered members/index.html.erb within layouts/application (Duration: 35.3ms | Allocations: 4533)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 53.0ms | Allocations: 8782)
+Completed 200 OK in 67ms (Views: 32.2ms | ActiveRecord: 23.4ms | Allocations: 11973)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:03:10 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (4.8ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:23
+  Rendered members/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.3ms | Allocations: 5239)
+Completed 200 OK in 58ms (Views: 45.2ms | ActiveRecord: 4.8ms | Allocations: 5782)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:03:57 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:23
+  Rendered members/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 5799)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 1.2ms | Allocations: 7149)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:04:02 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:23
+  Rendered members/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 5800)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 1.0ms | Allocations: 7144)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:04:38 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 5792)
+Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 1.0ms | Allocations: 7130)
+
+
+Started GET "/payments" for ::1 at 2021-02-24 07:05:51 -0600
+Processing by PaymentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/index.html.erb within layouts/application
+  [1m[36mPayment Load (2.4ms)[0m  [1m[34mSELECT "payments".* FROM "payments" ORDER BY created_at DESC[0m
+  ↳ app/views/payments/index.html.erb:26
+  Rendered payments/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1197)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 5622)
+Completed 200 OK in 31ms (Views: 20.8ms | ActiveRecord: 2.4ms | Allocations: 8109)
+
+
+Started GET "/semesters" for ::1 at 2021-02-24 07:05:53 -0600
+Processing by SemestersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering semesters/index.html.erb within layouts/application
+  [1m[36mSemester Load (2.3ms)[0m  [1m[34mSELECT "semesters".* FROM "semesters" ORDER BY start_date DESC[0m
+  ↳ app/views/semesters/index.html.erb:27
+  Rendered semesters/index.html.erb within layouts/application (Duration: 19.3ms | Allocations: 4763)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 9010)
+Completed 200 OK in 42ms (Views: 20.9ms | ActiveRecord: 10.1ms | Allocations: 11550)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:05:58 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (6.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1331)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 6243)
+Completed 200 OK in 36ms (Views: 24.1ms | ActiveRecord: 6.2ms | Allocations: 7361)
+
+
+Started GET "/" for ::1 at 2021-02-24 07:29:14 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 218)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2021-02-24 07:29:18 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 85)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2021-02-24 07:29:18 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 79)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: 0c7d5c432af5bcc210d4
+Version: webpack 4.46.0
+Time: 1528ms
+Built at: 02/24/2021 7:29:18 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-67fce1f82d5a801dedc5.js    125 KiB  application  [emitted] [immutable]  application
+js/application-67fce1f82d5a801dedc5.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-67fce1f82d5a801dedc5.js js/application-67fce1f82d5a801dedc5.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 84 bytes {application} [built]
+[./app/javascript/packs/application.js] 558 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 4788.0ms | Allocations: 18607)
+Completed 200 OK in 4811ms (Views: 4801.2ms | Allocations: 19801)
+
+
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: 0c7d5c432af5bcc210d4
+Version: webpack 4.46.0
+Time: 1242ms
+Built at: 02/24/2021 7:29:20 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-67fce1f82d5a801dedc5.js    125 KiB  application  [emitted] [immutable]  application
+js/application-67fce1f82d5a801dedc5.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-67fce1f82d5a801dedc5.js js/application-67fce1f82d5a801dedc5.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 84 bytes {application} [built]
+[./app/javascript/packs/application.js] 558 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3009.1ms | Allocations: 14149)
+Completed 200 OK in 3011ms (Views: 3009.7ms | Allocations: 14538)
+
+
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: 0c7d5c432af5bcc210d4
+Version: webpack 4.46.0
+Time: 1234ms
+Built at: 02/24/2021 7:29:21 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-67fce1f82d5a801dedc5.js    125 KiB  application  [emitted] [immutable]  application
+js/application-67fce1f82d5a801dedc5.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-67fce1f82d5a801dedc5.js js/application-67fce1f82d5a801dedc5.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 84 bytes {application} [built]
+[./app/javascript/packs/application.js] 558 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2891.3ms | Allocations: 10019)
+Completed 200 OK in 2893ms (Views: 2892.5ms | Allocations: 10407)
+
+
+Started GET "/" for ::1 at 2021-02-24 07:29:22 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 79)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 4337)
+Completed 200 OK in 19ms (Views: 17.6ms | Allocations: 4725)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:29:23 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (2.8ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1454)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 5715)
+Completed 200 OK in 177ms (Views: 18.0ms | ActiveRecord: 16.8ms | Allocations: 9799)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:29:42 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1031)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: 1ffa5faa53ae15a4bbaf
+Version: webpack 4.46.0
+Time: 763ms
+Built at: 02/24/2021 7:29:44 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-a8e47262d1b842b01f1a.js    125 KiB  application  [emitted] [immutable]  application
+js/application-a8e47262d1b842b01f1a.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-a8e47262d1b842b01f1a.js js/application-a8e47262d1b842b01f1a.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 93 bytes {application} [built]
+[./app/javascript/packs/application.js] 558 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2179.8ms | Allocations: 6731)
+Completed 200 OK in 2183ms (Views: 2179.2ms | ActiveRecord: 1.3ms | Allocations: 7271)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:29:55 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.5ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 42.0ms | Allocations: 5860)
+Completed 200 OK in 51ms (Views: 44.0ms | ActiveRecord: 1.5ms | Allocations: 7216)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:30:21 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1382)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: 0c7d5c432af5bcc210d4
+Version: webpack 4.46.0
+Time: 755ms
+Built at: 02/24/2021 7:30:23 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-67fce1f82d5a801dedc5.js    125 KiB  application  [emitted] [immutable]  application
+js/application-67fce1f82d5a801dedc5.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-67fce1f82d5a801dedc5.js js/application-67fce1f82d5a801dedc5.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 84 bytes {application} [built]
+[./app/javascript/packs/application.js] 558 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2268.3ms | Allocations: 7107)
+Completed 200 OK in 2275ms (Views: 2269.4ms | ActiveRecord: 1.3ms | Allocations: 8451)
+
+
+Started GET "/" for ::1 at 2021-02-24 07:31:33 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 4474)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.0ms | Allocations: 5438)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:31:35 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.6ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1038)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 5297)
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 1.6ms | Allocations: 5837)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:32:15 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (3.7ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1031)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: a13c554017348dac5cd0
+Version: webpack 4.46.0
+Time: 1118ms
+Built at: 02/24/2021 7:32:18 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-c49de4b632ba4efc7afd.js    125 KiB  application  [emitted] [immutable]  application
+js/application-c49de4b632ba4efc7afd.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-c49de4b632ba4efc7afd.js js/application-c49de4b632ba4efc7afd.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 84 bytes {application} [built]
+[./app/javascript/packs/application.js] 580 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3287.5ms | Allocations: 6542)
+Completed 200 OK in 3291ms (Views: 3284.9ms | ActiveRecord: 3.7ms | Allocations: 7081)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:33:37 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 4589)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.9ms | Allocations: 12071)
+Completed 200 OK in 75ms (Views: 44.6ms | ActiveRecord: 13.1ms | Allocations: 16308)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:34:09 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.8ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1047)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 611d12ffff46475a68d9
+Version: webpack 4.46.0
+Time: 1163ms
+Built at: 02/24/2021 7:34:13 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-d81bac641693db704d91.js    126 KiB  application  [emitted] [immutable]  application
+js/application-d81bac641693db704d91.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-d81bac641693db704d91.js js/application-d81bac641693db704d91.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 84 bytes {application} [built]
+[./app/javascript/packs/application.js] 580 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+ERROR in ./app/javascript/custom/custom.js
+Module not found: Error: Can't resolve 'jquery/src/jquery' in '/Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/app/javascript/custom'
+ @ ./app/javascript/custom/custom.js 1:0-28
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js
+Module not found: Error: Can't resolve 'jquery/src/jquery' in '/Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/node_modules/@rails/ujs/lib/assets/compiled'
+ @ ./node_modules/@rails/ujs/lib/assets/compiled/rails-ujs.js 1:0-28
+ @ ./app/javascript/packs/application.js
+
+  Rendered layout layouts/application.html.erb (Duration: 3365.4ms | Allocations: 6511)
+Completed 200 OK in 3368ms (Views: 3364.2ms | ActiveRecord: 1.8ms | Allocations: 7062)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:34:39 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.6ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 4589)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.3ms | Allocations: 12071)
+Completed 200 OK in 73ms (Views: 44.8ms | ActiveRecord: 8.8ms | Allocations: 16308)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:36:48 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.6ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 19.6ms | Allocations: 4603)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: 7f77a7eca7113eb4f427
+Version: webpack 4.46.0
+Time: 3498ms
+Built at: 02/24/2021 7:36:54 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-60635302a9878c783397.js    441 KiB  application  [emitted] [immutable]  application
+js/application-60635302a9878c783397.js.map    514 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-60635302a9878c783397.js js/application-60635302a9878c783397.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 84 bytes {application} [built]
+[./app/javascript/packs/application.js] 516 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 5944.1ms | Allocations: 18938)
+Completed 200 OK in 5968ms (Views: 5938.7ms | ActiveRecord: 10.8ms | Allocations: 23314)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:37:20 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1047)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: 3331b6b1ee086095d01a
+Version: webpack 4.46.0
+Time: 1271ms
+Built at: 02/24/2021 7:37:23 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-51677feb6519052b4eec.js    441 KiB  application  [emitted] [immutable]  application
+js/application-51677feb6519052b4eec.js.map    514 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-51677feb6519052b4eec.js js/application-51677feb6519052b4eec.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 107 bytes {application} [built]
+[./app/javascript/packs/application.js] 516 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3269.3ms | Allocations: 6535)
+Completed 200 OK in 3272ms (Views: 3268.8ms | ActiveRecord: 1.0ms | Allocations: 7086)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:39:09 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1405)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 5860)
+Completed 200 OK in 40ms (Views: 35.6ms | ActiveRecord: 1.2ms | Allocations: 7201)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:39:39 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1041)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: 9fcc6965424147fe65d1
+Version: webpack 4.46.0
+Time: 1318ms
+Built at: 02/24/2021 7:39:43 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-69a9a02af99044b357ee.js    441 KiB  application  [emitted] [immutable]  application
+js/application-69a9a02af99044b357ee.js.map    514 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-69a9a02af99044b357ee.js js/application-69a9a02af99044b357ee.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 128 bytes {application} [built]
+[./app/javascript/packs/application.js] 516 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3468.3ms | Allocations: 6532)
+Completed 200 OK in 3470ms (Views: 3468.0ms | ActiveRecord: 0.9ms | Allocations: 7072)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:41:00 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1400)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: ff1c8472f0852eb4ac8d
+Version: webpack 4.46.0
+Time: 1288ms
+Built at: 02/24/2021 7:41:04 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-dd9e875332fdd5ee990a.js    441 KiB  application  [emitted] [immutable]  application
+js/application-dd9e875332fdd5ee990a.js.map    514 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-dd9e875332fdd5ee990a.js js/application-dd9e875332fdd5ee990a.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 107 bytes {application} [built]
+[./app/javascript/packs/application.js] 516 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3481.1ms | Allocations: 7108)
+Completed 200 OK in 3488ms (Views: 3482.9ms | ActiveRecord: 1.1ms | Allocations: 8451)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:41:18 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.8ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1041)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: 6fe12da927e458d301cc
+Version: webpack 4.46.0
+Time: 1339ms
+Built at: 02/24/2021 7:41:21 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-5dec4a305b35b2d73f4c.js    441 KiB  application  [emitted] [immutable]  application
+js/application-5dec4a305b35b2d73f4c.js.map    514 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-5dec4a305b35b2d73f4c.js js/application-5dec4a305b35b2d73f4c.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 107 bytes {application} [built]
+[./app/javascript/packs/application.js] 516 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3645.2ms | Allocations: 6526)
+Completed 200 OK in 3648ms (Views: 3644.1ms | ActiveRecord: 1.8ms | Allocations: 7066)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:42:28 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1382)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 5823)
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 1.1ms | Allocations: 7160)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:42:34 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1050)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 5285)
+Completed 200 OK in 15ms (Views: 11.9ms | ActiveRecord: 1.4ms | Allocations: 5837)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:42:41 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.5ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1034)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: 65ee4a4da4f91dce90ec
+Version: webpack 4.46.0
+Time: 1409ms
+Built at: 02/24/2021 7:42:45 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-86f4b88c3d578c51c135.js    442 KiB  application  [emitted] [immutable]  application
+js/application-86f4b88c3d578c51c135.js.map    514 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-86f4b88c3d578c51c135.js js/application-86f4b88c3d578c51c135.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 266 bytes {application} [built]
+[./app/javascript/packs/application.js] 516 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3602.0ms | Allocations: 6525)
+Completed 200 OK in 3605ms (Views: 3601.1ms | ActiveRecord: 1.5ms | Allocations: 7064)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:42:57 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1034)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: 8eec66b84f966f151da8
+Version: webpack 4.46.0
+Time: 941ms
+Built at: 02/24/2021 7:42:59 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-eedffeba518c2eb44cfa.js    442 KiB  application  [emitted] [immutable]  application
+js/application-eedffeba518c2eb44cfa.js.map    514 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-eedffeba518c2eb44cfa.js js/application-eedffeba518c2eb44cfa.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 267 bytes {application} [built]
+[./app/javascript/packs/application.js] 516 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2275.6ms | Allocations: 6517)
+Completed 200 OK in 2278ms (Views: 2275.4ms | ActiveRecord: 1.0ms | Allocations: 7056)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 07:43:02 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (2.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 215)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4383)
+Completed 200 OK in 44ms (Views: 9.2ms | ActiveRecord: 3.7ms | Allocations: 7932)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:43:04 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (3.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1065)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 5919)
+Completed 200 OK in 29ms (Views: 23.4ms | ActiveRecord: 3.0ms | Allocations: 6462)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 07:43:07 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 76)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4310)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.9ms | Allocations: 5380)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:43:09 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (2.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1550)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 5914)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 2.1ms | Allocations: 6457)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 07:43:10 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 76)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4308)
+Completed 200 OK in 14ms (Views: 8.1ms | ActiveRecord: 1.7ms | Allocations: 5396)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:43:11 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1034)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 5928)
+Completed 200 OK in 31ms (Views: 25.4ms | ActiveRecord: 1.0ms | Allocations: 6470)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 07:43:14 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 76)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4303)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 1.9ms | Allocations: 5373)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:43:16 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (2.7ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1035)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 5917)
+Completed 200 OK in 28ms (Views: 21.6ms | ActiveRecord: 2.7ms | Allocations: 6460)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 07:43:21 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 76)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4303)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 1.0ms | Allocations: 5373)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:43:23 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (3.7ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1034)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 5267)
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 3.7ms | Allocations: 5810)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:44:31 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1388)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/anujparakh/Documents/College Documents/Eighth Semester/CSCE 431/Project/afiso-tracker/public/packs
+[Webpacker] Hash: da876178b9732337be3c
+Version: webpack 4.46.0
+Time: 948ms
+Built at: 02/24/2021 7:44:33 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-f7f0bdc0bb47ca6cfcf9.js    441 KiB  application  [emitted] [immutable]  application
+js/application-f7f0bdc0bb47ca6cfcf9.js.map    513 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-f7f0bdc0bb47ca6cfcf9.js js/application-f7f0bdc0bb47ca6cfcf9.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/custom/custom.js] 0 bytes {application} [built]
+[./app/javascript/packs/application.js] 516 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2356.2ms | Allocations: 7086)
+Completed 200 OK in 2364ms (Views: 2359.3ms | ActiveRecord: 1.4ms | Allocations: 8430)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:46:14 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1383)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 5824)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 1.1ms | Allocations: 7161)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:46:52 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1041)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 5267)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.9ms | Allocations: 5807)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:47:49 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1334)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 5785)
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 1.1ms | Allocations: 7123)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:48:00 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 5781)
+Completed 200 OK in 24ms (Views: 16.8ms | ActiveRecord: 1.2ms | Allocations: 7125)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:48:24 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1334)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 5782)
+Completed 200 OK in 33ms (Views: 28.3ms | ActiveRecord: 1.0ms | Allocations: 7125)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:48:35 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1332)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 5773)
+Completed 200 OK in 20ms (Views: 15.8ms | ActiveRecord: 1.2ms | Allocations: 7110)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:50:36 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 5827)
+Completed 200 OK in 20ms (Views: 16.9ms | ActiveRecord: 1.0ms | Allocations: 7164)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:50:55 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1390)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 5839)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 1.0ms | Allocations: 7183)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 07:50:57 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (2.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 6.8ms | Allocations: 347)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 5067)
+Completed 200 OK in 34ms (Views: 25.5ms | ActiveRecord: 2.1ms | Allocations: 6297)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:51:16 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.9ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1387)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 5835)
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 1.9ms | Allocations: 7178)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:51:32 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (2.5ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1041)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 5267)
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 2.5ms | Allocations: 5807)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:51:35 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:25
+  Rendered members/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1383)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 5825)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 1.0ms | Allocations: 7162)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:53:49 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (2.8ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1385)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 5837)
+Completed 200 OK in 19ms (Views: 12.9ms | ActiveRecord: 2.8ms | Allocations: 7181)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:53:56 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.8ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1376)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 5817)
+Completed 200 OK in 24ms (Views: 18.4ms | ActiveRecord: 1.8ms | Allocations: 7154)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:53:57 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (2.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1020)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 5246)
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 2.1ms | Allocations: 5786)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:54:04 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1377)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 5818)
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 1.0ms | Allocations: 7161)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:54:08 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1379)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5827)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 1.2ms | Allocations: 7171)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:54:29 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1377)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 5825)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 1.0ms | Allocations: 7169)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:54:55 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1375)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.2ms | Allocations: 5823)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.9ms | Allocations: 7160)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:55:14 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.5ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1408)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 5849)
+Completed 200 OK in 27ms (Views: 21.2ms | ActiveRecord: 1.5ms | Allocations: 7186)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 07:55:15 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 263)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4595)
+Completed 200 OK in 19ms (Views: 14.1ms | ActiveRecord: 1.1ms | Allocations: 6318)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:55:17 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (7.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1048)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.3ms | Allocations: 5938)
+Completed 200 OK in 60ms (Views: 45.0ms | ActiveRecord: 7.1ms | Allocations: 6482)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:56:38 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1411)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 5852)
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 1.2ms | Allocations: 7195)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 07:56:41 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 205)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 5097)
+Completed 200 OK in 23ms (Views: 14.5ms | ActiveRecord: 1.5ms | Allocations: 6295)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:56:43 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (4.8ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1048)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 5934)
+Completed 200 OK in 32ms (Views: 19.2ms | ActiveRecord: 4.8ms | Allocations: 6477)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:57:53 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1409)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 5850)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 1.0ms | Allocations: 7193)
+
+
+Started GET "/members" for ::1 at 2021-02-24 07:59:02 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1414)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.4ms | Allocations: 17978)
+Completed 200 OK in 72ms (Views: 67.6ms | ActiveRecord: 1.0ms | Allocations: 19322)
+
+
+Started GET "/members" for ::1 at 2021-02-24 08:00:08 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 5849)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 1.1ms | Allocations: 7193)
+
+
+Started GET "/members" for ::1 at 2021-02-24 08:00:18 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1409)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 5848)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 1.1ms | Allocations: 7186)
+
+
+Started GET "/members" for ::1 at 2021-02-24 08:00:55 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1052)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.7ms | Allocations: 16543)
+Completed 200 OK in 47ms (Views: 44.2ms | ActiveRecord: 1.0ms | Allocations: 17083)
+
+
+Started GET "/members/4" for ::1 at 2021-02-24 08:01:24 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMember Load (3.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 209)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 5118)
+Completed 200 OK in 40ms (Views: 30.2ms | ActiveRecord: 3.5ms | Allocations: 6316)
+
+
+Started GET "/members" for ::1 at 2021-02-24 08:01:26 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (4.4ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1048)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 5930)
+Completed 200 OK in 46ms (Views: 32.8ms | ActiveRecord: 4.4ms | Allocations: 6473)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:04:29 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 211)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 4744)
+Completed 200 OK in 31ms (Views: 25.0ms | ActiveRecord: 1.0ms | Allocations: 7203)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:04:35 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4301)
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 1.4ms | Allocations: 5371)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:04:36 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 76)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4301)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.7ms | Allocations: 5370)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:04:39 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 158)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 4599)
+Completed 200 OK in 33ms (Views: 26.2ms | ActiveRecord: 1.0ms | Allocations: 6466)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:05:06 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 200)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4641)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.9ms | Allocations: 6516)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:05:08 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 193)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4634)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 1.0ms | Allocations: 6501)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:05:11 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 67)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4288)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.9ms | Allocations: 5358)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:05:12 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 63)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4289)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 1.0ms | Allocations: 5358)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:05:19 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4636)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.9ms | Allocations: 6509)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:05:29 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 197)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4638)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.6ms | Allocations: 6512)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:05:49 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4636)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.7ms | Allocations: 6510)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:06:09 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 194)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 4635)
+Completed 200 OK in 34ms (Views: 27.6ms | ActiveRecord: 1.0ms | Allocations: 6502)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:06:13 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 194)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4630)
+Completed 200 OK in 15ms (Views: 8.8ms | ActiveRecord: 1.8ms | Allocations: 6498)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:06:22 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 194)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4635)
+Completed 200 OK in 16ms (Views: 9.8ms | ActiveRecord: 1.4ms | Allocations: 6502)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:06:31 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 197)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4640)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.9ms | Allocations: 6513)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:06:37 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4634)
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 1.0ms | Allocations: 6508)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:07:45 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 215)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4661)
+Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 1.2ms | Allocations: 6535)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:09:02 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.6ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 4652)
+Completed 200 OK in 33ms (Views: 26.3ms | ActiveRecord: 1.6ms | Allocations: 6520)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:09:06 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 215)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4656)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.8ms | Allocations: 6523)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:09:38 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 220)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4661)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.8ms | Allocations: 6535)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:09:53 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 215)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4654)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 1.9ms | Allocations: 6521)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:10:02 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.6ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 215)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4661)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 1.6ms | Allocations: 6535)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:10:07 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4649)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 0.7ms | Allocations: 6517)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:10:46 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 4654)
+Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 1.3ms | Allocations: 6521)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:10:53 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (4.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 216)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4662)
+Completed 200 OK in 16ms (Views: 7.9ms | ActiveRecord: 4.1ms | Allocations: 6536)
+
+
+Started GET "/members/5" for ::1 at 2021-02-24 08:11:06 -0600
+Processing by MembersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/members_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering members/show.html.erb within layouts/application
+  Rendered members/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 214)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4650)
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.9ms | Allocations: 6524)
+
+
+Started GET "/semesters" for ::1 at 2021-02-24 08:14:52 -0600
+Processing by SemestersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering semesters/index.html.erb within layouts/application
+  [1m[36mSemester Load (8.0ms)[0m  [1m[34mSELECT "semesters".* FROM "semesters" ORDER BY start_date DESC[0m
+  ↳ app/views/semesters/index.html.erb:28:in `each_with_index'
+  Rendered semesters/index.html.erb within layouts/application (Duration: 33.9ms | Allocations: 4840)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.3ms | Allocations: 9241)
+Completed 200 OK in 55ms (Views: 25.5ms | ActiveRecord: 23.9ms | Allocations: 11355)
+
+
+Started GET "/semesters/1" for ::1 at 2021-02-24 08:15:04 -0600
+Processing by SemestersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSemester Load (1.2ms)[0m  [1m[34mSELECT "semesters".* FROM "semesters" WHERE "semesters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/semesters_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering semesters/show.html.erb within layouts/application
+  Rendered semesters/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 403)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 4632)
+Completed 200 OK in 45ms (Views: 34.8ms | ActiveRecord: 1.2ms | Allocations: 6593)
+
+
+Started GET "/payments" for ::1 at 2021-02-24 08:15:10 -0600
+Processing by PaymentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/index.html.erb within layouts/application
+  [1m[36mPayment Load (3.2ms)[0m  [1m[34mSELECT "payments".* FROM "payments" ORDER BY created_at DESC[0m
+  ↳ app/views/payments/index.html.erb:26
+  Rendered payments/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 5394)
+Completed 200 OK in 45ms (Views: 27.2ms | ActiveRecord: 3.2ms | Allocations: 8200)
+
+
+Started GET "/payments" for ::1 at 2021-02-24 08:15:30 -0600
+Processing by PaymentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/index.html.erb within layouts/application
+  [1m[36mPayment Load (1.7ms)[0m  [1m[34mSELECT "payments".* FROM "payments" ORDER BY created_at DESC[0m
+  ↳ app/views/payments/index.html.erb:26
+  Rendered payments/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 5544)
+Completed 200 OK in 19ms (Views: 14.5ms | ActiveRecord: 1.7ms | Allocations: 6882)
+
+
+Started GET "/semesters" for ::1 at 2021-02-24 08:15:32 -0600
+Processing by SemestersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering semesters/index.html.erb within layouts/application
+  [1m[36mSemester Load (1.5ms)[0m  [1m[34mSELECT "semesters".* FROM "semesters" ORDER BY start_date DESC[0m
+  ↳ app/views/semesters/index.html.erb:28:in `each_with_index'
+  Rendered semesters/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1861)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 6097)
+Completed 200 OK in 35ms (Views: 25.7ms | ActiveRecord: 1.5ms | Allocations: 7215)
+
+
+Started GET "/semesters/1" for ::1 at 2021-02-24 08:15:36 -0600
+Processing by SemestersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSemester Load (1.8ms)[0m  [1m[34mSELECT "semesters".* FROM "semesters" WHERE "semesters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/semesters_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering semesters/show.html.erb within layouts/application
+  Rendered semesters/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 303)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 4651)
+Completed 200 OK in 24ms (Views: 14.9ms | ActiveRecord: 1.8ms | Allocations: 6395)
+
+
+Started GET "/payments" for ::1 at 2021-02-24 08:15:38 -0600
+Processing by PaymentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/index.html.erb within layouts/application
+  [1m[36mPayment Load (2.4ms)[0m  [1m[34mSELECT "payments".* FROM "payments" ORDER BY created_at DESC[0m
+  ↳ app/views/payments/index.html.erb:26
+  Rendered payments/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 776)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 5635)
+Completed 200 OK in 25ms (Views: 19.1ms | ActiveRecord: 2.4ms | Allocations: 6178)
+
+
+Started GET "/semesters" for ::1 at 2021-02-24 08:15:42 -0600
+Processing by SemestersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering semesters/index.html.erb within layouts/application
+  [1m[36mSemester Load (15.1ms)[0m  [1m[34mSELECT "semesters".* FROM "semesters" ORDER BY start_date DESC[0m
+  ↳ app/views/semesters/index.html.erb:28:in `each_with_index'
+  Rendered semesters/index.html.erb within layouts/application (Duration: 26.7ms | Allocations: 1565)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 5793)
+Completed 200 OK in 49ms (Views: 27.5ms | ActiveRecord: 15.1ms | Allocations: 6337)
+
+
+Started GET "/semesters" for ::1 at 2021-02-24 08:15:48 -0600
+Processing by SemestersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering semesters/index.html.erb within layouts/application
+  [1m[36mSemester Load (4.0ms)[0m  [1m[34mSELECT "semesters".* FROM "semesters" ORDER BY start_date DESC[0m
+  ↳ app/views/semesters/index.html.erb:28:in `each_with_index'
+  Rendered semesters/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1311)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 5750)
+Completed 200 OK in 38ms (Views: 30.8ms | ActiveRecord: 4.0ms | Allocations: 7097)
+
+
+Started GET "/semesters/1" for ::1 at 2021-02-24 08:15:51 -0600
+Processing by SemestersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSemester Load (2.0ms)[0m  [1m[34mSELECT "semesters".* FROM "semesters" WHERE "semesters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/semesters_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering semesters/show.html.erb within layouts/application
+  Rendered semesters/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 296)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 5183)
+Completed 200 OK in 33ms (Views: 25.0ms | ActiveRecord: 2.0ms | Allocations: 6388)
+
+
+Started GET "/semesters" for ::1 at 2021-02-24 08:15:52 -0600
+Processing by SemestersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering semesters/index.html.erb within layouts/application
+  [1m[36mSemester Load (2.4ms)[0m  [1m[34mSELECT "semesters".* FROM "semesters" ORDER BY start_date DESC[0m
+  ↳ app/views/semesters/index.html.erb:28:in `each_with_index'
+  Rendered semesters/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 908)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 5128)
+Completed 200 OK in 31ms (Views: 24.5ms | ActiveRecord: 2.4ms | Allocations: 5729)
+
+
+Started GET "/payments" for ::1 at 2021-02-24 08:15:55 -0600
+Processing by PaymentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/index.html.erb within layouts/application
+  [1m[36mPayment Load (2.1ms)[0m  [1m[34mSELECT "payments".* FROM "payments" ORDER BY created_at DESC[0m
+  ↳ app/views/payments/index.html.erb:26
+  Rendered payments/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1690)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 6005)
+Completed 200 OK in 35ms (Views: 26.7ms | ActiveRecord: 2.1ms | Allocations: 7123)
+
+
+Started GET "/" for ::1 at 2021-02-24 08:17:50 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 4616)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.0ms | Allocations: 5864)
+
+
+Started GET "/members" for ::1 at 2021-02-24 08:17:51 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1549)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 5780)
+Completed 200 OK in 22ms (Views: 17.4ms | ActiveRecord: 1.4ms | Allocations: 7407)
+
+
+Started GET "/payments" for ::1 at 2021-02-24 08:17:52 -0600
+Processing by PaymentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/index.html.erb within layouts/application
+  [1m[36mPayment Load (3.5ms)[0m  [1m[34mSELECT "payments".* FROM "payments" ORDER BY created_at DESC[0m
+  ↳ app/views/payments/index.html.erb:27:in `each_with_index'
+  Rendered payments/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1807)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 6035)
+Completed 200 OK in 32ms (Views: 24.8ms | ActiveRecord: 3.5ms | Allocations: 7154)
+
+
+Started GET "/semesters" for ::1 at 2021-02-24 08:17:52 -0600
+Processing by SemestersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering semesters/index.html.erb within layouts/application
+  [1m[36mSemester Load (2.0ms)[0m  [1m[34mSELECT "semesters".* FROM "semesters" ORDER BY start_date DESC[0m
+  ↳ app/views/semesters/index.html.erb:28:in `each_with_index'
+  Rendered semesters/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1400)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 5629)
+Completed 200 OK in 24ms (Views: 17.1ms | ActiveRecord: 2.0ms | Allocations: 7308)
+
+
+Started GET "/payments" for ::1 at 2021-02-24 08:17:53 -0600
+Processing by PaymentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/index.html.erb within layouts/application
+  [1m[36mPayment Load (3.9ms)[0m  [1m[34mSELECT "payments".* FROM "payments" ORDER BY created_at DESC[0m
+  ↳ app/views/payments/index.html.erb:27:in `each_with_index'
+  Rendered payments/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 5648)
+Completed 200 OK in 30ms (Views: 20.9ms | ActiveRecord: 3.9ms | Allocations: 6191)
+
+
+Started GET "/members" for ::1 at 2021-02-24 08:17:54 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (2.9ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:26:in `each_with_index'
+  Rendered members/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 5937)
+Completed 200 OK in 23ms (Views: 16.4ms | ActiveRecord: 2.9ms | Allocations: 6480)
+
+

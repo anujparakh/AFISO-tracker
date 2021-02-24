@@ -14,16 +14,20 @@
 
 <div class="container text-center">
     <table class="table table-hover table-striped table-bordered" summary="Semester List">
-        <tr class="header">
-            <th>Semester</th>
-            <th>Start</th>
-            <th>End</th>
-            <th>Dues Deadline</th>
-            <th><i class="fas fa-edit"></i></th>
-            <th><i class="fas fa-trash"></th>
-        </tr>
-        <% @semesters.each do |semester| %>
+        <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Semester</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Dues Deadline</th>
+                <th><i class="fas fa-edit"></i></th>
+                <th><i class="fas fa-trash"></th>
+            </tr>
+        </thead>
+        <% @semesters.each_with_index do |semester, index| %>
         <tr>
+            <td><a href="<%= semester_path(semester) %>" class="cell-link"><%=index + 1%></a></td>
             <td><%= semester.semester_name %></td>
             <td><%= semester.start_date.strftime("%b %Y") %></td>
             <td><%= semester.end_date.strftime("%b %Y") %></td>
@@ -34,7 +38,7 @@
                 <% end%>
             </td>
             <td>
-                <%= link_to semester_path(semester), :method => 'delete' , :class => 'action destroy', :data => {confirm: "Are you sure you wish to delete this member?"} do%>
+                <%= link_to semester_path(semester), :method => 'delete' , :class => 'action destroy', :data => {confirm: "Are you sure you wish to delete this semester?"} do%>
                 <i class="fas fa-trash text-danger"></i>
                 <% end%>
             </td>
