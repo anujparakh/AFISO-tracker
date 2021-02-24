@@ -1,7 +1,9 @@
 <% flash.each do |type, msg| %>
-<div class="text-center full-bg bg-success m-0">
-    <p class="text-white m-0"><%=msg%></p>
-</div>
+<% if type=='notice'%>
+    <div class="text-center full-bg bg-success m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+<%end%>
 <% end %>
 
 <div class="jumbotron text-center">
@@ -32,7 +34,7 @@
             </td>
             <td>
                 <%= link_to payment_path(payment), method: :delete, data: {confirm: "Are you sure you wish to delete this member?"} do%>
-                <i class="fas fa-trash"></i>
+                <i class="fas fa-trash text-danger"></i>
                 <% end%>
             </td>
         </tr>

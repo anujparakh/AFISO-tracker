@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   before_action :check_for_lockup
 
   def index
-    @members = Member.all
+    @members = Member.order("name ASC")
   end
 
   def show

@@ -7,6 +7,6 @@ class HomeController < ApplicationController
   def help
   end
 
-  def security
+  def settings
   end
 end

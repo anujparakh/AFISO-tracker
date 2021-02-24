@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'home/help'
-  get 'home/security'
+  get 'home/settings'
 
   #get 'semesters/index'
   #get 'semesters/show'
