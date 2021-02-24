@@ -3348,3 +3348,106 @@ Processing by SemestersController#index as HTML
 Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 1.8ms | Allocations: 6304)
 
 
+Started GET "/payments" for ::1 at 2021-02-23 23:40:09 -0600
+Processing by PaymentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/index.html.erb within layouts/application
+  [1m[36mPayment Load (2.1ms)[0m  [1m[34mSELECT "payments".* FROM "payments" ORDER BY created_at DESC[0m
+  ↳ app/views/payments/index.html.erb:24
+  Rendered payments/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 752)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 4986)
+Completed 200 OK in 24ms (Views: 17.6ms | ActiveRecord: 2.1ms | Allocations: 6476)
+
+
+Started GET "/payments" for ::1 at 2021-02-23 23:40:14 -0600
+Processing by PaymentsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1550)
+
+
+  
+ActiveRecord::UnknownAttributeReference (Query method called with non-attribute argument(s): "created_at DSC"):
+  
+app/controllers/payments_controller.rb:6:in `index'
+Started GET "/payments" for ::1 at 2021-02-23 23:40:17 -0600
+Processing by PaymentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/index.html.erb within layouts/application
+  [1m[36mPayment Load (0.9ms)[0m  [1m[34mSELECT "payments".* FROM "payments" ORDER BY created_at DESC[0m
+  ↳ app/views/payments/index.html.erb:24
+  Rendered payments/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 751)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 5004)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.9ms | Allocations: 6491)
+
+
+Started GET "/members" for ::1 at 2021-02-23 23:42:27 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.5ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:23
+  Rendered members/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 3689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 7903)
+Completed 200 OK in 31ms (Views: 15.3ms | ActiveRecord: 10.5ms | Allocations: 9299)
+
+
+Started GET "/payments" for ::1 at 2021-02-23 23:42:28 -0600
+Processing by PaymentsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/index.html.erb within layouts/application
+  [1m[36mPayment Load (2.0ms)[0m  [1m[34mSELECT "payments".* FROM "payments" ORDER BY created_at DESC[0m
+  ↳ app/views/payments/index.html.erb:24
+  Rendered payments/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 745)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 5659)
+Completed 200 OK in 37ms (Views: 32.9ms | ActiveRecord: 2.0ms | Allocations: 6201)
+
+
+Started GET "/members" for ::1 at 2021-02-23 23:42:40 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (4.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:23
+  Rendered members/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1022)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 5898)
+Completed 200 OK in 24ms (Views: 14.6ms | ActiveRecord: 4.0ms | Allocations: 6440)
+
+
+Started GET "/" for ::1 at 2021-02-23 23:43:30 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4641)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 5886)
+
+
+Started GET "/members" for ::1 at 2021-02-23 23:43:31 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (3.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:23
+  Rendered members/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1825)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 6248)
+Completed 200 OK in 26ms (Views: 20.7ms | ActiveRecord: 3.0ms | Allocations: 7367)
+
+
+Started GET "/members" for ::1 at 2021-02-23 23:43:37 -0600
+Processing by MembersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering members/index.html.erb within layouts/application
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY name ASC[0m
+  ↳ app/views/members/index.html.erb:23
+  Rendered members/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1332)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 5796)
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 1.0ms | Allocations: 7140)
+
+

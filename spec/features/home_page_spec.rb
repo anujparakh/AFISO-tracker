@@ -44,15 +44,15 @@ RSpec.describe 'Home Page', type: :feature do
         end
     end
 
-    describe 'Security' do
-        it 'logs in and shows the security page' do
-            visit 'home/security'
+    describe 'Settings' do
+        it 'logs in and shows the settings page' do
+            visit 'home/settings'
 
             # Fill in password
             fill_in "code word", with: ENV['LOCKUP_CODEWORD']
             click_button('Go')
 
-            expect(page).to have_content('Security')
+            expect(page).to have_content('Settings')
         end
     end
 end

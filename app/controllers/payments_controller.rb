@@ -3,7 +3,7 @@ class PaymentsController < ApplicationController
 
   ### READ ###
   def index
-    @payments = Payment.order("created_at ASC")
+    @payments = Payment.order("created_at DESC")
   end
 
   def show
