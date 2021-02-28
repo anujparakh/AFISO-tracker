@@ -9,8 +9,8 @@ jobs:
       postgres:
         image: postgres:10.8
         env:
-          POSTGRES_USER: postgres
-          PG_PASSWORD: password
+          POSTGRES_USER: afiso_dev
+          PG_PASSWORD: afisopass
           POSTGRES_DB: postgres
           CI_HOST: localhost
         ports:
@@ -36,7 +36,7 @@ jobs:
     - name: Build DB and install gems
       env:
         PGHOST: localhost
-        PGUSER: postgres
+        PGUSER: afiso_dev
         PGPORT: ${{ job.services.postgres.ports[5432] }} # get randomly assigned published port
         RAILS_ENV: test
         CI_HOST: localhost
@@ -49,7 +49,7 @@ jobs:
     - name: Run tests
       env:
         PGHOST: localhost
-        PGUSER: postgres
+        PGUSER: afiso_dev
         PGPORT: ${{ job.services.postgres.ports[5432] }} # get randomly assigned published port
         RAILS_ENV: test
       run: bundle exec rspec
