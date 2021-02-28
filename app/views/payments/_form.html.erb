@@ -7,18 +7,18 @@
     </tr>
     <tr>
         <th>Member</th>
-        <td><%= f.text_field(:member_id) %></td>
+        <td><%= f.select(:member_id, options_for_select(@members.map { |s| [s.name, s.id] }), {}, { :class => "p-1" }) %></td>
     </tr>
     <tr>
         <th>Semester</th>
-        <td><%= f.text_field(:semester_id) %></td>
+        <td><%= f.select(:semester_id, options_for_select(@semesters.map { |s| [s.semester_name, s.id] }), {}, { :class => "p-1"}) %></td>
     </tr>
     <tr>
         <th>Officer</th>
-        <td><%= f.text_field(:officer_id) %></td>
+        <td><%= f.select(:officer_id, options_for_select(@officers.map { |s| [s.name, s.id] }), {}, { :class => "p-1"}) %></td>
     </tr>
     <tr>
         <th>Date</th>
-        <td><%= f.date_select(:dues_deadline,{order: [:month, :day, :year], selected: Date.today})%></td>
+        <td><%= f.date_select(:dues_deadline,{order: [:month, :day, :year], selected: Date.today}, { :class => "p-1"})%></td>
     </tr>
 </table>

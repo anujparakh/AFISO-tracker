@@ -13,6 +13,9 @@ class PaymentsController < ApplicationController
   ### CREATE ###
   def new
     @payment = Payment.new
+    @members = Member.order("name ASC")
+    @semesters = Semester.order("start_date DESC")
+    @officers = Officer.order("name ASC")
     @payment.paymentDate = DateTime.now
   end
 
@@ -38,6 +41,9 @@ class PaymentsController < ApplicationController
   ### UPDATE ###
   def edit
     @payment = Payment.find(params[:id])
+    @members = Member.order("name ASC")
+    @semesters = Semester.order("start_date DESC")
+    @officers = Officer.order("name ASC")
   end
 
   def update
