@@ -4,7 +4,6 @@ RSpec.describe "Members Page", type: :feature do
 
   # MUST test each page to make sure it's password protected
   describe "Password Protected" do
-    p ENV["LOCKUP_CODEWORD"]
     it "shows the password page" do
       visit members_path
       expect(page).to have_content("password")

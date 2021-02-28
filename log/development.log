@@ -5193,3 +5193,125 @@ Processing by MembersController#index as HTML
 Completed 200 OK in 23ms (Views: 16.4ms | ActiveRecord: 2.9ms | Allocations: 6480)
 
 
+Started GET "/" for ::1 at 2021-02-27 22:59:08 -0600
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 349)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 7777)
+Completed 200 OK in 51ms (Views: 37.5ms | ActiveRecord: 0.0ms | Allocations: 10530)
+
+
+Started GET "/" for ::1 at 2021-02-27 22:59:09 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 4308)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms | Allocations: 4702)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMember Create (0.8ms)[0m  [1m[32mINSERT INTO "members" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John Doe"], ["email", "johndoe@gmail.com"], ["created_at", "2021-02-28 05:11:48.385479"], ["updated_at", "2021-02-28 05:11:48.385479"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSemester Create (0.5ms)[0m  [1m[32mINSERT INTO "semesters" ("start_date", "end_date", "dues_deadline", "semester_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["start_date", "2021-02-28 05:11:48.395983"], ["end_date", "2021-03-03 05:11:48.396010"], ["dues_deadline", "2021-03-01 05:11:48.396032"], ["semester_name", "Fall 2021"], ["created_at", "2021-02-28 05:11:48.407887"], ["updated_at", "2021-02-28 05:11:48.407887"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOfficer Create (1.7ms)[0m  [1m[32mINSERT INTO "officers" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Officer Officerson"], ["email", "iamanofficer@office.com"], ["created_at", "2021-02-28 05:11:48.426567"], ["updated_at", "2021-02-28 05:11:48.426567"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMember Create (0.7ms)[0m  [1m[32mINSERT INTO "members" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John Doe"], ["email", "johndoe@gmail.com"], ["created_at", "2021-02-28 05:11:52.858454"], ["updated_at", "2021-02-28 05:11:52.858454"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSemester Create (0.5ms)[0m  [1m[32mINSERT INTO "semesters" ("start_date", "end_date", "dues_deadline", "semester_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["start_date", "2021-02-28 05:11:52.873302"], ["end_date", "2021-03-03 05:11:52.873324"], ["dues_deadline", "2021-03-01 05:11:52.873344"], ["semester_name", "Fall 2021"], ["created_at", "2021-02-28 05:11:52.885195"], ["updated_at", "2021-02-28 05:11:52.885195"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOfficer Create (0.5ms)[0m  [1m[32mINSERT INTO "officers" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Officer Officerson"], ["email", "iamanofficer@office.com"], ["created_at", "2021-02-28 05:11:52.901554"], ["updated_at", "2021-02-28 05:11:52.901554"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (59.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "AFISO_Tracker_development"[0m
+  [1m[35m (55.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "AFISO_Tracker_test"[0m
+  [1m[35m (269.5ms)[0m  [1m[35mCREATE DATABASE "AFISO_Tracker_development" ENCODING = 'unicode'[0m
+  [1m[35m (103.9ms)[0m  [1m[35mCREATE DATABASE "AFISO_Tracker_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "members" CASCADE[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "members" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "officers" CASCADE[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "officers" ("id" bigserial primary key, "name" character varying, "email" character varying, "privelegeLevel" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "payments" CASCADE[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "payments" ("id" bigserial primary key, "paymentDate" timestamp, "paymentAmount" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "member_id" bigint, "officer_id" bigint, "semester_id" bigint)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "semesters" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "semesters" ("id" bigserial primary key, "start_date" timestamp, "end_date" timestamp, "dues_deadline" timestamp, "semester_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210219214029)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210211001810),
+(20210211001851),
+(20210211001931),
+(20210211002013);
+
+[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-28 05:13:38.677443"], ["updated_at", "2021-02-28 05:13:38.677443"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "f96a59eb69248761e778ee8755ed35bd8803136e"], ["created_at", "2021-02-28 05:13:38.685340"], ["updated_at", "2021-02-28 05:13:38.685340"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "members" CASCADE[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "members" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "officers" CASCADE[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "officers" ("id" bigserial primary key, "name" character varying, "email" character varying, "privelegeLevel" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "payments" CASCADE[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "payments" ("id" bigserial primary key, "paymentDate" timestamp, "paymentAmount" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "member_id" bigint, "officer_id" bigint, "semester_id" bigint)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "semesters" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "semesters" ("id" bigserial primary key, "start_date" timestamp, "end_date" timestamp, "dues_deadline" timestamp, "semester_name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210219214029)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210211001810),
+(20210211001851),
+(20210211001931),
+(20210211002013);
+
+[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-28 05:13:38.768324"], ["updated_at", "2021-02-28 05:13:38.768324"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-02-28 05:13:38.777760"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "f96a59eb69248761e778ee8755ed35bd8803136e"], ["created_at", "2021-02-28 05:13:38.788737"], ["updated_at", "2021-02-28 05:13:38.788737"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMember Create (1.0ms)[0m  [1m[32mINSERT INTO "members" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "John Doe"], ["email", "johndoe@gmail.com"], ["created_at", "2021-02-28 05:13:38.884726"], ["updated_at", "2021-02-28 05:13:38.884726"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSemester Create (0.6ms)[0m  [1m[32mINSERT INTO "semesters" ("start_date", "end_date", "dues_deadline", "semester_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["start_date", "2021-02-28 05:13:38.897175"], ["end_date", "2021-03-03 05:13:38.897197"], ["dues_deadline", "2021-03-01 05:13:38.897218"], ["semester_name", "Fall 2021"], ["created_at", "2021-02-28 05:13:38.909518"], ["updated_at", "2021-02-28 05:13:38.909518"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOfficer Create (0.6ms)[0m  [1m[32mINSERT INTO "officers" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Officer Officerson"], ["email", "iamanofficer@office.com"], ["created_at", "2021-02-28 05:13:38.923334"], ["updated_at", "2021-02-28 05:13:38.923334"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
