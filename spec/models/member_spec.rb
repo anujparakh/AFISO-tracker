@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe Member, :type => :model do
   subject {
-    described_class.new(name: "John Doe", email: "johndoe@gmail.com")
+    described_class.new(name: "John Doe", email: "neverbefore@gmail.com")
   }
 
   describe "Validations" do

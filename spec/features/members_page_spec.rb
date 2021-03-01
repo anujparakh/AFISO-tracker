@@ -52,7 +52,7 @@ RSpec.describe "Members Page", type: :feature do
       click_button("Go")
 
       fill_in "name", with: "John Doe"
-      fill_in "email", with: "johndoe@gmail.com"
+      fill_in "email", with: "newemail@gmail.com"
       click_button("Add Member")
       expect(page).to_not have_content("Invalid")
     end
