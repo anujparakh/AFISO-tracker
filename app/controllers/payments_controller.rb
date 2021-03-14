@@ -13,10 +13,18 @@ class PaymentsController < ApplicationController
   ### CREATE ###
   def new
     @payment = Payment.new
+    @members = Member.order("name ASC")
+    @semesters = Semester.order("start_date DESC")
+    @officers = Officer.order("name ASC")
+
     @payment.paymentDate = DateTime.now
   end
 
   def create
+    @members = Member.order("name ASC")
+    @semesters = Semester.order("start_date DESC")
+    @officers = Officer.order("name ASC")
+
     @payment = Payment.new(payment_params)
     @payment.paymentDate = DateTime.now
 
@@ -38,10 +46,17 @@ class PaymentsController < ApplicationController
   ### UPDATE ###
   def edit
     @payment = Payment.find(params[:id])
+    @members = Member.order("name ASC")
+    @semesters = Semester.order("start_date DESC")
+    @officers = Officer.order("name ASC")
   end
 
   def update
     @payment = Payment.find(params[:id])
+    @members = Member.order("name ASC")
+    @semesters = Semester.order("start_date DESC")
+    @officers = Officer.order("name ASC")
+
     if @payment.update(payment_params)
       flash[:notice] = "Payment Successfully Updated!"
       redirect_to(payments_path)
