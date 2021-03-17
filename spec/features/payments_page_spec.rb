@@ -57,10 +57,10 @@ RSpec.describe "Payments Page", type: :feature do
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
       click_button("Go")
 
-      fill_in "payment_amount", with: 50
-      fill_in "member_id", with: Member.last.id
-      fill_in "semester_id", with: Semester.last.id
-      fill_in "officer_id", with: Officer.last.id
+      fill_in "payment_payment_amount", with: 50
+      select Member.last.email, :from => "payment_member_id"
+      select Semester.last.semester_name, :from => "payment_semester_id"
+      select Officer.last.email, :from => "payment_officer_id"
       click_button("Add Payment")
       expect(page).to have_content("Payments")
     end
@@ -83,9 +83,9 @@ RSpec.describe "Payments Page", type: :feature do
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
       click_button("Go")
 
-      fill_in "member_id", with: Member.last.id
-      fill_in "semester_id", with: Semester.last.id
-      fill_in "officer_id", with: Officer.last.id
+      select Member.last.email, :from => "payment_member_id"
+      select Semester.last.semester_name, :from => "payment_semester_id"
+      select Officer.last.email, :from => "payment_officer_id"
 
       click_button("Add Payment")
       expect(page).to have_content("Invalid")
@@ -125,18 +125,7 @@ RSpec.describe "Payments Page", type: :feature do
 
       expect(page).to have_content("Update")
     end
-
-    it "opens edit page for a member and changes to an invalid semester" do
-      visit edit_payment_path(Payment.last.id)
-      # Fill in password
-      fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
-      click_button("Go")
-
-      fill_in "semester_id", with: ""
-      click_button("Update Payment")
-
-      expect(page).to have_content("Update")
-    end
+	  
   end
 
   describe "Show Payment" do
