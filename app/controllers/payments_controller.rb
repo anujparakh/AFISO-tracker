@@ -13,20 +13,12 @@ class PaymentsController < ApplicationController
   ### CREATE ###
   def new
     @payment = Payment.new
-    @members = Member.order("name ASC")
-    @semesters = Semester.order("start_date DESC")
-    @officers = Officer.order("name ASC")
-
-    @payment.paymentDate = DateTime.now
+    @payment.payment_date = DateTime.now
   end
 
   def create
-    @members = Member.order("name ASC")
-    @semesters = Semester.order("start_date DESC")
-    @officers = Officer.order("name ASC")
-
     @payment = Payment.new(payment_params)
-    @payment.paymentDate = DateTime.now
+    @payment.payment_date = DateTime.now
 
     # Make sure associated member, officer, and semester exist
     if valid_relations(@payment)
@@ -46,17 +38,10 @@ class PaymentsController < ApplicationController
   ### UPDATE ###
   def edit
     @payment = Payment.find(params[:id])
-    @members = Member.order("name ASC")
-    @semesters = Semester.order("start_date DESC")
-    @officers = Officer.order("name ASC")
   end
 
   def update
     @payment = Payment.find(params[:id])
-    @members = Member.order("name ASC")
-    @semesters = Semester.order("start_date DESC")
-    @officers = Officer.order("name ASC")
-
     if @payment.update(payment_params)
       flash[:notice] = "Payment Successfully Updated!"
       redirect_to(payments_path)
@@ -81,7 +66,7 @@ class PaymentsController < ApplicationController
   private
 
   def payment_params
-    params.require(:payment).permit(:member_id, :semester_id, :officer_id, :paymentAmount)
+    params.require(:payment).permit(:member_id, :semester_id, :officer_id, :payment_amount)
   end
 
   def valid_relations(form_record)
