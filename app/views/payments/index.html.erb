@@ -29,8 +29,8 @@
             <td><a href="<%= payment_path(payment) %>" class="cell-link"><%=index + 1%></a></td>
             <td><%= payment.member.name %></td>
             <td><%= payment.semester.semester_name%></td>
-            <td>$ <%= payment.paymentAmount %></td>
-            <td><%= payment.paymentDate.strftime('%b %d, %Y') %></td>
+            <td>$ <%= payment.payment_amount %></td>
+            <td><%= payment.payment_date.strftime('%b %d, %Y') %></td>
              <td>
                 <%= link_to edit_payment_path(payment), :class => 'action edit' do%>
                 <i class="fas fa-edit"></i>
