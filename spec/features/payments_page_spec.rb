@@ -2,7 +2,10 @@ require "rails_helper"
 
 RSpec.describe "Payments Page", type: :feature do
   before :all do
-    Payment.new(paymentAmount: 1010, paymentDate: DateTime.now, member_id: Member.last.id, semester_id: Semester.last.id, officer_id: Officer.last.id).save
+    Semester.new(semester_name: 'Spring 3030', start_date: DateTime.now, end_date: DateTime.now + 3, dues_deadline: DateTime.now + 1).save
+	Member.new(name: "John Doe", email: "johndoe@deleter.com").save
+	Officer.new(name: "John Doe", email: "johndoe@deleter.com").save
+    Payment.new(payment_amount: 1010, payment_date: DateTime.now, member_id: Member.last.id, semester_id: Semester.last.id, officer_id: Officer.last.id).save
   end
 
   # MUST test each page to make sure it's password protected
@@ -54,11 +57,10 @@ RSpec.describe "Payments Page", type: :feature do
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
       click_button("Go")
 
-      fill_in "payment_paymentAmount", with: 50
+      fill_in "payment_payment_amount", with: 50
       select Member.last.email, :from => "payment_member_id"
       select Semester.last.semester_name, :from => "payment_semester_id"
       select Officer.last.email, :from => "payment_officer_id"
-
       click_button("Add Payment")
       expect(page).to have_content("Payments")
     end
@@ -85,7 +87,6 @@ RSpec.describe "Payments Page", type: :feature do
       select Semester.last.semester_name, :from => "payment_semester_id"
       select Officer.last.email, :from => "payment_officer_id"
 
-
       click_button("Add Payment")
       expect(page).to have_content("Invalid")
     end
@@ -107,7 +108,7 @@ RSpec.describe "Payments Page", type: :feature do
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
       click_button("Go")
 
-      fill_in "payment_paymentAmount", with: 123456
+      fill_in "payment_payment_amount", with: 123456
       click_button("Update Payment")
 
       expect(page).to have_content("123456")
@@ -119,12 +120,12 @@ RSpec.describe "Payments Page", type: :feature do
       fill_in "code word", with: ENV["LOCKUP_CODEWORD"]
       click_button("Go")
 
-      fill_in "payment_paymentAmount", with: ""
+      fill_in "payment_payment_amount", with: ""
       click_button("Update Payment")
 
       expect(page).to have_content("Update")
     end
-
+	  
   end
 
   describe "Show Payment" do
