@@ -1,4 +1,4 @@
-name: Rspec Tests
+name: Security
 
 on: [push, pull_request]
 
@@ -18,7 +18,7 @@ jobs:
         gem install brakeman
     - name: Run Brakeman
       run: |
-        brakeman -f json > tmp/brakeman.json || exit 0
+        brakeman -f json # > tmp/brakeman.json || exit 0
     - name: Brakeman Report
       uses: devmasx/brakeman-linter-action@v1.0.0
       env:
