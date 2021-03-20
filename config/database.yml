@@ -26,8 +26,8 @@ development:
   <<: *default
   database: AFISO_Tracker_development
   # host: localhost
-  username: afiso
-  password: afiso_pass
+  username: afiso_dev
+  password: afisopass
   # port: 5433
 
   # The specified database role being used to connect to postgres.
@@ -64,8 +64,8 @@ test:
   <<: *default
   database: AFISO_Tracker_test
   host: localhost
-  username: afiso
-  password: afiso_pass
+  username: afiso_dev
+  password: afisopass
   # port: 5433
 
 # As with config/credentials.yml, you never want to store sensitive information,
