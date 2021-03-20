@@ -11,6 +11,35 @@
     <%= link_to("Add Member", new_member_path, :class => 'action new large-link') %>
 </div>
 
+<div class="container text-center">
+    <th>Select view of active members:</th>
+	<td><%= select_tag(:view_semester_id, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @selected),
+	:onchange => 'window.location.href = \'/members.\'+ this.value') %></td></br>
+	
+	<th>Generate mailing list from view: </th> 
+	<button id="#toggle_list" onclick="showList()">Show/Hide List</button></br>  
+	<script>
+        function showList() {
+			var x = document.getElementById("list_area");
+            if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+	</script>
+	<div id="list_area" style="display:none;">
+	<textarea id="mailing_list"><%= @mailing_list %></textarea> <button onclick="copyText()">Copy List</button>
+	</div></br>
+	<script>
+        function copyText() {
+		    console.log("test")
+			var posturl = document.getElementById("mailing_list");
+            posturl.select();
+            document.execCommand("copy");
+		}
+	</script>
+</div>
 
 <div class="container text-center">
     <table class="table table-hover table-striped table-bordered" summary="Member List">

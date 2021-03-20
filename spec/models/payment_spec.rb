@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Payment, :type => :model do
     subject {
-        described_class.new(paymentAmount: 100, paymentDate: DateTime.now)
+        described_class.new(payment_amount: 100, payment_date: DateTime.now)
     }
 
     describe "Validations" do
@@ -11,7 +11,7 @@ RSpec.describe Payment, :type => :model do
         end
 
         it "is not valid without an amount" do
-            subject.paymentAmount = nil
+            subject.payment_amount = nil
             expect(subject).to_not be_valid
         end
     end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_214029) do
+ActiveRecord::Schema.define(version: 2021_02_19_214030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,15 +31,15 @@ ActiveRecord::Schema.define(version: 2021_02_19_214029) do
   end
 
   create_table "payments", force: :cascade do |t|
-    t.datetime "paymentDate"
-    t.float "paymentAmount"
+    t.datetime "payment_date"
+    t.float "payment_amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "member_id"
     t.bigint "officer_id"
     t.bigint "semester_id"
   end
-  
+
   create_table "semesters", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
