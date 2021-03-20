@@ -1,0 +1,24 @@
+name: Security
+
+on: [push, pull_request]
+
+jobs:
+  run-security:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Ruby 2.7.2
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.7.2
+
+    - name: Install Brakeman
+      run: |
+        gem install brakeman
+    - name: Run Brakeman
+      uses: artplan1/brakeman-action@v1.2.1
+      with:
+        flags: "--color"
+
+
