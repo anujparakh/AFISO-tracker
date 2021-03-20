@@ -8,15 +8,21 @@ Rails.application.routes.draw do
 
 
   resources :semesters do
-	member do
-		get :delete
-	end
+	  member do
+		  get :delete
+	  end
   end
 
   resources :members do
-	member do
-		get :delete
-	end
+	  member do
+		  get :delete
+	  end
+  end
+
+  resources :transactions do
+    member do
+      get :delete
+    end
   end
 
   root to: "home#index"
@@ -24,6 +30,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/help'
   get 'home/settings'
+
+
 
   #get 'semesters/index'
   #get 'semesters/show'
@@ -40,6 +48,12 @@ Rails.application.routes.draw do
   #get 'payments/new'
   #get 'payments/edit'
   #get 'payments/delete'
+  #get 'transactions/index'
+  #get 'transactions/show'
+  #get 'transactions/new'
+  #get 'transactions/edit'
+  #get 'transactions/delete'
+
 
   mount Lockup::Engine, at: '/lockup'
 
