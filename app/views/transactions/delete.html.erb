@@ -1,0 +1,15 @@
+<%= link_to("<< Back to List", transactions_path, :class => "back-link") %>
+
+<div class="transactions delete">
+    <h2>Delete Transaction</h2>
+
+    <%= form_for(@transaction, :method => "delete") do |f| %>
+
+    <p>Are you sure you want to permanently delete this Transaction?</p>
+    <p>Transaction Amount: <%= @transaction.transaction_amount%></p>
+    <div class="form-buttons">
+        <%= f.submit("Delete Transaction") %>
+    </div>
+
+    <% end %>
+</div>

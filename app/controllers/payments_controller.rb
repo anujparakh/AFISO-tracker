@@ -26,6 +26,7 @@ class PaymentsController < ApplicationController
     @officers = Officer.order("name ASC")
 
     @payment = Payment.new(payment_params)
+
     @payment.payment_date = DateTime.now
 
     # Make sure associated member, officer, and semester exist
