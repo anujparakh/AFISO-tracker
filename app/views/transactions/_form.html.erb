@@ -1,0 +1,18 @@
+<table class="table" summary="Subject form fields">
+    <tr>
+        <th>Amount</th>
+        <td><%= f.text_field(:transaction_amount) %></td>
+    </tr>
+    <tr>
+        <th>Category</th>
+        <td><%= f.text_field(:transaction_type) %></td>
+    </tr>
+    <tr>
+        <th>Officer</th>
+        <td><%= f.select(:officer_id, options_for_select(@officers.map { |s| [s.email, s.id] }), {}, { :class => "p-1"}) %></td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td><%= f.date_select(:transaction_date,{order: [:month, :day, :year], selected: Date.today}, { :class => "p-1"})%></td>
+    </tr>
+</table>

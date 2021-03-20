@@ -1,0 +1,25 @@
+<div class="jumbotron text-center">
+    <h1 class="display-3">Transaction Information</h1>
+    <a href="<%=transactions_path%>" class="large-link">Back to List</a>
+</div>
+
+<div class="container text-center">
+    <table class="table" summary="Member detail view">
+        <tr>
+            <th>ID:</th>
+            <td><%= @transaction.id %></td>
+        </tr>
+        <tr>
+            <th>Category</th>
+            <td>$<%= @transaction.transaction_type %></td>
+        </tr>
+        <tr>
+            <th>Amount</th>
+            <td>$<%= @transaction.transaction_amount %></td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td><%= @transaction.transaction_date.strftime("%B %d, %Y") %></td>
+        </tr>
+    </table>
+</div>
