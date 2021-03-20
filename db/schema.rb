@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2021_03_20_001732) do
   end
 
   create_table "payments", force: :cascade do |t|
-    t.datetime "paymentDate"
-    t.float "paymentAmount"
+    t.datetime "payment_date"
+    t.float "payment_amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "member_id"
