@@ -6,7 +6,7 @@
     <%= form_for(@payment, :method => "delete") do |f| %>
 
     <p>Are you sure you want to permanently delete this payment?</p>
-    <p>Payment Amount: <%= @payment.paymentAmount%></p>
+    <p>Payment Amount: <%= @payment.payment_amount%></p>
     <div class="form-buttons">
         <%= f.submit("Delete payment") %>
     </div>
