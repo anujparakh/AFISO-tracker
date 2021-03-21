@@ -16,6 +16,7 @@
         <thead class="thead-dark">
             <tr>
             <th>#</th>
+            <th>Type</th>
             <th>Category</th>
             <th>Amount</th>
             <th>Date</th>
@@ -27,6 +28,7 @@
         <tr>
             <td><a href="<%= transaction_path(transaction) %>" class="cell-link"><%=index + 1%></a></td>
             <td><%= transaction.transaction_type %></td>
+            <td><%= transaction.transaction_category %></td>
             <td>$ <%= transaction.transaction_amount %></td>
             <td><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
              <td>

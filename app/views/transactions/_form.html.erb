@@ -4,8 +4,12 @@
         <td><%= f.text_field(:transaction_amount) %></td>
     </tr>
     <tr>
+        <th>Transaction Type</th>
+        <td><%= f.select(:transaction_type, [['Revenue', true], ['Expense', false]]) %></td>
+    </tr>
+    <tr>
         <th>Category</th>
-        <td><%= f.text_field(:transaction_type) %></td>
+        <td><%= f.text_field(:transaction_category) %></td>
     </tr>
     <tr>
         <th>Officer</th>

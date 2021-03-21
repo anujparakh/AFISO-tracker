@@ -72,7 +72,7 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:officer_id, :transaction_amount, :transaction_date, :transaction_type)
+    params.require(:transaction).permit(:officer_id, :transaction_amount, :transaction_date, :transaction_type, :transaction_category)
   end
 
   def valid_relations(form_record)
