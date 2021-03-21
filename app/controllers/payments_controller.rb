@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  before_action :check_for_lockup
+  # before_action :check_for_lockup
 
   ### READ ###
   def index

@@ -31,6 +31,8 @@
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <a class="navbar-brand" href="/">AFISO Finance Tracker</a>
+        <% if current_admin.present?  %>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,7 +58,14 @@
                 </li>
             </ul>
         </div>
+
+        <a type="button" class=" btn btn-outline-danger" href=<%=destroy_admin_session_path%>>Log Out</a>
+
+        <% end %>
+
     </nav>
+
+
     <%= yield %>
 </body>
 </head>
