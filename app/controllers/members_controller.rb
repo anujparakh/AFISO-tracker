@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_action :check_for_lockup
+  # before_action :check_for_lockup
 
   def index
     if params[:format] == nil or params[:format] == "None"

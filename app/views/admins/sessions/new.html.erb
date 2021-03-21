@@ -1,0 +1,23 @@
+<% flash.each do |type, msg| %>
+  <% if type=='notice'%>
+    <div class="text-center full-bg bg-info m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+  <%end%>
+    <% if type=='success'%>
+    <div class="text-center full-bg bg-success m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+  <%end%>
+  <% if type=='alert'%>
+    <div class="text-center full-bg bg-danger m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+  <%end%>
+
+<% end %>
+
+<div class="jumbotron text-center">
+  <h1 class="display-2">Welcome!</h1>
+  <%= link_to("Sign in with Google", admin_google_oauth2_omniauth_authorize_path, :class => 'action new large-link', :method => :post) %>
+</div>

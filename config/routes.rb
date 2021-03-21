@@ -25,37 +25,21 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "home#index"
+  # root to: 'dashboards#show'
+  devise_for :admins, controllers: { omniauth_callbacks: 'admins/omniauth_callbacks' }
+  devise_scope :admin do
+    get 'admins/sign_in', to: 'admins/sessions#new', as: :new_admin_session
+    get 'admins/sign_out', to: 'admins/sessions#destroy', as: :destroy_admin_session
+  end
 
+  root to: "home#index"
   get 'home/index'
   get 'home/help'
   get 'home/settings'
 
 
+  # mount Lockup::Engine, at: '/lockup'
 
-  #get 'semesters/index'
-  #get 'semesters/show'
-  #get 'semesters/new'
-  #get 'semesters/edit'
-  #get 'semesters/delete'
-  #get 'members/index'
-  #get 'members/show'
-  #get 'members/new'
-  #get 'members/edit'
-  #get 'members/delete'
-  #get 'payments/index'
-  #get 'payments/show'
-  #get 'payments/new'
-  #get 'payments/edit'
-  #get 'payments/delete'
-  #get 'transactions/index'
-  #get 'transactions/show'
-  #get 'transactions/new'
-  #get 'transactions/edit'
-  #get 'transactions/delete'
-
-
-  mount Lockup::Engine, at: '/lockup'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
