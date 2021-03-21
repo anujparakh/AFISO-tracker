@@ -16,6 +16,7 @@ RSpec.describe "Transactions Page", type: :feature do
       visit "home/index"
       click_on "Log Out"
       expect(page).to have_content("Sign in with Google")
+
     end
   end
 
