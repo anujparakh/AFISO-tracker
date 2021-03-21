@@ -5,10 +5,12 @@ class TransactionsController < ApplicationController
   def index
     if params[:format] == nil or params[:format] == 'None'
       @selected = 0
+      @total = 0.0
       @transactions = Transaction.order("created_at DESC")
     else
       @selected = params[:format]
       @transactions = Transaction.get_specific_type(params[:format])
+      @total = Transaction.get_total(@transactions)
     end
   end
 

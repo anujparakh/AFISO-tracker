@@ -12,9 +12,12 @@
 </div>
 
 <div class="container text-center">
-	<th>Select report type:</th>
+  <th>Select report type:</th>
 		<td><%= select_tag(:chosen_report_type, options_for_select([['None', 'None'], ['Revenue', true], ['Expense', false]], :selected => @selected),
-	:onchange => 'window.location.href = \'/transactions.\'+ this.value') %></td></br>
+	:onchange => 'window.location.href = \'/transactions.\'+ this.value') %></td><br><br>
+  <% if @selected == 'true' || @selected == 'false'%>
+    <th>Total = $<%= @total %></th><br><br>
+  <% end %>
 </div>
 
 <div class="container text-center">
