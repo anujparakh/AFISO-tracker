@@ -3,7 +3,13 @@ class TransactionsController < ApplicationController
 
   ### READ ###
   def index
-    @transactions = Transaction.order("created_at DESC")
+    if params[:format] == nil or params[:format] == 'None'
+      @selected = 0
+      @transactions = Transaction.order("created_at DESC")
+    else
+      @selected = params[:format]
+      @transactions = Transaction.get_specific_type(params[:format])
+    end
   end
 
   def show

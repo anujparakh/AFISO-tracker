@@ -12,6 +12,12 @@
 </div>
 
 <div class="container text-center">
+	<th>Select report type:</th>
+		<td><%= select_tag(:chosen_report_type, options_for_select([['None', 'None'], ['Revenue', true], ['Expense', false]], :selected => @selected),
+	:onchange => 'window.location.href = \'/transactions.\'+ this.value') %></td></br>
+</div>
+
+<div class="container text-center">
   <table class="table table-hover" summary="transaction List">
     <thead class="thead-dark">
       <tr>
@@ -26,12 +32,12 @@
     <% @transactions.each_with_index do |transaction, index| %>
       <tr>
       	<td><a href="<%= transaction_path(transaction) %>" class="cell-link"><%=index + 1%></a></td>
-   
+
         <% if transaction.transaction_type==true%>
 					<td class="bg-success"><%= transaction.transaction_category %></td>
         	<td class="bg-success">$ <%= transaction.transaction_amount %></td>
 					<td class="bg-success"><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
-        <% else %>
+        <% elsif%>
 					<td class="bg-danger"><%= transaction.transaction_category %></td>
         	<td class="bg-danger">$ <%= transaction.transaction_amount %></td>
 					<td class="bg-danger"><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
@@ -45,7 +51,7 @@
         <td>
           <%= link_to transaction_path(transaction), method: :delete, data: {confirm: "Are you sure you wish to delete this transaction?"} do%>
             <i class="fas fa-trash text-danger"></i>
-          <% end%>
+          <% end %>
         </td>
       </tr>
     <% end %>
