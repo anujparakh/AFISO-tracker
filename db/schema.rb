@@ -65,10 +65,7 @@ ActiveRecord::Schema.define(version: 2021_03_21_054531) do
     t.float "transaction_amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    
-    # true = revenue, false = expense
     t.boolean "transaction_type"
-    
     t.string "transaction_category"
     t.index ["officer_id"], name: "index_transactions_on_officer_id"
   end

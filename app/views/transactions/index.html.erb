@@ -10,18 +10,23 @@
   <h1 class="display-3">Transactions</h1>
   <%= link_to("Add transaction", new_transaction_path, :class => 'action new large-link') %>
 </div>
-
 <div class="container text-center">
-  <th>Select report type:</th>
-		<td><%= select_tag(:chosen_report_type, options_for_select([['None', 'None'], ['Revenue', true], ['Expense', false]], :selected => @selected),
-	:onchange => 'window.location.href = \'/transactions.\'+ this.value') %></td><br><br>
-  <% if @selected == 'true' || @selected == 'false'%>
+  <th>Filter Transaction Type: </th>
+		<td><%= select_tag(:chosen_report_type, options_for_select([['All', 'All'], ['Revenue', true], ['Expense', false]], :selected => @selectedType),
+	:onchange => "window.location.href = '/transactions?semester=' + document.getElementById('chosen_semester').value + '&type=' + document.getElementById('chosen_report_type').value") %></td><br><br>
+
+  <th>Filter Semester: </th>
+  <td><%= select_tag(:chosen_semester, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"All"), :selected => @selectedSemester),
+	:onchange => "window.location.href = '/transactions?semester=' + document.getElementById('chosen_semester').value + '&type=' + document.getElementById('chosen_report_type').value") %></td><br><br>
+
+
+  <% if @selectedType != 'All' || @selectedSemester != 'All'%>
     <th>Total = $<%= @total %></th><br><br>
   <% end %>
 </div>
 
 <div class="container text-center">
-  <table class="table table-hover" summary="transaction List">
+  <table class="table" summary="transaction List">
     <thead class="thead-dark">
       <tr>
       <th>#</th>
@@ -33,20 +38,18 @@
       </tr>
     </thead>
     <% @transactions.each_with_index do |transaction, index| %>
-      <tr>
-      	<td><a href="<%= transaction_path(transaction) %>" class="cell-link"><%=index + 1%></a></td>
+      <% if transaction.transaction_type==true%>
+      <tr class="table-success">
+      <% else %>
+      <tr class="table-danger">
+      <% end %>
 
-        <% if transaction.transaction_type==true%>
-					<td class="bg-success"><%= transaction.transaction_category %></td>
-        	<td class="bg-success">$ <%= transaction.transaction_amount %></td>
-					<td class="bg-success"><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
-        <% elsif%>
-					<td class="bg-danger"><%= transaction.transaction_category %></td>
-        	<td class="bg-danger">$ <%= transaction.transaction_amount %></td>
-					<td class="bg-danger"><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
-				<% end %>
+          <td ><a href="<%= transaction_path(transaction) %>" class="cell-link"><%=index + 1%></a></td>
+					<td ><%= transaction.transaction_category %></td>
+        	<td >$ <%= transaction.transaction_amount %></td>
+					<td ><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
 
-        <td>
+          <td>
         	<%= link_to edit_transaction_path(transaction), :class => 'action edit' do%>
             <i class="fas fa-edit"></i>
           <% end %>

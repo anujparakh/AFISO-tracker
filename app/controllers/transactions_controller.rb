@@ -3,15 +3,17 @@ class TransactionsController < ApplicationController
 
   ### READ ###
   def index
-    if params[:format] == nil or params[:format] == 'None'
-      @selected = 0
-      @total = 0.0
-      @transactions = Transaction.order("created_at DESC")
-    else
-      @selected = params[:format]
-      @transactions = Transaction.get_specific_type(params[:format])
-      @total = Transaction.get_total(@transactions)
-    end
+
+    @selectedSemester = params[:semester]
+    @selectedSemester = "All" if @selectedSemester == nil
+
+    @selectedType = params[:type]
+    @selectedType = "All" if @selectedType == nil
+
+
+    @transactions = Transaction.filter_on_semester_and_type(@selectedType, @selectedSemester).order("transaction_date DESC")
+    @total = Transaction.get_total(@transactions)
+
   end
 
   def show
