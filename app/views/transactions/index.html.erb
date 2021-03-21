@@ -1,48 +1,53 @@
 <% flash.each do |type, msg| %>
 <% if type=='notice'%>
-    <div class="text-center full-bg bg-success m-0">
-        <p class="text-white m-0"><%=msg%></p>
-    </div>
-<%end%>
+	<div class="text-center full-bg bg-success m-0">
+  	<p class="text-white m-0"><%=msg%></p>
+  </div>
+<% end %>
 <% end %>
 
 <div class="jumbotron text-center">
-    <h1 class="display-3">Transactions</h1>
-    <%= link_to("Add transaction", new_transaction_path, :class => 'action new large-link') %>
+  <h1 class="display-3">Transactions</h1>
+  <%= link_to("Add transaction", new_transaction_path, :class => 'action new large-link') %>
 </div>
 
 <div class="container text-center">
-    <table class="table table-hover table-striped table-bordered" summary="transaction List">
-        <thead class="thead-dark">
-            <tr>
-            <th>#</th>
-            <th>Type</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th><i class="fas fa-edit"></i></th>
-            <th><i class="fas fa-trash"></th>
-            </tr>
-        </thead>
-        <% @transactions.each_with_index do |transaction, index| %>
-        <tr>
-            <td><a href="<%= transaction_path(transaction) %>" class="cell-link"><%=index + 1%></a></td>
-            <td><%= transaction.transaction_type %></td>
-            <td><%= transaction.transaction_category %></td>
-            <td>$ <%= transaction.transaction_amount %></td>
-            <td><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
-             <td>
-                <%= link_to edit_transaction_path(transaction), :class => 'action edit' do%>
-                <i class="fas fa-edit"></i>
-                <% end%>
-            </td>
-            <td>
-                <%= link_to transaction_path(transaction), method: :delete, data: {confirm: "Are you sure you wish to delete this transaction?"} do%>
-                <i class="fas fa-trash text-danger"></i>
-                <% end%>
-            </td>
-        </tr>
-        <% end %>
-    </table>
+  <table class="table table-hover" summary="transaction List">
+    <thead class="thead-dark">
+      <tr>
+      <th>#</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th><i class="fas fa-edit"></i></th>
+      <th><i class="fas fa-trash"></th>
+      </tr>
+    </thead>
+    <% @transactions.each_with_index do |transaction, index| %>
+      <tr>
+      	<td><a href="<%= transaction_path(transaction) %>" class="cell-link"><%=index + 1%></a></td>
+   
+        <% if transaction.transaction_type==true%>
+					<td class="bg-success"><%= transaction.transaction_category %></td>
+        	<td class="bg-success">$ <%= transaction.transaction_amount %></td>
+					<td class="bg-success"><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
+        <% else %>
+					<td class="bg-danger"><%= transaction.transaction_category %></td>
+        	<td class="bg-danger">$ <%= transaction.transaction_amount %></td>
+					<td class="bg-danger"><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
+				<% end %>
 
+        <td>
+        	<%= link_to edit_transaction_path(transaction), :class => 'action edit' do%>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to transaction_path(transaction), method: :delete, data: {confirm: "Are you sure you wish to delete this transaction?"} do%>
+            <i class="fas fa-trash text-danger"></i>
+          <% end%>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>
