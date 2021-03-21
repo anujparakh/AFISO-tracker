@@ -1,5 +1,5 @@
 class SemestersController < ApplicationController
-  before_action :check_for_lockup
+  # before_action :check_for_lockup
 
   def index
     @semesters = Semester.order("start_date DESC")

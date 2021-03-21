@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-  before_action :check_for_lockup
+  # before_action :check_for_lockup
 
   ### READ ###
   def index
@@ -11,7 +11,7 @@ class TransactionsController < ApplicationController
   end
 
   ### CREATE ###
-  def new    
+  def new
     @officers = Officer.order("name ASC")
     @transaction = Transaction.new
     #@transaction.transactionDate = DateTime.now
@@ -36,7 +36,7 @@ class TransactionsController < ApplicationController
       flash[:errors] = "Invalid officer"
       render("new")
     end
-  end  
+  end
 
   ### UPDATE ###
   def edit
@@ -55,9 +55,9 @@ class TransactionsController < ApplicationController
       flash[:errors] = "Invalid fields"
       render("edit")
     end
-  end  
+  end
 
-  ### DELETE ### 
+  ### DELETE ###
   def delete
     @transaction = Transaction.find(params[:id])
   end
@@ -70,7 +70,7 @@ class TransactionsController < ApplicationController
   end
 
   private
-  
+
   def transaction_params
     params.require(:transaction).permit(:officer_id, :transaction_amount, :transaction_date, :transaction_type)
   end
