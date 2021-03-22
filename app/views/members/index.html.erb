@@ -15,7 +15,6 @@
     <th>Select view of active members:</th>
     <td><%= select_tag(:view_semester_id, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @selected),
 	:onchange => 'window.location.href = \'/members.\'+ this.value') %></td></br>
-
     <th>Generate mailing list from view: </th>
     <button id="#toggle_list" onclick="showList()">Show/Hide List</button></br>
     <script>

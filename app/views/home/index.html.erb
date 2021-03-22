@@ -15,8 +15,10 @@
         <li class="nav-item">
             <a class="nav-link" href=<%=members_path%>>Look at a list of Members</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href=<%=members_path(Semester.last.id)%>>Look at a list of Active Members</a>
-        </li>
+        <%if Semester.all.size > 0%>
+            <li class="nav-item">
+                <a class="nav-link" href=<%=members_path(Semester.last.id)%>>Look at a list of Active Members</a>
+            </li>
+        <%end%>
     </ul>
 </div>
