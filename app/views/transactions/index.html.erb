@@ -1,46 +1,65 @@
 <% flash.each do |type, msg| %>
 <% if type=='notice'%>
-    <div class="text-center full-bg bg-success m-0">
-        <p class="text-white m-0"><%=msg%></p>
-    </div>
-<%end%>
+	<div class="text-center full-bg bg-success m-0">
+  	<p class="text-white m-0"><%=msg%></p>
+  </div>
+<% end %>
 <% end %>
 
 <div class="jumbotron text-center">
-    <h1 class="display-3">Transactions</h1>
-    <%= link_to("Add transaction", new_transaction_path, :class => 'action new large-link') %>
+  <h1 class="display-3">Transactions</h1>
+  <%= link_to("Add transaction", new_transaction_path, :class => 'action new large-link') %>
+</div>
+<div class="container text-center">
+  <th>Filter Transaction Type: </th>
+		<td><%= select_tag(:chosen_report_type, options_for_select([['All', 'All'], ['Revenue', true], ['Expense', false]], :selected => @selectedType),
+	:onchange => "window.location.href = '/transactions?semester=' + document.getElementById('chosen_semester').value + '&type=' + document.getElementById('chosen_report_type').value") %></td><br><br>
+
+  <th>Filter Semester: </th>
+  <td><%= select_tag(:chosen_semester, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"All"), :selected => @selectedSemester),
+	:onchange => "window.location.href = '/transactions?semester=' + document.getElementById('chosen_semester').value + '&type=' + document.getElementById('chosen_report_type').value") %></td><br><br>
+
+
+  <% if @selectedType != 'All' || @selectedSemester != 'All'%>
+    <th>Total = $<%= @total %></th><br><br>
+  <% end %>
 </div>
 
 <div class="container text-center">
-    <table class="table table-hover table-striped table-bordered" summary="transaction List">
-        <thead class="thead-dark">
-            <tr>
-            <th>#</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th><i class="fas fa-edit"></i></th>
-            <th><i class="fas fa-trash"></th>
-            </tr>
-        </thead>
-        <% @transactions.each_with_index do |transaction, index| %>
-        <tr>
-            <td><a href="<%= transaction_path(transaction) %>" class="cell-link"><%=index + 1%></a></td>
-            <td><%= transaction.transaction_type %></td>
-            <td>$ <%= transaction.transaction_amount %></td>
-            <td><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
-             <td>
-                <%= link_to edit_transaction_path(transaction), :class => 'action edit' do%>
-                <i class="fas fa-edit"></i>
-                <% end%>
-            </td>
-            <td>
-                <%= link_to transaction_path(transaction), method: :delete, data: {confirm: "Are you sure you wish to delete this transaction?"} do%>
-                <i class="fas fa-trash text-danger"></i>
-                <% end%>
-            </td>
-        </tr>
-        <% end %>
-    </table>
+  <table class="table" summary="transaction List">
+    <thead class="thead-dark">
+      <tr>
+      <th>#</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th><i class="fas fa-edit"></i></th>
+      <th><i class="fas fa-trash"></th>
+      </tr>
+    </thead>
+    <% @transactions.each_with_index do |transaction, index| %>
+      <% if transaction.transaction_type==true%>
+      <tr class="table-success">
+      <% else %>
+      <tr class="table-danger">
+      <% end %>
 
+          <td ><a href="<%= transaction_path(transaction) %>" class="cell-link"><%=index + 1%></a></td>
+					<td ><%= transaction.transaction_category %></td>
+        	<td >$ <%= transaction.transaction_amount %></td>
+					<td ><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
+
+          <td>
+        	<%= link_to edit_transaction_path(transaction), :class => 'action edit' do%>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to transaction_path(transaction), method: :delete, data: {confirm: "Are you sure you wish to delete this transaction?"} do%>
+            <i class="fas fa-trash text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>
