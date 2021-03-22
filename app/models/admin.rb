@@ -4,8 +4,10 @@ class Admin < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:google_oauth2]
 
   def self.from_google(email:, full_name:, uid:, avatar_url:)
-    # return nil unless email is an officer/developer
-    if Officer.where("email = ?", email).empty? && !['anuj@anujinfotech.com', 'amg9973@tamu.edu', 'phelan27@tamu.edu', 'brentonlenzen@tamu.edu', 'jlee232435@tamu.edu'].include?(email)
+    # return nil unless email is an officer/developer/part of teaching team
+    if Officer.where("email = ?", email).empty? &&
+      !['anuj@anujinfotech.com', 'amg9973@tamu.edu', 'phelan27@tamu.edu', 'brentonlenzen@tamu.edu', 'jlee232435@tamu.edu'].include?(email) &&
+      !['shayle@tamu.edu', 'manseerat@tamu.edu', 'paulinewade@tamu.edu', 'keerthana96@tamu.edu'].include?(email)
       return nil
     end
     create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
