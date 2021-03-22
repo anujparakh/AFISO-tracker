@@ -3,7 +3,12 @@ class PaymentsController < ApplicationController
 
   ### READ ###
   def index
-    @payments = Payment.order("created_at DESC")
+    @selectedSemester = params[:semester]
+    @selectedSemester = "All" if @selectedSemester == nil
+
+    @payments = Payment.filter_on_semester(@selectedSemester)
+
+    @total = Payment.get_total(@payments)
   end
 
   def show
