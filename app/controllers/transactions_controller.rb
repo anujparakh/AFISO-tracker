@@ -36,7 +36,7 @@ class TransactionsController < ApplicationController
     # Make sure associated member, officer, and semester exist
     if valid_relations(@transaction)
       if @transaction.save
-        flash[:notice] = "transaction Successfully Created!"
+        flash[:notice] = "Transaction Successfully Created!"
         redirect_to(transactions_path)
       else
         flash[:errors] = "Invalid fields"
@@ -59,7 +59,7 @@ class TransactionsController < ApplicationController
     @officers = Officer.order("name ASC")
 
     if @transaction.update(transaction_params)
-      flash[:notice] = "transaction Successfully Updated!"
+      flash[:notice] = "Transaction Successfully Updated!"
       redirect_to(transactions_path)
     else
       flash[:errors] = "Invalid fields"
@@ -75,7 +75,7 @@ class TransactionsController < ApplicationController
   def destroy
     @transaction = Transaction.find(params[:id])
     @transaction.destroy
-    flash[:notice] = "Transaction has been deleted"
+    flash[:notice] = "Transaction has been deleted!"
     redirect_to(transactions_path)
   end
 
