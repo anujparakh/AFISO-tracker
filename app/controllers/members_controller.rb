@@ -13,6 +13,7 @@ class MembersController < ApplicationController
   end
 
   def show
+    @semesters_active = Member.member_active_in_semesters(params[:id])
     @member = Member.find(params[:id])
   end
 
@@ -63,4 +64,3 @@ class MembersController < ApplicationController
 
 
 end
-

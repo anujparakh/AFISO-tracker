@@ -1,5 +1,5 @@
 class Semester < ApplicationRecord
-  has_many :payments
+  has_many :payments, dependent: :destroy
   validates_presence_of :semester_name, :start_date, :end_date
   validates_uniqueness_of :semester_name
 

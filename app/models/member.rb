@@ -1,5 +1,5 @@
 class Member < ApplicationRecord
-  has_many :payments
+  has_many :payments, dependent: :destroy
   validates_presence_of :name, :email
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
@@ -16,6 +16,26 @@ class Member < ApplicationRecord
       @members.push(Member.find(id))
     end
     return @members
+  end
+
+  def self.member_active_in_semesters(m_id)
+    # look at payments for given semester
+    @payments = Payment.where(member_id: m_id)
+    @sem_ids = []
+    @payments.each_with_index do |payment, index|
+      @sem_ids.push(Semester.find(payment.semester_id))
+    end
+    # get all payments for member
+    @active_semester_list = ""
+    # iterate through the list
+    @sem_ids.each_with_index do |semester, index|
+      if index == @sem_ids.size - 1
+          @active_semester_list += semester.semester_name
+      else
+          @active_semester_list += semester.semester_name + ", "
+      end
+    end
+    return @active_semester_list
   end
 end
 
