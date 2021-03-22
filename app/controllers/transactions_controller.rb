@@ -3,7 +3,17 @@ class TransactionsController < ApplicationController
 
   ### READ ###
   def index
-    @transactions = Transaction.order("created_at DESC")
+
+    @selectedSemester = params[:semester]
+    @selectedSemester = "All" if @selectedSemester == nil
+
+    @selectedType = params[:type]
+    @selectedType = "All" if @selectedType == nil
+
+
+    @transactions = Transaction.filter_on_semester_and_type(@selectedType, @selectedSemester).order("transaction_date DESC")
+    @total = Transaction.get_total(@transactions)
+
   end
 
   def show
@@ -72,7 +82,7 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:officer_id, :transaction_amount, :transaction_date, :transaction_type)
+    params.require(:transaction).permit(:officer_id, :transaction_amount, :transaction_date, :transaction_type, :transaction_category)
   end
 
   def valid_relations(form_record)

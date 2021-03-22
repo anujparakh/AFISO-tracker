@@ -37,7 +37,6 @@ RSpec.describe "Transactions Page", type: :feature do
     it "tries to create a new valid transaction" do
       visit new_transaction_path
       fill_in "transaction_transaction_amount", with: 50
-      fill_in "transaction_transaction_type", with: "Type"
       select Officer.last.email, :from => "transaction_officer_id"
 
       click_button("Add Transaction")
@@ -52,7 +51,6 @@ RSpec.describe "Transactions Page", type: :feature do
 
     it "tries to create a new invalid transaction without transaction amount" do
       visit new_transaction_path
-      fill_in "transaction_transaction_type", with: "Type"
       select Officer.last.email, :from => "transaction_officer_id"
       click_button("Add Transaction")
       expect(page).to have_content("Invalid")
