@@ -29,13 +29,14 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="/">AFISO Finance Tracker</a>
-        <% if current_admin.present?  %>
-
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="navbar-brand" href="/">AFISO Tracker</a>
+        <% if current_admin.present?  %>
+
+
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -59,7 +60,7 @@
             </ul>
         </div>
 
-        <a type="button" class=" btn btn-outline-danger" href=<%=destroy_admin_session_path%>>Log Out</a>
+        <a type="button" class="btn btn-outline-danger" href=<%=destroy_admin_session_path%>>Log Out</a>
 
         <% end %>
 
