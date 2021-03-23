@@ -5,15 +5,15 @@
     </tr>
     <tr>
         <th>Member</th>
-        <td><%= f.select(:member_id, options_for_select(@members.map { |s| [s.email, s.id] }), {}, { :class => "p-1" }) %></td>
+        <td><%= f.select(:member_id, options_for_select(@members.map { |s| [s.email, s.id] } , @payment.member_id), {}, { :class => "p-1" }) %></td>
     </tr>
     <tr>
         <th>Semester</th>
-        <td><%= f.select(:semester_id, options_for_select(@semesters.map { |s| [s.semester_name, s.id] }), {}, { :class => "p-1"}) %></td>
+        <td><%= f.select(:semester_id, options_for_select(@semesters.map { |s| [s.semester_name, s.id] }, @payment.semester_id), {}, { :class => "p-1"}) %></td>
     </tr>
     <tr>
         <th>Officer</th>
-        <td><%= f.select(:officer_id, options_for_select(@officers.map { |s| [s.email, s.id] }), {}, { :class => "p-1"}) %></td>
+        <td><%= f.select(:officer_id, options_for_select(@officers.map { |s| [s.email, s.id] }, @payment.officer_id), {}, { :class => "p-1"}) %></td>
     </tr>
     <tr>
         <th>Date</th>

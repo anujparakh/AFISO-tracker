@@ -13,7 +13,7 @@
     </tr>
     <tr>
         <th>Officer</th>
-        <td><%= f.select(:officer_id, options_for_select(@officers.map { |s| [s.email, s.id] }), {}, { :class => "p-1"}) %></td>
+        <td><%= f.select(:officer_id, options_for_select(@officers.map { |s| [s.email, s.id] }, @transaction.officer_id), {}, { :class => "p-1"}) %></td>
     </tr>
     <tr>
         <th>Date</th>
