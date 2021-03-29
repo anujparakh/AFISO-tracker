@@ -3,13 +3,13 @@ class MembersController < ApplicationController
 
   def index
     if params[:format] == nil or params[:format] == "None"
-	  @selected = 0
+      @selected = 0
       @members = Member.order("name ASC")
-	else
-	  @selected = params[:format]
-	  @members = Member.get_active_in_semester(params[:format])
-	end
-	@mailing_list = generate_mailing_list(@members)
+    else
+      @selected = params[:format]
+      @members = Member.get_active_in_semester(params[:format])
+    end
+    @mailing_list = generate_mailing_list(@members)
   end
 
   def show
@@ -58,9 +58,8 @@ class MembersController < ApplicationController
   end
 
   private
+
   def member_params
     params.require(:member).permit(:name, :email)
   end
-
-
 end

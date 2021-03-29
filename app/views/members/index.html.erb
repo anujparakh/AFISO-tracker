@@ -1,10 +1,25 @@
-<% flash.each do |type, msg| %>
-<% if type=='notice'%>
-<div class="text-center full-bg bg-success m-0">
-    <p class="text-white m-0"><%=msg%></p>
+<div id="flash-message">
+    <% flash.each do |type, msg| %>
+    <% if type=='notice'%>
+    <div class="text-center full-bg bg-success m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+    <% elsif type=='error'%>
+    <div class="text-center full-bg bg-danger m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+    <%end%>
+    <% end %>
 </div>
-<%end%>
-<% end %>
+
+<div>
+    <div class="text-center full-bg bg-success m-0">
+        <p class="text-white m-0" id="copy-message-success"></p>
+    </div>
+    <div class="text-center full-bg bg-danger m-0">
+        <p class="text-white m-0" id="copy-message-failure"></p>
+    </div>
+</div>
 
 <div class="jumbotron text-center">
     <h1 class="display-3">Members</h1>
@@ -12,35 +27,34 @@
 </div>
 
 <div class="container text-center">
-    <th>Select view of active members:</th>
-    <td><%= select_tag(:view_semester_id, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @selected),
-	:onchange => 'window.location.href = \'/members.\'+ this.value') %></td></br>
-    <th>Generate mailing list from view: </th>
-    <button id="#toggle_list" onclick="showList()">Show/Hide List</button></br>
-    <script>
-        function showList() {
-            var x = document.getElementById("list_area");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
+    <div class="col">
+        <th>Show Active Members for: </th>
+        <td><%= select_tag(:view_semester_id, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @selected),
+	:onchange => 'window.location.href = \'/members.\'+ this.value', :class => "p-1") %></td><br>
+        <button id="toggle_list" class="btn btn-primary mt-3" onclick="copyText()">Copy Mailing List</button></br>
+        <textarea style="position:absolute; top:-100%; left:-100%;" id="tobecopied"><%= @mailing_list %></textarea>
+        <script>
+            $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+            })
+            function copyText() {
+                var ele = document.getElementById("tobecopied")
+                ele.select()
+                ele.setSelectionRange(0, 99999); /* For mobile devices */
+
+                success = document.execCommand("copy")
+                if (success) {
+                    document.getElementById("copy-message-success").innerHTML = "Mailing list copied to clipboard"
+                    document.getElementById("copy-message-success").style.display = "block"
+                } else {
+                    // $("#toggle_list").attr('title', 'There was an error copying to clipboard!')
+                }
             }
-        }
-    </script>
-    <div id="list_area" style="display:none;">
-        <textarea id="mailing_list"><%= @mailing_list %></textarea> <button onclick="copyText()">Copy List</button>
-    </div></br>
-    <script>
-        function copyText() {
-            console.log("test")
-            var posturl = document.getElementById("mailing_list");
-            posturl.select();
-            document.execCommand("copy");
-        }
-    </script>
+        </script>
+    </div>
 </div>
 
-<div class="container text-center">
+<div class="container text-center mt-3">
     <table class="table table-hover table-striped table-bordered" summary="Member List">
         <thead class="thead-dark">
             <tr>

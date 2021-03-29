@@ -29,7 +29,6 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 
-
 gem 'simplecov', :require => false, :group => :test
 
 # Use Active Storage variant
