@@ -9,7 +9,7 @@ class MembersController < ApplicationController
       @members = Member.get_active_in_semester(params[:semesterId])
     elsif params[:search] != nil
       @searchVal = params[:search]
-      @members = Member.all.where("lower(name) LIKE ? OR lower(email) LIKE ?", "%#{@searchVal.downcase}%", "%#{@searchVal.downcase}%")
+      @members = Member.all.where("lower(name) LIKE ? OR lower(email) LIKE ?", "%#{@searchVal.downcase}%", "%#{@searchVal.downcase}%").order("name ASC")
     else
       @selected = 0
       @members = Member.order("name ASC")
