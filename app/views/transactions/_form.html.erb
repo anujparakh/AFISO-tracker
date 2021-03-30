@@ -1,22 +1,22 @@
 <table class="table" summary="Subject form fields">
     <tr>
-        <th>Amount</th>
-        <td><%= f.text_field(:transaction_amount) %></td>
+        <th class="align-middle">Amount</th>
+        <td><%= f.text_field(:transaction_amount, :class => "form-control w-auto m-auto") %></td>
     </tr>
     <tr>
-        <th>Transaction Type</th>
-        <td><%= f.select(:transaction_type, [['Revenue', true], ['Expense', false]]) %></td>
+        <th class="align-middle">Transaction Type</th>
+        <td><%= f.select(:transaction_type, [['Revenue', true], ['Expense', false]], {}, { :class => "custom-select w-auto"}) %></td>
     </tr>
     <tr>
-        <th>Category</th>
-        <td><%= f.text_field(:transaction_category) %></td>
+        <th class="align-middle">Category</th>
+        <td><%= f.text_field(:transaction_category, :class => "form-control w-auto m-auto") %></td>
     </tr>
     <tr>
-        <th>Officer</th>
-        <td><%= f.select(:officer_id, options_for_select(@officers.map { |s| [s.email, s.id] }, @transaction.officer_id), {}, { :class => "p-1"}) %></td>
+        <th class="align-middle">Officer</th>
+        <td><%= f.select(:officer_id, options_for_select(@officers.map { |s| [s.email, s.id] }, @transaction.officer_id), {}, { :class => "custom-select w-auto"}) %></td>
     </tr>
     <tr>
-        <th>Date</th>
-        <td><%= f.date_select(:transaction_date,{order: [:month, :day, :year], selected: Date.today}, { :class => "p-1"})%></td>
+        <th class="align-middle">Date</th>
+        <td><%= f.date_select(:transaction_date,{order: [:month, :day, :year], selected: Date.today}, { :class => "custom-select w-auto"})%></td>
     </tr>
 </table>
