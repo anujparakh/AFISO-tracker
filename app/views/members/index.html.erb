@@ -71,7 +71,6 @@
         <input class="form-control w-auto " placeholder="Search for member" id="search-box" type="text" value="<%=@searchVal%>">
         </input>
         <button class="btn btn-primary ml-1" id="search-btn" onclick="searchClicked()"><i class="fas fa-search"></i></button>
-
     </div>
 
     <script>
@@ -97,11 +96,10 @@
     <table class="table table-hover table-striped table-bordered" summary="Member List">
         <thead class="thead-dark">
             <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th><i class="fas fa-edit"></i></th>
-                <th><i class="fas fa-trash"></th>
+                <th class="">#</th>
+                <th class="">Name</th>
+                <th class="">Email</th>
+                <th class=""> <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </th>
             </tr>
         </thead>
         <% @members.each_with_index do |member, index| %>
@@ -110,14 +108,17 @@
             <td><%= member.name %></td>
             <td><%= member.email %></td>
             <td>
-                <%= link_to edit_member_path(member), :class => 'action edit' do%>
-                <i class="fas fa-edit"></i>
-                <% end%>
-            </td>
-            <td>
-                <%= link_to member_path(member), :method => :delete , :data => {confirm: "Are you sure you wish to delete this member?"} do%>
-                <i class="fas fa-trash text-danger"></i>
-                <% end%>
+                <div class="dropdown show">
+                    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="<%=edit_member_path(member)%>">Edit</a>
+                        <%= link_to "Delete", member_path(member), method: :delete, data: {confirm: "Are you sure you wish to delete this member?"}, :class => "dropdown-item" %>
+                        <a class="dropdown-item" href="<%= new_payment_path(:member_id => member.id) %>">Make Payment</a>
+                    </div>
+                </div>
             </td>
         </tr>
         <% end %>
