@@ -33,7 +33,8 @@ RSpec.describe "Members Page", type: :feature do
 
       # test view change
       select('Spring 2021', :from=>'view_semester_id')
-      visit members_path(Semester.last.id)
+      visit "members/?semesterId=" + Semester.last.id.to_s
+      # visit members_path(Semester.last.id)
       expect(page).to_not have_content("John Doe")
     end
 

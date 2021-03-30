@@ -1,10 +1,10 @@
 <table class="table" summary="Member form fields">
       <tr>
-        <th>Name</th>
-        <td><%= f.text_field(:name, id: 'name') %></td>
+        <th class="align-middle">Name</th>
+        <td><%= f.text_field(:name, id: 'name', :class => "form-control w-auto m-auto") %></td>
       </tr>
       <tr>
-        <th>Email Address</th>
-        <td><%= f.text_field(:email, id: 'email') %></td>
+        <th class="align-middle">Email Address</th>
+        <td><%= f.text_field(:email, id: 'email', :class => "form-control w-auto m-auto") %></td>
       </tr>
   </table>

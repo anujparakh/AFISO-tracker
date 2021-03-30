@@ -14,12 +14,41 @@
 
 <div>
     <div class="text-center full-bg bg-success m-0">
-        <p class="text-white m-0" id="copy-message-success"></p>
+        <p class="text-white m-0" id="message-success"></p>
     </div>
     <div class="text-center full-bg bg-danger m-0">
-        <p class="text-white m-0" id="copy-message-failure"></p>
+        <p class="text-white m-0" id="message-failure"></p>
     </div>
 </div>
+
+<script>
+    function copyText() {
+        var ele = document.getElementById("tobecopied")
+        ele.select()
+        ele.setSelectionRange(0, 99999); /* For mobile devices */
+
+        success = document.execCommand("copy")
+        if (success) {
+            document.getElementById("message-success").innerHTML = "Mailing list copied to clipboard"
+            document.getElementById("message-success").style.display = "block"
+        } else {
+            document.getElementById("message-failure").innerHTML = "There was an error copying to clipboard!"
+            document.getElementById("message-failure").style.display = "block"
+        }
+    }
+
+    function searchClicked() {
+        console.log('test')
+        var searchValue = document.getElementById("search-box").value
+        if (searchValue == "") {
+            document.getElementById("message-failure").innerHTML = "Input for search empty!"
+            document.getElementById("message-failure").style.display = "block"
+            return
+        }
+
+        window.location.href = "/members?search=" + searchValue
+    }
+</script>
 
 <div class="jumbotron text-center">
     <h1 class="display-3">Members</h1>
@@ -27,31 +56,39 @@
 </div>
 
 <div class="container text-center">
+
+    <% if @searchVal == "" %>
     <div class="col">
-        <th>Show Active Members for: </th>
+        <th>Filter Active Members: </th>
         <td><%= select_tag(:view_semester_id, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @selected),
-	:onchange => 'window.location.href = \'/members.\'+ this.value', :class => "p-1") %></td><br>
+	:onchange => "window.location.href = '/members/?semesterId='+ this.value", :class => "custom-select w-auto") %></td><br>
         <button id="toggle_list" class="btn btn-primary mt-3" onclick="copyText()">Copy Mailing List</button></br>
         <textarea style="position:absolute; top:-100%; left:-100%;" id="tobecopied"><%= @mailing_list %></textarea>
-        <script>
-            $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-            })
-            function copyText() {
-                var ele = document.getElementById("tobecopied")
-                ele.select()
-                ele.setSelectionRange(0, 99999); /* For mobile devices */
-
-                success = document.execCommand("copy")
-                if (success) {
-                    document.getElementById("copy-message-success").innerHTML = "Mailing list copied to clipboard"
-                    document.getElementById("copy-message-success").style.display = "block"
-                } else {
-                    // $("#toggle_list").attr('title', 'There was an error copying to clipboard!')
-                }
-            }
-        </script>
     </div>
+    <% end %>
+
+    <div class="row d-flex justify-content-center mt-3">
+        <input class="form-control w-auto" placeholder="Search for member" id="search-box" type="text" value="<%=@searchVal%>"></input>
+        <button class="btn btn-outline-primary ml-1" id="search-btn" onclick="searchClicked()"><i class="fa fa-search"></i></button>
+    </div>
+
+    <script>
+        var searchBox = document.getElementById("search-box");
+        searchBox.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("search-btn").click();
+            }
+        });
+    </script>
+
+    <% if @searchVal != "" %>
+    <a class="btn btn-info mt-3" href="/members" role="button">Back to List</a>
+    <script>
+        document.getElementById("search-box").focus()
+    </script>
+    <% end %>
+
 </div>
 
 <div class="container text-center mt-3">

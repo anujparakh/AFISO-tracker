@@ -14,7 +14,7 @@
 <div class="container text-center">
   <th>Filter Semester: </th>
   <td><%= select_tag(:chosen_semester, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"All"), :selected => @selectedSemester),
-	:onchange => "window.location.href = '/payments?semester=' + document.getElementById('chosen_semester').value") %></td><br><br>
+	:onchange => "window.location.href = '/payments?semester=' + document.getElementById('chosen_semester').value", :class => "custom-select w-auto") %></td><br><br>
 
 
   <% if @selectedSemester != 'All'%>

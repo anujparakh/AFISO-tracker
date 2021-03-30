@@ -2,12 +2,17 @@ class MembersController < ApplicationController
   # before_action :check_for_lockup
 
   def index
-    if params[:format] == nil or params[:format] == "None"
+
+    @searchVal = ""
+    if params[:semesterId] != nil and params[:semesterId] != "None"
+      @selected = params[:semesterId]
+      @members = Member.get_active_in_semester(params[:semesterId])
+    elsif params[:search] != nil
+      @searchVal = params[:search]
+      @members = Member.all.where("lower(name) LIKE ? OR lower(email) LIKE ?", "%#{@searchVal.downcase}%", "%#{@searchVal.downcase}%")
+    else
       @selected = 0
       @members = Member.order("name ASC")
-    else
-      @selected = params[:format]
-      @members = Member.get_active_in_semester(params[:format])
     end
     @mailing_list = generate_mailing_list(@members)
   end
