@@ -2,7 +2,6 @@ class MembersController < ApplicationController
   # before_action :check_for_lockup
 
   def index
-
     @searchVal = ""
     if params[:semesterId] != nil and params[:semesterId] != "None"
       @selected = params[:semesterId]

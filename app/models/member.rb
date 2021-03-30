@@ -35,6 +35,11 @@ class Member < ApplicationRecord
           @active_semester_list += semester.semester_name + ", "
       end
     end
+
+    if @active_semester_list == ""
+      return "None"
+    end
+
     return @active_semester_list
   end
 end
