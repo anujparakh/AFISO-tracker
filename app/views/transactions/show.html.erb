@@ -4,32 +4,26 @@
 </div>
 
 <div class="container text-center">
-  <table class="table" summary="Member detail view">
-    <tr>
-      <th>ID:</th>
-      <td><%= @transaction.id %></td>
-    </tr>     
-        
-    <% if @transaction.transaction_type==true%>
-      <tr>
+  <table class="table" summary="Transaction detail view">
+    <% if @transaction.transaction_type%>
+      <tr class="table-success">
         <th>Type</th>
-        <td class="bg-success">Revenue</td>
+        <td>Revenue</td>
       </tr>
       <tr>
         <th>Amount</th>
-        <td class="bg-success">$<%= @transaction.transaction_amount %></td>
+        <td>$<%= @transaction.transaction_amount %></td>
       </tr>
     <% else %>
-      <tr>
+      <tr class="table-danger">
         <th>Type</th>
-        <td class="bg-danger">Expense</td>
+        <td>Expense</td>
       </tr>
       <tr>
         <th>Amount</th>
-        <td class="bg-danger">$<%= @transaction.transaction_amount %></td>
+        <td>$<%= @transaction.transaction_amount %></td>
       </tr>
 		<% end %>
-			
 		<tr>
       <th>Category</th>
       <td><%= @transaction.transaction_category %></td>
