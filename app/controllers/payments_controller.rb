@@ -29,6 +29,9 @@ class PaymentsController < ApplicationController
   end
 
   def create
+    @members = Member.order("name ASC")
+    @semesters = Semester.order("start_date DESC")
+    @officers = Officer.order("name ASC")
     @payment = Payment.new(payment_params)
 
     # Make sure associated member, officer, and semester exist
