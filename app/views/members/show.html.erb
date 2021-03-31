@@ -1,26 +1,23 @@
-
 <div class="jumbotron text-center">
-    <h1 class="display-3">Member Information</h1>
+    <h1 class="display-3"><%= @member.name %></h1>
     <a href="<%=members_path%>" class="large-link">Back to List</a>
 </div>
 
 <div class="container text-center">
-<table class="table" summary="Member detail view">
-    <tr>
-        <th>ID</th>
-        <td><%= @member.id%></td>
-    </thead>
-    <tr>
-        <th>Name</th>
-        <td><%= @member.name %></td>
-    </tr>
-    <tr>
-        <th>Email</th>
-        <td><%= @member.email %></td>
-    </tr>
-    <tr>
-      <th>Active in Semesters: </th>
-      <td><%= @semesters_active %></td>
-    </tr>
-</table>
+    <table class="table" summary="Member detail view">
+        <tr>
+            <th>Name</th>
+            <td><%= @member.name %></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><%= @member.email %></td>
+        </tr>
+        <tr>
+            <th>Active in Semesters: </th>
+            <td><%= @semesters_active %></td>
+        </tr>
+    </table>
+    <a class="btn btn-primary" href="<%= new_payment_path(:member_id => @member.id) %>" role="button">Make Payment</a>
+
 </div>

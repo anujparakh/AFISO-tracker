@@ -13,11 +13,11 @@
 <div class="container text-center">
   <th>Filter Transaction Type: </th>
 		<td><%= select_tag(:chosen_report_type, options_for_select([['All', 'All'], ['Revenue', true], ['Expense', false]], :selected => @selectedType),
-	:onchange => "window.location.href = '/transactions?semester=' + document.getElementById('chosen_semester').value + '&type=' + document.getElementById('chosen_report_type').value") %></td><br><br>
+	:onchange => "window.location.href = '/transactions?semester=' + document.getElementById('chosen_semester').value + '&type=' + document.getElementById('chosen_report_type').value", :class => "custom-select w-auto") %></td><br><br>
 
   <th>Filter Semester: </th>
   <td><%= select_tag(:chosen_semester, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"All"), :selected => @selectedSemester),
-	:onchange => "window.location.href = '/transactions?semester=' + document.getElementById('chosen_semester').value + '&type=' + document.getElementById('chosen_report_type').value") %></td><br><br>
+	:onchange => "window.location.href = '/transactions?semester=' + document.getElementById('chosen_semester').value + '&type=' + document.getElementById('chosen_report_type').value", :class => "custom-select w-auto") %></td><br><br>
 
 
   <% if @selectedType != 'All' || @selectedSemester != 'All'%>

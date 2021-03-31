@@ -1,10 +1,54 @@
-<% flash.each do |type, msg| %>
-<% if type=='notice'%>
-<div class="text-center full-bg bg-success m-0">
-    <p class="text-white m-0"><%=msg%></p>
+<div id="flash-message">
+    <% flash.each do |type, msg| %>
+    <% if type=='notice'%>
+    <div class="text-center full-bg bg-success m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+    <% elsif type=='error'%>
+    <div class="text-center full-bg bg-danger m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+    <%end%>
+    <% end %>
 </div>
-<%end%>
-<% end %>
+
+<div>
+    <div class="text-center full-bg bg-success m-0">
+        <p class="text-white m-0" id="message-success"></p>
+    </div>
+    <div class="text-center full-bg bg-danger m-0">
+        <p class="text-white m-0" id="message-failure"></p>
+    </div>
+</div>
+
+<script>
+    function copyText() {
+        var ele = document.getElementById("tobecopied")
+        ele.select()
+        ele.setSelectionRange(0, 99999); /* For mobile devices */
+
+        success = document.execCommand("copy")
+        if (success) {
+            document.getElementById("message-success").innerHTML = "Mailing list copied to clipboard"
+            document.getElementById("message-success").style.display = "block"
+        } else {
+            document.getElementById("message-failure").innerHTML = "There was an error copying to clipboard!"
+            document.getElementById("message-failure").style.display = "block"
+        }
+    }
+
+    function searchClicked() {
+        console.log('test')
+        var searchValue = document.getElementById("search-box").value
+        if (searchValue == "") {
+            document.getElementById("message-failure").innerHTML = "Input for search empty!"
+            document.getElementById("message-failure").style.display = "block"
+            return
+        }
+
+        window.location.href = "/members?search=" + searchValue
+    }
+</script>
 
 <div class="jumbotron text-center">
     <h1 class="display-3">Members</h1>
@@ -12,43 +56,50 @@
 </div>
 
 <div class="container text-center">
-    <th>Select view of active members:</th>
-    <td><%= select_tag(:view_semester_id, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @selected),
-	:onchange => 'window.location.href = \'/members.\'+ this.value') %></td></br>
-    <th>Generate mailing list from view: </th>
-    <button id="#toggle_list" onclick="showList()">Show/Hide List</button></br>
+
+    <% if @searchVal == "" %>
+    <div class="col">
+        <th>Filter Active Members: </th>
+        <td><%= select_tag(:view_semester_id, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @selected),
+	:onchange => "window.location.href = '/members/?semesterId='+ this.value", :class => "custom-select w-auto") %></td><br>
+        <button id="toggle_list" class="btn btn-primary mt-3" onclick="copyText()">Copy Mailing List</button></br>
+        <textarea style="position:absolute; top:-100%; left:-100%;" id="tobecopied"><%= @mailing_list %></textarea>
+    </div>
+    <% end %>
+
+    <div class="row d-flex justify-content-center mt-3">
+        <input class="form-control w-auto " placeholder="Search for member" id="search-box" type="text" value="<%=@searchVal%>">
+        </input>
+        <button class="btn btn-primary ml-1" id="search-btn" onclick="searchClicked()"><i class="fas fa-search"></i></button>
+    </div>
+
     <script>
-        function showList() {
-            var x = document.getElementById("list_area");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
+        var searchBox = document.getElementById("search-box");
+        searchBox.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("search-btn").click();
             }
-        }
+        });
     </script>
-    <div id="list_area" style="display:none;">
-        <textarea id="mailing_list"><%= @mailing_list %></textarea> <button onclick="copyText()">Copy List</button>
-    </div></br>
+
+    <% if @searchVal != "" %>
+    <a class="btn btn-info mt-3" href="/members" role="button">Back to List</a>
     <script>
-        function copyText() {
-            console.log("test")
-            var posturl = document.getElementById("mailing_list");
-            posturl.select();
-            document.execCommand("copy");
-        }
+        document.getElementById("search-box").focus()
     </script>
+    <% end %>
+
 </div>
 
-<div class="container text-center">
+<div class="container text-center mt-3">
     <table class="table table-hover table-striped table-bordered" summary="Member List">
         <thead class="thead-dark">
             <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th><i class="fas fa-edit"></i></th>
-                <th><i class="fas fa-trash"></th>
+                <th class="">#</th>
+                <th class="">Name</th>
+                <th class="">Email</th>
+                <th class=""> <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </th>
             </tr>
         </thead>
         <% @members.each_with_index do |member, index| %>
@@ -57,14 +108,17 @@
             <td><%= member.name %></td>
             <td><%= member.email %></td>
             <td>
-                <%= link_to edit_member_path(member), :class => 'action edit' do%>
-                <i class="fas fa-edit"></i>
-                <% end%>
-            </td>
-            <td>
-                <%= link_to member_path(member), :method => :delete , :data => {confirm: "Are you sure you wish to delete this member?"} do%>
-                <i class="fas fa-trash text-danger"></i>
-                <% end%>
+                <div class="dropdown show">
+                    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="<%=edit_member_path(member)%>">Edit</a>
+                        <%= link_to "Delete", member_path(member), method: :delete, data: {confirm: "Are you sure you wish to delete this member?"}, :class => "dropdown-item" %>
+                        <a class="dropdown-item" href="<%= new_payment_path(:member_id => member.id) %>">Make Payment</a>
+                    </div>
+                </div>
             </td>
         </tr>
         <% end %>

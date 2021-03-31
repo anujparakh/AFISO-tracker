@@ -11,11 +11,11 @@ class Payment < ApplicationRecord
       return Payment.all
     else
       @semester = Semester.find(semester_id)
-      return Payment.where({ payment_date: (@semester.start_date)..@semester.end_date})
+      return Payment.where({ semester_id: semester_id })
     end
-    
+
   end
-    
+
   def self.get_total(payment_list)
     # iterate through payments and add each amount to total
     total = 0.0
