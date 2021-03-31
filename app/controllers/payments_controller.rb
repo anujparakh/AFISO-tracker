@@ -22,7 +22,6 @@ class PaymentsController < ApplicationController
     @semesters = Semester.order("start_date DESC")
     @officers = Officer.order("name ASC")
 
-    @payment.payment_date = DateTime.now
     if params[:member_id] != nil
       @payment.member_id = params[:member_id]
     end
@@ -30,13 +29,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @members = Member.order("name ASC")
-    @semesters = Semester.order("start_date DESC")
-    @officers = Officer.order("name ASC")
-
     @payment = Payment.new(payment_params)
-
-    @payment.payment_date = DateTime.now
 
     # Make sure associated member, officer, and semester exist
     if valid_relations(@payment)
@@ -91,7 +84,7 @@ class PaymentsController < ApplicationController
   private
 
   def payment_params
-    params.require(:payment).permit(:member_id, :semester_id, :officer_id, :payment_amount)
+    params.require(:payment).permit(:member_id, :semester_id, :officer_id, :payment_amount, :payment_date)
   end
 
   def valid_relations(form_record)

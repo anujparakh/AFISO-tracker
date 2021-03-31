@@ -33,8 +33,7 @@
       <th>Category</th>
       <th>Amount</th>
       <th>Date</th>
-      <th><i class="fas fa-edit"></i></th>
-      <th><i class="fas fa-trash"></th>
+      <th class=""> <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </th>
       </tr>
     </thead>
     <% @transactions.each_with_index do |transaction, index| %>
@@ -50,15 +49,17 @@
 					<td ><%= transaction.transaction_date.strftime('%b %d, %Y') %></td>
 
           <td>
-        	<%= link_to edit_transaction_path(transaction), :class => 'action edit' do%>
-            <i class="fas fa-edit"></i>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to transaction_path(transaction), method: :delete, data: {confirm: "Are you sure you wish to delete this transaction?"} do%>
-            <i class="fas fa-trash text-danger"></i>
-          <% end %>
-        </td>
+                <div class="dropdown show">
+                    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="<%=edit_transaction_path(transaction)%>">Edit</a>
+                        <%= link_to "Delete", transaction_path(transaction), method: :delete, data: {confirm: "Are you sure you wish to delete this transaction?"}, :class => "dropdown-item" %>
+                    </div>
+                </div>
+          </td>
       </tr>
     <% end %>
   </table>

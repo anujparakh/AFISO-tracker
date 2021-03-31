@@ -9,7 +9,6 @@
 <div class="jumbotron text-center">
     <h1 class="display-3">Semesters</h1>
     <%= link_to("Add Semester", new_semester_path, :class => 'action new large-link') %>
-
 </div>
 
 <div class="container text-center">
@@ -21,8 +20,7 @@
                 <th>Start</th>
                 <th>End</th>
                 <th>Dues Deadline</th>
-                <th><i class="fas fa-edit"></i></th>
-                <th><i class="fas fa-trash"></th>
+                <th class=""> <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </th>
             </tr>
         </thead>
         <% @semesters.each_with_index do |semester, index| %>
@@ -33,15 +31,17 @@
             <td><%= semester.end_date.strftime("%b %Y") %></td>
             <td><%= semester.dues_deadline.strftime("%b %d, %Y") %></td>
             <td>
-                <%= link_to edit_semester_path(semester), :class => 'action edit' do%>
-                <i class="fas fa-edit"></i>
-                <% end%>
-            </td>
-            <td>
-                <%= link_to semester_path(semester), :method => 'delete' , :class => 'action destroy', :data => {confirm: "Are you sure you wish to delete this semester?"} do%>
-                <i class="fas fa-trash text-danger"></i>
-                <% end%>
-            </td>
+                <div class="dropdown show">
+                    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="<%=edit_semester_path(semester)%>">Edit</a>
+                        <%= link_to "Delete", semester_path(semester), method: :delete, data: {confirm: "Are you sure you wish to delete this semester?"}, :class => "dropdown-item" %>
+                    </div>
+                </div>
+          </td>
 
         </tr>
         <% end %>
