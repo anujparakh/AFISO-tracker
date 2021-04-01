@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  # before_action :check_for_lockup
 
   def index
   end
@@ -8,5 +7,7 @@ class HomeController < ApplicationController
   end
 
   def settings
+    @officers = Officer.order("email ASC")
+    @officer = Officer.new
   end
 end
