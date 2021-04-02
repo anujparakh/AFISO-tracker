@@ -1,6 +1,103 @@
+<div id="flash-message">
+    <% flash.each do |type, msg| %>
+    <% if type=='notice'%>
+    <div class="text-center full-bg bg-success m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+    <% elsif type=='error'%>
+    <div class="text-center full-bg bg-danger m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+    <%end%>
+    <% end %>
+</div>
 
 <div class="jumbotron text-center">
     <h1 class="display-3">Settings</h1>
-    <p>This page will contain login and other relevant settings.</p>
 </div>
 
+<div class="container text-center">
+
+    <hr />
+
+    <h1 class="font-weight-light">Admin Officers</h1>
+    <div class="mx-auto" style="max-width:576px ">
+        <p class="lead text-muted">The following officers can login with their Google emails for admin access to this application.</p>
+
+        <table class="table table-hover table-striped table-bordered mt-3" summary="Member List">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="">#</th>
+                    <th class="">Email</th>
+                    <th class=""> <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </th>
+                </tr>
+            </thead>
+
+            <% @officers.each_with_index do |officer, index| %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= officer.email %></td>
+                <td>
+                    <div class="dropdown show">
+                        <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display:block; width:100%;">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <%= link_to "Delete", destroy_officer_url(officer), method: :delete, data: {confirm: "Are you sure you wish to delete this officer? This officer will lose access to this application and will have to be re-added."}, :class => "dropdown-item" %>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <% end %>
+        </table>
+
+        <script>
+            function addOfficer() {
+                var formDiv = document.getElementById("form-div")
+
+                if (formDiv.style.display == 'none') {
+                    formDiv.style.display = 'block'
+                    document.getElementById('add-officer').style.display = 'none'
+                }
+            }
+
+            function cancelClicked() {
+                document.getElementById("form-div").style.display = 'none'
+
+                document.getElementById('add-officer').style.display = 'block'
+            }
+        </script>
+
+        <div id="form-div" style="display:none">
+            <div class="row d-flex justify-content-center mb-3">
+
+                <%= form_for(@officer, :url => create_officer_url, :method => 'post', :html => {:class => 'w-100'} ) do |f| %>
+
+                <%= f.text_field(:email, id: 'email', :class => "form-control w-50 mx-auto mb-3", placeholder: "Enter new admin officer email") %>
+                <%= f.submit("Add Officer", :class => "btn btn-primary mx-2") %>
+                <button id="cancel-btn"  type="button" class="btn btn-danger mx-2" onclick="cancelClicked()">Cancel</button>
+
+                <%end%>
+            </div>
+
+        </div>
+
+
+        <div class="row d-flex justify-content-center">
+            <button id="add-officer" class="btn btn-primary mx-2 mb-3" onclick="addOfficer()">Add Officer</button>
+        </div>
+
+    </div>
+
+    <hr/>
+
+    <h1 class="font-weight-light">User Preferences</h1>
+    <div class="mx-auto" style="max-width:576px ">
+
+        <p class="lead text-muted">All user preferences will be listed here.</p>
+    </div>
+    <hr />
+
+
+</div>
