@@ -22,6 +22,7 @@ class PaymentsController < ApplicationController
     @semesters = Semester.order("start_date DESC")
     @officers = Officer.order("name ASC")
 
+
     if params[:member_id] != nil
       @payment.member_id = params[:member_id]
     end
