@@ -1,17 +1,20 @@
+# frozen_string_literal: true
+
 class MembersController < ApplicationController
   # before_action :check_for_lockup
 
   def index
-    @searchVal = ""
-    if params[:semesterId] != nil and params[:semesterId] != "None"
+    @searchVal = ''
+    if !params[:semesterId].nil? && (params[:semesterId] != 'None')
       @selected = params[:semesterId]
       @members = Member.get_active_in_semester(params[:semesterId])
-    elsif params[:search] != nil
+    elsif !params[:search].nil?
       @searchVal = params[:search]
-      @members = Member.all.where("lower(name) LIKE ? OR lower(email) LIKE ?", "%#{@searchVal.downcase}%", "%#{@searchVal.downcase}%").order("name ASC")
+      @members = Member.all.where('lower(name) LIKE ? OR lower(email) LIKE ?', "%#{@searchVal.downcase}%",
+                                  "%#{@searchVal.downcase}%").order('name ASC')
     else
       @selected = 0
-      @members = Member.order("name ASC")
+      @members = Member.order('name ASC')
     end
     @mailing_list = generate_mailing_list(@members)
   end
@@ -32,8 +35,8 @@ class MembersController < ApplicationController
     if @member.save
       redirect_to(members_path, notice: "#{name} added to list!")
     else
-      flash[:error] = "Invalid Fields"
-      render("new")
+      flash[:error] = 'Invalid Fields'
+      render('new')
     end
   end
 
@@ -44,10 +47,10 @@ class MembersController < ApplicationController
   def update
     @member = Member.find(params[:id])
     if @member.update(member_params)
-      redirect_to(members_path, notice: "Member information updated!")
+      redirect_to(members_path, notice: 'Member information updated!')
     else
-      flash[:error] = "Invalid Fields"
-      render("edit")
+      flash[:error] = 'Invalid Fields'
+      render('edit')
     end
   end
 
@@ -58,7 +61,7 @@ class MembersController < ApplicationController
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    redirect_to(members_path, :flash => { notice: "Member deleted from list!" })
+    redirect_to(members_path, flash: { notice: 'Member deleted from list!' })
   end
 
   private

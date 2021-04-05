@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddForeignKeysToPayments < ActiveRecord::Migration[6.1]
   def change
     add_column :payments, :member_id, :bigint

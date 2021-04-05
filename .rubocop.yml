@@ -1,0 +1,32 @@
+AllCops:
+    SuggestExtensions: false
+    Exclude:
+      - 'bin/**'
+      - 'node_modules/**/*'
+      - 'vendor/**/*'
+      - 'config/**/*'
+
+# Commonly used screens these days easily fit more than 80 characters.
+Layout/LineLength:
+  Max: 140
+
+# Too short methods lead to extraction of single-use methods, which can make
+# the code easier to read (by naming things), but can also clutter the class
+Metrics/MethodLength:
+  Max: 50
+
+Metrics/BlockLength:
+  Max: 100
+
+# The guiding principle of classes is SRP, SRP can't be accurately measured by LoC
+Metrics/ClassLength:
+  Max: 1500
+
+Documentation:
+  Enabled: false
+
+VariableName:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false

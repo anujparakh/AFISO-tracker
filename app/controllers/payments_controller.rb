@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class PaymentsController < ApplicationController
   # before_action :check_for_lockup
 
   ### READ ###
   def index
     @selectedSemester = params[:semester]
-    @selectedSemester = "All" if @selectedSemester == nil
+    @selectedSemester = 'All' if @selectedSemester.nil?
 
     @payments = Payment.filter_on_semester(@selectedSemester)
 
@@ -18,58 +20,54 @@ class PaymentsController < ApplicationController
   ### CREATE ###
   def new
     @payment = Payment.new
-    @members = Member.order("name ASC")
-    @semesters = Semester.order("start_date DESC")
-    @officers = Officer.order("name ASC")
+    @members = Member.order('name ASC')
+    @semesters = Semester.order('start_date DESC')
+    @officers = Officer.order('name ASC')
 
-
-    if params[:member_id] != nil
-      @payment.member_id = params[:member_id]
-    end
-
+    @payment.member_id = params[:member_id] unless params[:member_id].nil?
   end
 
   def create
-    @members = Member.order("name ASC")
-    @semesters = Semester.order("start_date DESC")
-    @officers = Officer.order("name ASC")
+    @members = Member.order('name ASC')
+    @semesters = Semester.order('start_date DESC')
+    @officers = Officer.order('name ASC')
     @payment = Payment.new(payment_params)
 
     # Make sure associated member, officer, and semester exist
     if valid_relations(@payment)
       if @payment.save
-        flash[:notice] = "Payment Successfully Created!"
+        flash[:notice] = 'Payment Successfully Created!'
         redirect_to(payments_path)
       else
-        flash[:errors] = "Invalid fields"
-        render("new")
+        flash[:errors] = 'Invalid fields'
+        render('new')
       end
     else
-      flash[:errors] = "Invalid officer, member or semester"
-      render("new")
+      flash[:errors] = 'Invalid officer, member or semester'
+      render('new')
     end
   end
 
   ### UPDATE ###
   def edit
     @payment = Payment.find(params[:id])
-    @members = Member.order("name ASC")
-    @semesters = Semester.order("start_date DESC")
-    @officers = Officer.order("name ASC")
+    @members = Member.order('name ASC')
+    @semesters = Semester.order('start_date DESC')
+    @officers = Officer.order('name ASC')
   end
 
   def update
     @payment = Payment.find(params[:id])
-    @members = Member.order("name ASC")
-    @semesters = Semester.order("start_date DESC")
-    @officers = Officer.order("name ASC")
+    @members = Member.order('name ASC')
+    @semesters = Semester.order('start_date DESC')
+    @officers = Officer.order('name ASC')
 
     if @payment.update(payment_params)
-      flash[:notice] = "Payment Successfully Updated!"
+      flash[:notice] = 'Payment Successfully Updated!'
       redirect_to(payments_path)
     else
-      flash[:errors] = "Invalid fields"
-      render("edit")
+      flash[:errors] = 'Invalid fields'
+      render('edit')
     end
   end
 
@@ -81,7 +79,7 @@ class PaymentsController < ApplicationController
   def destroy
     @payment = Payment.find(params[:id])
     @payment.destroy
-    flash[:notice] = "Payment has been deleted"
+    flash[:notice] = 'Payment has been deleted'
     redirect_to(payments_path)
   end
 
