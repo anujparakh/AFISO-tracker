@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :payments do
+  resources :dues do
     member do
       get :delete
     end
