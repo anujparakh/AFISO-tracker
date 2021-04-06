@@ -32,7 +32,8 @@ ActiveRecord::Schema.define(version: 2021_03_21_054531) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "member_id"
     t.bigint "officer_id"
-    t.bigint "semester_id"
+    t.bigint "semester_id_1"
+    t.bigint "semester_id_2"
   end
 
   create_table "members", force: :cascade do |t|
