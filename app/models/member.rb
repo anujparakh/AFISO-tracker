@@ -1,11 +1,11 @@
 class Member < ApplicationRecord
-  has_many :payments, dependent: :destroy
+  has_many :dues, dependent: :destroy
   validates_presence_of :name, :email
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def self.get_active_in_semester(s_id)
     # look at payments for given semester
-    @payments = Payment.where(semester_id: s_id)
+    @payments = Due.where(semester_id_1: s_id).or(Due.where(semester_id_2: s_id))
     m_ids = []
     @payments.each_with_index do |payment, index|
       m_ids.push(payment.member_id)
@@ -20,10 +20,13 @@ class Member < ApplicationRecord
 
   def self.member_active_in_semesters(m_id)
     # look at payments for given semester
-    @payments = Payment.where(member_id: m_id)
+    @payments = Due.where(member_id: m_id)
     @sem_ids = []
     @payments.each_with_index do |payment, index|
-      @sem_ids.push(Semester.find(payment.semester_id))
+      @sem_ids.push(Semester.find(payment.semester_id_1))
+	  if payment.semester_id_2 != nil
+	    @sem_ids.push(Semester.find(payment.semester_id_2))
+	  end
     end
     # get all payments for member
     @active_semester_list = ""
