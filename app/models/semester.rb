@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Semester < ApplicationRecord
   has_many :dues, foreign_key: :semester_id_1, dependent: :destroy
   has_many :dues, foreign_key: :semester_id_2, dependent: :destroy
@@ -10,26 +12,14 @@ class Semester < ApplicationRecord
   validate :due_date_before_end_date?
 
   def end_date_after_start_date?
-    if end_date != nil and start_date != nil
-      if end_date < start_date
-        errors.add :end_date, "must be after start date"
-      end
-    end
+    errors.add :end_date, 'must be after start date' if !end_date.nil? && !start_date.nil? && (end_date < start_date)
   end
 
   def due_date_after_start_date?
-    if dues_deadline != nil and start_date != nil
-      if dues_deadline < start_date
-        errors.add :dues_deadline, "must be after start date"
-      end
-    end
+    errors.add :dues_deadline, 'must be after start date' if !dues_deadline.nil? && !start_date.nil? && (dues_deadline < start_date)
   end
 
   def due_date_before_end_date?
-    if dues_deadline != nil and end_date != nil
-      if end_date < dues_deadline
-        errors.add :dues_deadline, "must be before end date"
-      end
-    end
+    errors.add :dues_deadline, 'must be before end date' if !dues_deadline.nil? && !end_date.nil? && (end_date < dues_deadline)
   end
 end
