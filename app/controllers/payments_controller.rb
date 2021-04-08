@@ -37,7 +37,7 @@ class PaymentsController < ApplicationController
     if valid_relations(@payment)
       if @payment.save
         flash[:notice] = 'Payment Successfully Created!'
-        redirect_to(payments_path)
+        redirect_to(receipt_payment_url(:id => @payment))
       else
         flash[:errors] = 'Invalid fields'
         render('new')
@@ -46,6 +46,10 @@ class PaymentsController < ApplicationController
       flash[:errors] = 'Invalid officer, member or semester'
       render('new')
     end
+  end
+
+  def receipt
+    @payment = Payment.find(params[:id])
   end
 
   ### UPDATE ###

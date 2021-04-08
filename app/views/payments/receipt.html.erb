@@ -1,0 +1,59 @@
+<div id="flash-message">
+    <% flash.each do |type, msg| %>
+    <% if type=='notice'%>
+    <div class="text-center full-bg bg-success m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+    <% elsif type=='error'%>
+    <div class="text-center full-bg bg-danger m-0">
+        <p class="text-white m-0"><%=msg%></p>
+    </div>
+    <%end%>
+    <% end %>
+</div>
+
+<div>
+    <div class="text-center full-bg bg-success m-0">
+        <p class="text-white m-0" id="message-success"></p>
+    </div>
+    <div class="text-center full-bg bg-danger m-0">
+        <p class="text-white m-0" id="message-failure"></p>
+    </div>
+</div>
+
+<div class="jumbotron text-center">
+    <h1 class="display-3">Dues Payment receipt</h1>
+    <a href="<%=payments_path%>" class="large-link">Back to List</a>
+</div>
+
+<script>
+    function copyText() {
+        var ele = document.getElementById("emailcontent")
+        ele.select()
+        ele.setSelectionRange(0, 99999); /* For mobile devices */
+
+        success = document.execCommand("copy")
+        if (success) {
+            document.getElementById("message-success").innerHTML = "Email content copied to clipboard"
+            document.getElementById("message-success").style.display = "block"
+        } else {
+            document.getElementById("message-failure").innerHTML = "There was an error copying to clipboard!"
+            document.getElementById("message-failure").style.display = "block"
+        }
+    }
+</script>
+
+<div class="container text-left">
+  <p>Email: <%= @payment.member.email %> <br>
+  Subject line: Dues payment receipt for <%= @payment.member.name %><br></p>
+
+  <button id="toggle_list" class="btn btn-primary mt-3" onclick="copyText()">Copy Email Content</button><br>
+
+  <p>Semester(s): <%= @payment.semester.semester_name %><br>
+  Date paid: <%= @payment.payment_date.strftime('%b %d, %Y') %><br>
+  Total: <%= @payment.payment_amount %></p>
+
+ <textarea style="position:absolute; top:-100%; left:-100%; font-size: 20px;" id="emailcontent">Semester(s): <%= @payment.semester.semester_name %>
+Date paid: <%= @payment.payment_date.strftime('%b %d, %Y') %>
+Total: <%= @payment.payment_amount %></textarea>
+</div>
