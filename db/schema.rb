@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,62 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_321_054_531) do
+ActiveRecord::Schema.define(version: 2021_03_21_054531) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'admins', force: :cascade do |t|
-    t.string 'email', null: false
-    t.string 'full_name'
-    t.string 'uid'
-    t.string 'avatar_url'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['email'], name: 'index_admins_on_email', unique: true
+  create_table "admins", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "full_name"
+    t.string "uid"
+    t.string "avatar_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
-  create_table 'members', force: :cascade do |t|
-    t.string 'name'
-    t.string 'email'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "dues", force: :cascade do |t|
+    t.datetime "payment_date"
+    t.float "payment_amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "member_id"
+    t.bigint "officer_id"
+    t.bigint "semester_id_1"
+    t.bigint "semester_id_2"
   end
 
-  create_table 'officers', force: :cascade do |t|
-    t.string 'name'
-    t.string 'email'
-    t.integer 'privelegeLevel'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "members", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'payments', force: :cascade do |t|
-    t.datetime 'payment_date'
-    t.float 'payment_amount'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.bigint 'member_id'
-    t.bigint 'officer_id'
-    t.bigint 'semester_id'
+  create_table "officers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.integer "privelegeLevel"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'semesters', force: :cascade do |t|
-    t.datetime 'start_date'
-    t.datetime 'end_date'
-    t.datetime 'dues_deadline'
-    t.string 'semester_name'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "semesters", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "dues_deadline"
+    t.string "semester_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'transactions', force: :cascade do |t|
-    t.bigint 'officer_id'
-    t.datetime 'transaction_date'
-    t.float 'transaction_amount'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.boolean 'transaction_type'
-    t.string 'transaction_category'
-    t.index ['officer_id'], name: 'index_transactions_on_officer_id'
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "officer_id"
+    t.datetime "transaction_date"
+    t.float "transaction_amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "transaction_type"
+    t.string "transaction_category"
+    t.index ["officer_id"], name: "index_transactions_on_officer_id"
   end
+
 end

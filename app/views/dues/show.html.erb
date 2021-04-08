@@ -1,6 +1,6 @@
 <div class="jumbotron text-center">
     <h1 class="display-3">Payment Information</h1>
-    <a href="<%=payments_path%>" class="large-link">Back to List</a>
+    <a href="<%=dues_path%>" class="large-link">Back to List</a>
 </div>
 
 <div class="container text-center">
@@ -10,8 +10,12 @@
             <td><%= @payment.member.name %></td>
         </tr>
         <tr>
-            <th>Semester</th>
-            <td><%= @payment.semester.semester_name %></td>
+            <th>Semester(s)</th>
+            <td><%= @payment.semester_1.semester_name %>
+			    <% if @payment.semester_id_2 != nil %>
+				  <%=", " + @payment.semester_2.semester_name %>
+				<% end %>
+			</td>
         </tr>
         <tr>
             <th>Amount</th>
@@ -22,4 +26,3 @@
             <td><%= @payment.payment_date.strftime("%B %d, %Y") %></td>
         </tr>
     </table>
-</div>
