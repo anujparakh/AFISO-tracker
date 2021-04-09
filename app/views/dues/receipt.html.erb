@@ -23,7 +23,7 @@
 
 <div class="jumbotron text-center">
   <h1 class="display-3">Dues Payment receipt</h1>
-  <a href="<%=payments_path%>" class="large-link">Back to List</a>
+  <a href="<%=dues_path%>" class="large-link">Back to List</a>
 </div>
 
 <script>
@@ -33,7 +33,10 @@
     ele.setSelectionRange(0, 99999); /* For mobile devices */
 
     success = document.execCommand("copy")
-    document.getElementById("flash-div").style.display = 'none'
+    var flash_div = document.getElementById("flash-div")
+    if (flash_div != null){
+      flash_div.style.display = "none"
+    }
     if (success) {
       document.getElementById("message-success").innerHTML = message + " copied to clipboard"
       document.getElementById("message-success").style.display = "block"
@@ -55,12 +58,12 @@
   <textarea style="position:absolute; top:-100%; left:-100%; font-size: 20px;" id="memberemail"><%= @payment.member.email %></textarea>
   <textarea style="position:absolute; top:-100%; left:-100%; font-size: 20px;" id="membername">Dues payment receipt for <%= @payment.member.name %></textarea>
 
-  <p class="lead mt-3 font-weight-light" stye="color:black">Semester(s): <%= @payment.semester.semester_name %><br>
+  <p class="lead mt-3 font-weight-light" stye="color:black">Semester(s): <%= @payment.semester_1.semester_name %><% if @payment.semester_2 != nil%>, <%=@payment.semester_2.semester_name%> <% end %><br>
   Date paid: <%= @payment.payment_date.strftime('%b %d, %Y') %><br>
   Total: <%= @payment.payment_amount %></p>
   <button id="toggle_list" class="btn btn-primary" onclick="copyText('emailcontent', 'Email content')">Copy</button>
 
- <textarea style="position:absolute; top:-100%; left:-100%; font-size: 20px;" id="emailcontent">Semester(s): <%= @payment.semester.semester_name %>
+ <textarea style="position:absolute; top:-100%; left:-100%; font-size: 20px;" id="emailcontent">Semester(s): <%= @payment.semester_1.semester_name %><% if @payment.semester_2 != nil%>, <%=@payment.semester_2.semester_name%> <% end %>
 Date paid: <%= @payment.payment_date.strftime('%b %d, %Y') %>
 Total: <%= @payment.payment_amount %></textarea>
 </div>

@@ -42,7 +42,7 @@ class DuesController < ApplicationController
     if valid_relations(@payment)
       if @payment.save
         flash[:notice] = "Payment Successfully Created!"
-        redirect_to(receipt_payment_url(:id => @payment))
+        redirect_to(receipt_due_url(:id => @payment))
       else
         flash[:errors] = "Invalid fields"
         render("new")
@@ -54,7 +54,7 @@ class DuesController < ApplicationController
   end
 
   def receipt
-    @payment = Payment.find(params[:id])
+    @payment = Due.find(params[:id])
   end
 
   ### UPDATE ###
