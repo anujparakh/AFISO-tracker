@@ -117,7 +117,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="<%=edit_member_path(member)%>">Edit</a>
                         <%= link_to "Delete", member_path(member), method: :delete, data: {confirm: "Are you sure you wish to delete this member?"}, :class => "dropdown-item" %>
-                        <a class="dropdown-item" href="<%= new_payment_path(:member_id => member.id) %>">Make Payment</a>
+                        <a class="dropdown-item" href="<%= new_due_path(:member_id => member.id) %>">Make Dues Payment</a>
                     </div>
                 </div>
             </td>

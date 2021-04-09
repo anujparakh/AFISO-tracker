@@ -1,23 +1,23 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
-  resources :payments do
+
+  resources :dues do
     member do
       get :delete
       get :receipt
     end
   end
 
+
   resources :semesters do
-    member do
-      get :delete
-    end
+	  member do
+		  get :delete
+	  end
   end
 
   resources :members do
-    member do
-      get :delete
-    end
+	  member do
+		  get :delete
+	  end
   end
 
   resources :transactions do
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     get 'admins/sign_out', to: 'admins/sessions#destroy', as: :destroy_admin_session
   end
 
-  root to: 'home#index'
+  root to: "home#index"
   get 'home/index'
   get 'home/help'
   get 'home/settings'
@@ -43,5 +43,9 @@ Rails.application.routes.draw do
 
   # mount Lockup::Engine, at: '/lockup'
 
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+
+
 end

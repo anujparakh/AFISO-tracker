@@ -5,17 +5,17 @@
 <% end %>
 
 <div class="jumbotron text-center">
-    <h1 class="display-3">New Payment</h1>
+    <h1 class="display-3">New Dues Payment</h1>
 </div>
 
 <div class="container text-center">
 
-    <%= form_for(@payment, :url => payments_path, :method => "post") do |f| %>
+    <%= form_for(@payment, :url => dues_path, :method => "post") do |f| %>
 
     <%= render(:partial => "form", :locals => {:f => f}) %>
 
     <div class="form-buttons">
-        <%= f.submit("Add Payment", :class => "btn btn-primary") %>
+        <%= f.submit("Add Dues Payment", :class => "btn btn-primary") %>
     </div>
 
     <% end %>
