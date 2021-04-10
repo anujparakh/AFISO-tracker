@@ -8,8 +8,12 @@
         <td><%= f.select(:member_id, options_for_select(@members.map { |s| [s.email, s.id] } , @payment.member_id), {}, { :class => "custom-select w-auto" }) %></td>
     </tr>
     <tr>
-        <th class="align-middle">Semester</th>
-        <td><%= f.select(:semester_id, options_for_select(@semesters.map { |s| [s.semester_name, s.id] }, @payment.semester_id), {}, { :class => "custom-select w-auto"}) %></td>
+        <th class="align-middle">Semester 1</th>
+        <td><%= f.select(:semester_id_1, options_for_select(@semesters.map { |s| [s.semester_name, s.id] }, @payment.semester_id_1), {}, { :class => "custom-select w-auto"}) %></td>
+    </tr>
+	<tr>
+        <th class="align-middle">Semester 2 (if applicable)</th>
+        <td><%= f.select(:semester_id_2, options_for_select(@semesters.map { |s| [s.semester_name, s.id] }, @payment.semester_id_2), {:include_blank => "N/A"}, { :class => "custom-select w-auto"}) %></td>
     </tr>
     <tr>
         <th class="align-middle">Officer</th>

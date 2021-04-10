@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FixTransactionColumnNames < ActiveRecord::Migration[6.1]
   def change
     rename_column :transactions, :transactionType, :transaction_type

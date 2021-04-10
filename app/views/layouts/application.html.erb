@@ -7,38 +7,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/bootstrap-dark.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap-dark.min.css" />
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <meta charset="utf-8">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
 
-    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
-    <style>
-        .large-link {
-            font-size: 30px;
-            font-weight: 200;
-        }
+<body id="everything-body" class="">
 
-        a[type='button'] {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-
-        }
-    </style>
-
-<body>
-
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <nav id="navbar-nav" class="navbar navbar-expand-md navbar-dark">
         <% if current_admin.present?  %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -52,7 +39,7 @@
                     <a class="nav-link" href="/members">Members</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/payments">Payments</a>
+                    <a class="nav-link" href="/dues">Dues</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/transactions">Transactions</a>
@@ -69,12 +56,32 @@
             </ul>
         </div>
 
-        <a type="button" class="btn btn-danger" href=<%=destroy_admin_session_path%>>Log Out</a>
+        <a type="button" class="btn btn-danger bg-danger" style="-webkit-appearance: none;" href=<%=destroy_admin_session_path%>>Log Out</a>
 
         <% end %>
 
     </nav>
 
+    <script>
+        <%if cookies[:theme] == nil %>
+
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+            {
+                document.getElementById("everything-body").className = "bootstrap-dark" // dark mode
+            }
+            else
+            {
+                document.getElementById("everything-body").className = "bootstrap" // light mode
+                document.getElementById("navbar-nav").classList.add("bg-dark")
+            }
+
+        <%elsif cookies[:theme] == "dark" %>
+            document.getElementById("everything-body").className = "bootstrap-dark" // dark mode
+        <%else%>
+            document.getElementById("everything-body").className = "bootstrap" // light mode
+            document.getElementById("navbar-nav").classList.add("bg-dark")
+        <%end%>
+    </script>
 
     <%= yield %>
 </body>

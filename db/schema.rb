@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 2021_03_21_054531) do
     t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
+  create_table "dues", force: :cascade do |t|
+    t.datetime "payment_date"
+    t.float "payment_amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "member_id"
+    t.bigint "officer_id"
+    t.bigint "semester_id_1"
+    t.bigint "semester_id_2"
+  end
+
   create_table "members", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -38,16 +49,6 @@ ActiveRecord::Schema.define(version: 2021_03_21_054531) do
     t.integer "privelegeLevel"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "payments", force: :cascade do |t|
-    t.datetime "payment_date"
-    t.float "payment_amount"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "member_id"
-    t.bigint "officer_id"
-    t.bigint "semester_id"
   end
 
   create_table "semesters", force: :cascade do |t|

@@ -75,8 +75,8 @@
                 <%= form_for(@officer, :url => create_officer_url, :method => 'post', :html => {:class => 'w-100'} ) do |f| %>
 
                 <%= f.text_field(:email, id: 'email', :class => "form-control w-50 mx-auto mb-3", placeholder: "Enter new admin officer email") %>
-                <%= f.submit("Add Officer", :class => "btn btn-primary mx-2") %>
-                <button id="cancel-btn"  type="button" class="btn btn-danger mx-2" onclick="cancelClicked()">Cancel</button>
+                <%= f.submit("Add Officer", :class => "btn btn-success mx-2") %>
+                <button id="cancel-btn" type="button" class="btn btn-danger mx-2" onclick="cancelClicked()">Cancel</button>
 
                 <%end%>
             </div>
@@ -90,14 +90,39 @@
 
     </div>
 
-    <hr/>
-
-    <h1 class="font-weight-light">User Preferences</h1>
-    <div class="mx-auto" style="max-width:576px ">
-
-        <p class="lead text-muted">All user preferences will be listed here.</p>
-    </div>
     <hr />
 
+    <script>
+        function checkboxClicked()
+        {
+            var body = document.getElementById("everything-body")
+            if(document.getElementById("dark-switch").checked)
+            {
+                body.className = "bootstrap-dark"
+                window.location.href = "/home/settings?theme=dark"
+            }
+            else
+            {
+                body.className = "bootstrap"
+                window.location.href = "/home/settings?theme=light"
+            }
+        }
+    </script>
 
+    <h1 class="font-weight-light">Dark Mode</h1>
+    <div class="mx-auto pb-1" style="max-width:576px ">
+        <p class="lead text-muted">Use this toggle to turn on dark mode because dark mode is awesome.</p>
+        <div class="custom-control custom-switch mt-1">
+            <p class="custom-control custom-switch custom-switch-lg">
+                <input class="custom-control-input" id="dark-switch" type="checkbox" onclick="checkboxClicked()">
+                <label class="custom-control-label font-italic" for="dark-switch"></label>
+            </p>
+
+            <script>
+            if(document.getElementById('everything-body').className == 'bootstrap-dark')
+                document.getElementById('dark-switch').checked = true;
+            </script>
+        </div>
+    </div>
+    <hr />
 </div>

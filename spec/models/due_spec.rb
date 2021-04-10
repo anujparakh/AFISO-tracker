@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Payment, :type => :model do
+RSpec.describe Due, :type => :model do
     subject {
         described_class.new(payment_amount: 100, payment_date: DateTime.now)
     }
@@ -18,11 +18,11 @@ RSpec.describe Payment, :type => :model do
 
     describe "Test Methods" do
         it "filter on a semester" do
-            expect(Payment.filter_on_semester(Semester.last.id).size).to be >= 0
+            expect(Due.filter_on_semester(Semester.last.id).size).to be >= 0
         end
 
         it "filter on all semesters" do
-            expect(Payment.filter_on_semester("All").size).to be >= 0
+            expect(Due.filter_on_semester("All").size).to be >= 0
         end
     end
 end
