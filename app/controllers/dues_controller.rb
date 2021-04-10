@@ -37,7 +37,7 @@ class DuesController < ApplicationController
     @payment = Due.new(due_params)
 
     @payment.payment_date = DateTime.now
-	
+
     # Make sure associated member, officer, and semester exist
     if valid_relations(@payment)
       if @payment.save
@@ -103,7 +103,7 @@ class DuesController < ApplicationController
 	semester_2_exists = Semester.exists?(id: form_record.semester_id_2) || form_record.semester_id_2.nil?
     officer_exists = Officer.exists?(id: form_record.officer_id)
     member_exists = Member.exists?(id: form_record.member_id)
-	
+
     if semester_1_exists && semester_2_exists && officer_exists && member_exists
       true
     else

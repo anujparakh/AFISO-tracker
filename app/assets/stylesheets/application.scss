@@ -85,7 +85,6 @@ a[type='button'] {
       width: calc(#{$mainVal} - 4px);
       height: calc(#{$mainVal} - 4px);
       border-radius: calc(#{$index} - (#{$mainVal} / 2));
-      background: #0275d8;
   }
 
   .custom-control-input:checked ~ .custom-control-label::after {

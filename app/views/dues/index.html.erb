@@ -53,6 +53,8 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="<%=edit_due_path(payment)%>">Edit</a>
                         <%= link_to "Delete", due_path(payment), method: :delete, data: {confirm: "Are you sure you wish to delete this payment?"}, :class => "dropdown-item" %>
+                        <a class="dropdown-item" href="<%=receipt_due_url(payment)%>">Show Receipt</a>
+
                     </div>
                 </div>
             </td>
