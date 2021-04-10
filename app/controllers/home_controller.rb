@@ -16,11 +16,17 @@ class HomeController < ApplicationController
       else
         cookies[:theme] = "light"
       end
-      flash[:notice] = "Changed to " + cookies[:theme] + " mode"
+      flash.now[:notice] = "Changed to " + cookies[:theme] + " mode"
     end
   end
 
   def members
+    p params[:semester]
+    if params[:semester] == "None"
+      flash[:error] = "Select a semester to delete"
+      redirect_to('/home/settings')
+      return
+    end
     #delete inactive members that havent been active since the semesters
     @semester = params[:semester]
     # do filtering and then deleting
