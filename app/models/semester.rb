@@ -26,10 +26,10 @@ class Semester < ApplicationRecord
   # returns ID of most recent semester
   def self.get_current_semester
     @id = Semester.where('start_date < ?', DateTime.now).order(start_date: :asc).first.id
-	if @id == nil
-	  return Semester.last.id
-	else
-	  return @id
-	end
+    if @id == nil
+      return Semester.last.id
+    else
+      return @id
+    end
   end
 end
