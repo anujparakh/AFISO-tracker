@@ -60,6 +60,8 @@
     <% if @searchVal == "" %>
     <div class="col">
         <th>Filter Active Members: </th>
+        <td><%= select_tag(:chosen_active_type, options_for_select("Active", "Inactive"), :selected => @selected),
+	:onchange => "window.location.href = '/members/?semesterId='+ document.getElementById(view_semester_id)", :class => "custom-select w-auto") %></td><br>
         <td><%= select_tag(:view_semester_id, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @selected),
 	:onchange => "window.location.href = '/members/?semesterId='+ this.value", :class => "custom-select w-auto") %></td><br>
         <button id="toggle_list" class="btn btn-primary mt-3" onclick="copyText()">Copy Mailing List</button></br>
