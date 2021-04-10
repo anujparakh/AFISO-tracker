@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     end
   end
 
-
   resources :semesters do
 	  member do
 		  get :delete

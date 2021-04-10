@@ -22,7 +22,7 @@ class DuesController < ApplicationController
     @semesters = Semester.order("start_date DESC")
     @officers = Officer.order("name ASC")
 
-    @payment.payment_date = DateTime.now
+
     if params[:member_id] != nil
       @payment.member_id = params[:member_id]
     end
