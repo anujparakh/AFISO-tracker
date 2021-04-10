@@ -75,7 +75,7 @@
                 <%= form_for(@officer, :url => create_officer_url, :method => 'post', :html => {:class => 'w-100'} ) do |f| %>
 
                 <%= f.text_field(:email, id: 'email', :class => "form-control w-50 mx-auto mb-3", placeholder: "Enter new admin officer email") %>
-                <%= f.submit("Add Officer", :class => "btn btn-primary mx-2") %>
+                <%= f.submit("Add Officer", :class => "btn btn-success mx-2") %>
                 <button id="cancel-btn" type="button" class="btn btn-danger mx-2" onclick="cancelClicked()">Cancel</button>
 
                 <%end%>

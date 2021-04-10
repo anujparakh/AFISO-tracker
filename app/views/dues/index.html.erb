@@ -16,7 +16,6 @@
   <td><%= select_tag(:chosen_semester, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"All"), :selected => @selectedSemester),
 	:onchange => "window.location.href = '/dues?semester=' + document.getElementById('chosen_semester').value", :class => "custom-select w-auto") %></td><br><br>
 
-
   <% if @selectedSemester != 'All'%>
     <th>Total = $<%= @total %></th><br><br>
   <% end %>
@@ -31,8 +30,7 @@
             <th>Semester</th>
             <th>Amount</th>
             <th>Date</th>
-            <th><i class="fas fa-edit"></i></th>
-            <th><i class="fas fa-trash"></th>
+            <th class=""> <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </th>
             </tr>
         </thead>
         <% @payments.each_with_index do |payment, index| %>
@@ -46,15 +44,17 @@
 			</td>
             <td>$ <%= payment.payment_amount %></td>
             <td><%= payment.payment_date.strftime('%b %d, %Y') %></td>
-             <td>
-                <%= link_to edit_due_path(payment), :class => 'action edit' do%>
-                <i class="fas fa-edit"></i>
-                <% end%>
-            </td>
             <td>
-                <%= link_to due_path(payment), method: :delete, data: {confirm: "Are you sure you wish to delete this dues payment?"} do%>
-                <i class="fas fa-trash text-danger"></i>
-                <% end%>
+                <div class="dropdown show">
+                    <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display:block; width:100%;">
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="<%=edit_due_path(payment)%>">Edit</a>
+                        <%= link_to "Delete", due_path(payment), method: :delete, data: {confirm: "Are you sure you wish to delete this payment?"}, :class => "dropdown-item" %>
+                    </div>
+                </div>
             </td>
         </tr>
         <% end %>
