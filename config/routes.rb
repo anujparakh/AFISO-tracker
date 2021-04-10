@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/help'
   get 'home/settings'
+  delete 'home/members'
 
   post 'officers/create' => 'officers#create', as: :create_officer
   delete 'officers/destroy/:id' => 'officers#destroy', as: :destroy_officer
