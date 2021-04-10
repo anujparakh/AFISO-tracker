@@ -91,7 +91,22 @@
     </div>
 
     <hr />
+    <h1 class="font-weight-light">Member Preferences</h1>
+    <div class="mx-auto" style="max-width:576px ">
+        <div class="container text-center">
+            <th>Select Semester to delete inactive members: </th>
+            <td><%= select_tag("selected_semester", options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @semester),
+          	:class => "custom-select w-auto") %></td><br><br>
+            <a id="delete_btn" data-confirm="Are you sure you wish to delete all inactive members for this semester?" class="btn btn-danger" rel="nofollow" data-method="delete" href="/home/members?semester=None">Delete</a>
+            <script>
+                document.getElementById("selected_semester").onchange = function() {
+                  document.getElementById("delete_btn").href = '/home/members?semester=' + document.getElementById("selected_semester").value
+                }
+            </script>
+        </div>
 
+    </div>
+    <hr />
     <script>
         function checkboxClicked()
         {
