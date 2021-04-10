@@ -17,7 +17,7 @@
         </li>
         <%if Semester.all.size > 0%>
             <li class="nav-item">
-                <a class="nav-link lead" href=<%=members_path(Semester.last.id)%>>Look at a list of Active Members</a>
+                <a class="nav-link lead" href=<%=members_path(Semester.get_current_semester)%>>Look at a list of Active Members</a>
             </li>
         <%end%>
     </ul>
