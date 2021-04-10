@@ -114,9 +114,14 @@
         <p class="lead text-muted">Use this toggle to turn on dark mode because dark mode is awesome.</p>
         <div class="custom-control custom-switch mt-1">
             <p class="custom-control custom-switch custom-switch-lg">
-                <input class="custom-control-input" id="dark-switch" type="checkbox" onclick="checkboxClicked()" <%if cookies[:theme] == "dark" %>checked<%end%>>
+                <input class="custom-control-input" id="dark-switch" type="checkbox" onclick="checkboxClicked()">
                 <label class="custom-control-label font-italic" for="dark-switch"></label>
             </p>
+
+            <script>
+            if(document.getElementById('everything-body').className == 'bootstrap-dark')
+                document.getElementById('dark-switch').checked = true;
+            </script>
         </div>
     </div>
     <hr />

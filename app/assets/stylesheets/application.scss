@@ -47,6 +47,14 @@
   color: #5bc0de;
 }
 
+a[type='button'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+}
+
+
 @mixin switch($res: 'sm') {
   $index: 1rem;
   $mainVal: 1rem;
