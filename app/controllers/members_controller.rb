@@ -2,18 +2,26 @@
 
 class MembersController < ApplicationController
   # before_action :check_for_lockup
+  #<td><%= select_tag(:chosen_active_type, options_for_select("Active", "Inactive"), :selected => @active_type),
+	#:onchange => "window.location.href = '/members/?semesterId='+ document.getElementById(view_semester_id) + '&activeType=' + this.value", :class => "custom-select w-auto") %></td><br>
 
   def index
     @searchVal = ''
-    if !params[:semesterId].nil? && (params[:semesterId] != 'None')
+    if !params[:semesterId].nil? && (params[:semesterId] != 'None') && (params[:activeType] == "Active")
       @selected = params[:semesterId]
+      @active_type = params[:activeType]
       @members = Member.get_active_in_semester(params[:semesterId])
+    elsif !params[:semesterId].nil? && (params[:semesterId] != 'None') && (params[:activeType] == "Inactive")
+      @selected = params[:semesterId]
+      @active_type = params[:activeType]
+      @members = Member.get_inactive_in_semester(params[:semesterId])
     elsif !params[:search].nil?
       @searchVal = params[:search]
       @members = Member.all.where('lower(name) LIKE ? OR lower(email) LIKE ?', "%#{@searchVal.downcase}%",
                                   "%#{@searchVal.downcase}%").order('name ASC')
     else
-      @selected = 0
+      #@selected = 1
+      @active_type = 0
       @members = Member.order('name ASC')
     end
     @mailing_list = generate_mailing_list(@members)
