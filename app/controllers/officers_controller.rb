@@ -18,6 +18,8 @@ class OfficersController < ApplicationController
     @officer = Officer.find(params[:id])
     if (Officer.all.count > 1)
       @officer.destroy
+    else
+      flash[:error] = "No one will have access to this app if all admins are deleted."
     end
     redirect_to('/home/settings')
   end
