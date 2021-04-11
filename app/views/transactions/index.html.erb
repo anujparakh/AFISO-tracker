@@ -8,7 +8,7 @@
 
 <div class="jumbotron text-center">
   <h1 class="display-3">Transactions</h1>
-  <%= link_to("Add transaction", new_transaction_path, :class => 'action new large-link') %>
+  <%= link_to("Add Transaction", new_transaction_path, :class => 'action new large-link') %>
 </div>
 <div class="container text-center">
   <th>Filter Transaction Type: </th>
@@ -22,6 +22,8 @@
 
   <% if @selectedType != 'All' || @selectedSemester != 'All'%>
     <th>Total = $<%= @total %></th><br><br>
+  <% else %>
+    <th>Total funds = $<%= @total %></th><br><br>
   <% end %>
 </div>
 

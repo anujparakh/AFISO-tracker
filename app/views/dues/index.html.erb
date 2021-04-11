@@ -18,6 +18,8 @@
 
   <% if @selectedSemester != 'All'%>
     <th>Total = $<%= @total %></th><br><br>
+  <% else %>
+    <th>Lifetime Dues Total = $<%= @total %></th><br><br>
   <% end %>
 </div>
 
@@ -37,10 +39,7 @@
         <tr>
             <td><a href="<%= due_path(payment) %>" class="cell-link"><%=index + 1%></a></td>
             <td><%= payment.member.name %></td>
-            <td><%= payment.semester_1.semester_name%>
-			    <% if payment.semester_id_2 != nil %>
-				  <%=", " + payment.semester_2.semester_name %>
-				<% end %>
+            <td><%= payment.semester_1.semester_name %><% if payment.semester_id_2 != nil %><%=", " + payment.semester_2.semester_name %><% end %>
 			</td>
             <td>$ <%= payment.payment_amount %></td>
             <td><%= payment.payment_date.strftime('%b %d, %Y') %></td>

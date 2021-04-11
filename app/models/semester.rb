@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class Semester < ApplicationRecord
-  has_many :dues, foreign_key: :semester_id_1, dependent: :destroy
-  has_many :dues, foreign_key: :semester_id_2, dependent: :destroy
+  has_many :dues, foreign_key: :semester_id_1
+  has_many :dues, foreign_key: :semester_id_2
+  after_destroy :delete_dues
   validates_presence_of :semester_name, :start_date, :end_date
   validates_uniqueness_of :semester_name
 
@@ -31,5 +32,9 @@ class Semester < ApplicationRecord
     else
       return @id
     end
+  end
+
+  def delete_dues
+    Due.where('semester_id_1 = :id OR semester_id_2 = :id', id: id).map(&:destroy)
   end
 end

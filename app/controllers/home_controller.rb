@@ -21,47 +21,90 @@ class HomeController < ApplicationController
   end
 
   def members
-    p params[:semester]
-    if params[:semester] == "None"
-      flash[:error] = "Select a semester to delete"
+    if (params[:semester] == "None") || (params[:semester2] == "None")
+      flash[:error] = "Select both semesters"
       redirect_to('/home/settings')
       return
     end
     #delete inactive members that havent been active since the semesters
     @semester = params[:semester]
+    @semester2 = params[:semester2]
     # do filtering and then deleting
     # @semester = Semester.find(@semester)
-    if @semester != "None"
-      @members = deleteInactive(@semester)
+    if (@semester != "None") && (@semester2 != "None")
+      @members = deleteInactive(@semester, @semester2)
       Member.where(:id => @members).destroy_all
     end
-    redirect_to('/home/settings', notice: "Old inactive members in the semester were removed")
+    redirect_to('/home/settings', notice: "Old inactive members were removed")
   end
 
-  def deleteInactive(semester)
+  def deleteInactive(semester, semester2)
     # look at payments for given semester
     @semester = Semester.find(semester)
+    @semester2 = Semester.find(semester2)
     @payments = Due.where(semester_id_1: @semester.id).or(Due.where(semester_id_2: @semester.id))
+    @payments2 = Due.where(semester_id_1: @semester2.id).or(Due.where(semester_id_2: @semester2.id))
+
+    # gets a list of members that were active in the first semester (ideally the older semester)
     active_ids = []
     @payments.each_with_index do |payment, index|
       active_ids.push(payment.member_id)
     end
-    # grab members who made payments in given semester
-    @members = []
+
+
+    # gets a list of members that were active in the second semester (ideally the more recent semester)
+    active_ids_2 = []
+    @payments2.each_with_index do |payment, index|
+      active_ids_2.push(payment.member_id)
+    end
+
+    # gets a list of members that were inactive in the second semester (ideally the more recent semester)
     @all_members = Member.order('name ASC')
-    isactive = false
+    inactive_ids_2 = []
+    inactive_in_2 = true
     @all_members.each_with_index do |member, index|
-      isactive = false
-      active_ids.each_with_index do |active, index|
-        if(member.id == active)
-          isactive = true
+      inactive_in_2 = true
+      active_ids_2.each_with_index do |active_mem_in_2, index|
+        if (member.id == active_mem_in_2)
+          inactive_in_2 = false
         end
       end
-      if(!isactive)
-        @members.push(member)
+
+      if (inactive_in_2)
+        inactive_ids_2.push(member.id)
       end
     end
-    return @members
+
+
+    # grab members who made payments in the first semester and did NOT make a payment in the second semester
+    @members_to_delete = []
+    may_be_removed = false
+    will_be_removed = false
+    @all_members.each_with_index do |member, index|
+      may_be_removed = false
+      will_be_removed = false
+      
+      # checks if a particular member is in our list of active id's for semester 1
+      active_ids.each_with_index do |mem_id, index|
+        if(member.id == mem_id)
+          may_be_removed = true
+        end
+      end
+
+      # checks if a particular member is NOT in our list of active id's for semester 2, but WAS in the list for semester 1
+      if(may_be_removed)
+        inactive_ids_2.each_with_index do |mem_id, index|
+          if (member.id == mem_id) 
+            will_be_removed = true
+          end
+        end
+      end
+
+      if(will_be_removed)
+        @members_to_delete.push(member)
+      end
+    end
+    return @members_to_delete
   end
 
 
