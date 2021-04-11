@@ -15,9 +15,10 @@ class OfficersController < ApplicationController
   def update; end
 
   def destroy
-    p params
     @officer = Officer.find(params[:id])
-    @officer.destroy
+    if (Officer.all.count > 1)
+      @officer.destroy
+    end
     redirect_to('/home/settings')
   end
 end

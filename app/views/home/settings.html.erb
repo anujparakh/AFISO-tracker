@@ -93,13 +93,18 @@
     <hr />
     <h1 class="font-weight-light">Delete Inactive Members</h1>
     <div class="mx-auto mb-3" style="max-width:576px ">
-        <p class="lead text-muted">This will delete all members inactive in the chosen semester. Select semester to delete inactive members.</p>
+        <p class="lead text-muted">This will delete all members that were active in the first selected semester, but not active for the second selected semester. Select semesters to delete inactive members.</p>
         <%= select_tag("selected_semester", options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @semester),
           	:class => "custom-select w-auto mx-1") %>
-        <a id="delete_btn" data-confirm="Are you sure you wish to delete all inactive members for this semester? This action is irreversible. It is recommended to read the help page section for this action first." class="btn btn-danger mx-1" rel="nofollow" data-method="delete" href="/home/members?semester=None">Delete</a>
+        <%= select_tag("selected_semester_2", options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @semester),
+          	:class => "custom-select w-auto mx-1") %>
+        <a id="delete_btn" data-confirm="Are you sure you wish to delete these members? This action is irreversible. It is recommended to read the help page section for this action first." class="btn btn-danger mx-1" rel="nofollow" data-method="delete" href="/home/members?semester=None&semester2=None">Delete</a>
         <script>
             document.getElementById("selected_semester").onchange = function() {
-                document.getElementById("delete_btn").href = '/home/members?semester=' + document.getElementById("selected_semester").value
+                document.getElementById("delete_btn").href = '/home/members?semester=' + document.getElementById("selected_semester").value + '&semester2=' + document.getElementById("selected_semester_2").value
+            }
+            document.getElementById("selected_semester_2").onchange = function() {
+                document.getElementById("delete_btn").href = '/home/members?semester=' + document.getElementById("selected_semester").value + '&semester2=' + document.getElementById("selected_semester_2").value
             }
         </script>
         <p class="lead text-muted mt-3"><b class="font-weight-bold">Note:</b> This action is irreversible.</p>
