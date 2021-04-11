@@ -1,13 +1,15 @@
 <div class="jumbotron text-center">
     <h1 class="display-2">AFISO Finance Tracker</h1>
+    <div class="mx-auto" style="max-width:576px">
     <h3 class="text-info" style="font-weight:300">Welcome to the Aggie Forensic Investigative Science Organization Finance Tracker!</h3>
+    </div>
 </div>
 
 <div class="container text-center mt-5">
     <h1 class="font-weight-light">Some Links</h1>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link" href=<%=new_due_path%>>Record a new Payment</a>
+            <a class="nav-link lead" href=<%=new_due_path%>>Record a new Payment</a>
         </li>
         <li class="nav-item">
             <a class="nav-link lead" href=<%=new_member_path%>>Add a Member</a>
@@ -17,7 +19,7 @@
         </li>
         <%if Semester.all.size > 0%>
             <li class="nav-item">
-                <a class="nav-link lead" href=<%=members_path(Semester.last.id)%>>Look at a list of Active Members</a>
+                <a class="nav-link lead" href="/members?semesterId=<%=Semester.get_current_semester%>">Look at a list of Active Members</a>
             </li>
         <%end%>
     </ul>
