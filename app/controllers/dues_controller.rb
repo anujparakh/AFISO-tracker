@@ -22,7 +22,7 @@ class DuesController < ApplicationController
     @semesters = Semester.order("start_date DESC")
     @officers = Officer.order("name ASC")
 
-    @payment.payment_date = DateTime.now
+
     if params[:member_id] != nil
       @payment.member_id = params[:member_id]
     end
@@ -37,12 +37,12 @@ class DuesController < ApplicationController
     @payment = Due.new(due_params)
 
     @payment.payment_date = DateTime.now
-	
+
     # Make sure associated member, officer, and semester exist
     if valid_relations(@payment)
       if @payment.save
         flash[:notice] = "Payment Successfully Created!"
-        redirect_to(dues_path)
+        redirect_to(receipt_due_url(:id => @payment))
       else
         flash[:errors] = "Invalid fields"
         render("new")
@@ -51,6 +51,10 @@ class DuesController < ApplicationController
       flash[:errors] = "Invalid officer, member or semester"
       render("new")
     end
+  end
+
+  def receipt
+    @payment = Due.find(params[:id])
   end
 
   ### UPDATE ###
@@ -99,7 +103,7 @@ class DuesController < ApplicationController
 	semester_2_exists = Semester.exists?(id: form_record.semester_id_2) || form_record.semester_id_2.nil?
     officer_exists = Officer.exists?(id: form_record.officer_id)
     member_exists = Member.exists?(id: form_record.member_id)
-	
+
     if semester_1_exists && semester_2_exists && officer_exists && member_exists
       true
     else

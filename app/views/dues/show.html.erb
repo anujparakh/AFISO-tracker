@@ -25,4 +25,6 @@
             <th>Date</th>
             <td><%= @payment.payment_date.strftime("%B %d, %Y") %></td>
         </tr>
-    </table>
+</table>
+    <a class="btn btn-primary" href="<%= receipt_due_url(@payment) %>" role="button">Show Receipt</a>
+</div>
