@@ -59,11 +59,13 @@
 
     <% if @searchVal == "" %>
     <div class="col">
-        <th>Filter Active Members: </th>
-        <td><%= select_tag(:chosen_active_type, options_for_select("Active", "Inactive"), :selected => @selected),
-	:onchange => "window.location.href = '/members/?semesterId='+ document.getElementById(view_semester_id)", :class => "custom-select w-auto") %></td><br>
-        <td><%= select_tag(:view_semester_id, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }.insert(0,"None"), :selected => @selected),
-	:onchange => "window.location.href = '/members/?semesterId='+ this.value", :class => "custom-select w-auto") %></td><br>
+        <div class="row d-flex justify-content-center mt-3">
+            <p class="my-auto">Show&nbsp;</p>
+            <%= select_tag(:chosen_active_type, options_for_select(["All", "Active", "Inactive" ], :selected => @active_type), :class => "custom-select w-auto") %>
+            <p class="my-auto">&nbsp;Members:&nbsp;</p>
+            <%= select_tag(:view_semester_id, options_for_select(Semester.order("start_date DESC").map{ |s| [ s.semester_name, s.id ] }, :selected => @selected), :prompt => "Select Semester",
+	:onchange => "window.location.href = '/members/?semesterId='+ this.value + '&activeType=' + document.getElementById('chosen_active_type').value", :class => "custom-select w-auto") %>
+        </div>
         <button id="toggle_list" class="btn btn-primary mt-3" onclick="copyText()">Copy Mailing List</button></br>
         <textarea style="position:absolute; top:-100%; left:-100%;" id="tobecopied"><%= @mailing_list %></textarea>
     </div>
@@ -83,6 +85,24 @@
                 document.getElementById("search-btn").click();
             }
         });
+
+        var chosen_type = document.getElementById("chosen_active_type");
+        var sem_id = document.getElementById("view_semester_id");
+        if (chosen_type.value == "All") {
+            sem_id.style.display = "none";
+        }
+        chosen_type.onchange = function(){
+            if (chosen_type.value == "All") {
+                sem_id.style.display = "none";
+                window.location.href = '/members/';
+            }
+            else {
+                sem_id.style.display = "block";
+                if(sem_id.value != ""){
+                    window.location.href = '/members/?semesterId=' + sem_id.value + '&activeType=' + chosen_type.value;
+                }
+            }
+        }
     </script>
 
     <% if @searchVal != "" %>
