@@ -22,10 +22,10 @@ class Semester < ApplicationRecord
   def due_date_before_end_date?
     errors.add :dues_deadline, 'must be before end date' if !dues_deadline.nil? && !end_date.nil? && (end_date < dues_deadline)
   end
-  
+
   # returns ID of most recent semester
   def self.get_current_semester
-    @id = Semester.where('start_date < ?', DateTime.now).order(start_date: :asc).first.id
+    @id = Semester.where('start_date < ?', DateTime.now).order(start_date: :desc).first.id
     if @id == nil
       return Semester.last.id
     else
