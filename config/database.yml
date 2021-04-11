@@ -26,7 +26,7 @@ development:
   <<: *default
   database: AFISO_Tracker_development
   # host: localhost
-  username: afiso_dev
+  username: afiso
   password: afiso_pass
   # port: 5433
 
@@ -64,7 +64,7 @@ test:
   <<: *default
   database: AFISO_Tracker_test
   host: localhost
-  username: afiso_dev
+  username: afiso
   password: afiso_pass
   # port: 5433
 

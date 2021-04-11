@@ -22,6 +22,8 @@
 
   <% if @selectedType != 'All' || @selectedSemester != 'All'%>
     <th>Total = $<%= @total %></th><br><br>
+  <% else %>
+    <th>Total funds = $<%= @total %></th><br><br>
   <% end %>
 </div>
 
